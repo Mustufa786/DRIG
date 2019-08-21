@@ -1,10 +1,12 @@
 <resources>
     <!--<string name="app_name"> Typhoid Outbreak Investigation and Control 2019 </string>-->
     <string name="app_name"> TYBAR TCV </string>
+    <string name="year">Year</string>
+    <string name="month">Month</string>
+    <string name="day">Day</string>
 
     <string name="yes"> ہاں </string>
     <string name="no"> نہیں </string>
-
 
     <string name="dsah"> سروے فارم</string>
     <string name="dsa01"> ٹا وُن کا نام اور کوڈ </string>
@@ -190,8 +192,6 @@
     <string name="tcvcl18">Vaccination ID:</string>
     <string name="tcvcl19">Vaccination Date</string>
     <string name="tcvcl20">Vaccination Time</string>
-    <string name="year">Year</string>
-    <string name="month">Month</string>
 
     <string name="tcvcl11a">Consent Provided</string>
     <string name="tcvcl11b">Consent Refused</string>
