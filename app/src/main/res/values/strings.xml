@@ -1,6 +1,96 @@
 <resources>
     <!--<string name="app_name"> Typhoid Outbreak Investigation and Control 2019 </string>-->
     <string name="app_name"> TYBAR TCV </string>
+
+    <string name="yes"> ہاں </string>
+    <string name="no"> نہیں </string>
+
+
+    <string name="dsah"> سروے فارم</string>
+    <string name="dsa01"> ٹا وُن کا نام اور کوڈ </string>
+
+    <string name="dsa02"> یونین کونسل کا نام اور کوڈ </string>
+    <string name="dsa03"> CHW </string>
+
+    <string name="dsa04"> گھرانے کا نمبر رجسٹر میں سے دیکھ کر لکھیں </string>
+
+    <string name="dsa05"> گھر کا پتہ </string>
+
+    <string name="dsa06"> گھرانے کے سر براہ کا نام </string>
+
+    <string name="dsa07"> موبائل نمبر </string>
+
+    <string name="dsa08"> CNIC شناختی کارڈنمبر </string>
+
+    <string name="dsa09"> اس گھر میں پانچ سال سے کم عمر بچوں کی تعداد کیا ہے؟ </string>
+    <string name="dsa09total"> کل تعداد </string>
+    <string name="dsa09boy"> بچے </string>
+    <string name="dsa09girl"> بچیاں </string>
+
+    <string name="dsa10"> اس گھر میں دو سال سے کم عمر بچوں کی تعداد کیا ہے؟ </string>
+    <string name="dsa10total"> کل تعداد </string>
+    <string name="dsa10boy"> بچے </string>
+    <string name="dsa10girl"> بچیاں </string>
+
+    <string name="dsa11"> کیا اس گھر میں کوئی حاملہ خاتون ہے؟[اگر جواب "ہاں" ہو تو سوال نمبر13پوچھیں ] </string>
+
+    <string name="dsa12"> اگر ہاں تو حمل کی مدت؟ [ہفتوں اورمہینوں میں لکھیں] </string>
+    <string name="dsa12week"> ہفتے </string>
+    <string name="dsa12month"> مہینے </string>
+
+    <string name="dsbh"> دو سال سے کم عمر بچوں کے حفاظتی ٹیکہ جات کی تفصیل </string>
+
+    <string name="dsb01"> بچے کا نام </string>
+
+    <string name="dsb02"> والد کا نام </string>
+
+    <string name="dsb03"> بچے کی جنس </string>
+    <string name="dsb03boy"> لڑکا </string>
+    <string name="dsb03girl"> لڑکی </string>
+
+    <string name="dsb04"> بچے کی تاریخ پیدائش </string>
+
+    <string name="dsb05"> بچے کی عمر </string>
+
+    <string name="dsb06"> کیا حفاظتی ٹیکہ جات کا کارڈ موجود ہے؟ </string>
+
+    <string name="dsb07"> حفاظتی ٹیکہ جات کے کارڈ کا QR کوڈ </string>
+
+    <string name="dsb08"> بچے کاای پی آئی نمبرEPI </string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -46,8 +136,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <!--School Listing-->
-    <string name="yes">YES</string>
-    <string name="no">NO</string>
+
     <string name="other">Other</string>
     <string name="dkn">Don\'t Know</string>
 
