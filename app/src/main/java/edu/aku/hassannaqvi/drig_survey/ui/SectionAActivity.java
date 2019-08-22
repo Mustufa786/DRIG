@@ -235,6 +235,7 @@ public class SectionAActivity extends AppCompatActivity {
         sfa.put("dsa14", bi.dsa14.getText().toString());
         sfa.put("dsa15", bi.dsa15a.isChecked() ? "1" : bi.dsa15b.isChecked() ? "2" : "0");
         sfa.put("dsa16", bi.dsa16.getText().toString());
+        sfa.put("dsa18", bi.dsa18a.isChecked() ? "1" : bi.dsa18b.isChecked() ? "2" : bi.dsa18c.isChecked() ? "3" : "0");
 
         for (int i = 0; i < childllArray19.size(); i++) {
             sfa.put("dsa16" + String.format("%02d", (i + 1)) + "m", monthArray19.get(i).getText().toString());
