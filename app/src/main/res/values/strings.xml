@@ -1,6 +1,7 @@
 <resources>
     <!--<string name="app_name"> Typhoid Outbreak Investigation and Control 2019 </string>-->
-    <string name="app_name"> TYBAR TCV </string>
+    <string name="app_name"> DRIG </string>
+
     <string name="year">Year</string>
     <string name="month">Month</string>
     <string name="day">Day</string>
@@ -8,6 +9,7 @@
     <string name="yes"> ہاں </string>
     <string name="no"> نہیں </string>
 
+    <
     <string name="dsah"> سروے فارم</string>
     <string name="dsa01"> ٹا وُن کا نام اور کوڈ </string>
 

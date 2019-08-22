@@ -124,49 +124,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
                     android:onClick="@{(v) -> callback.openForm(1)}"
-                    android:text="SCHOOL LISTING FORM" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:onClick="@{(v) -> callback.openForm(2)}"
-                    android:text="SCHOOL IMMUNIZATION FORM" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:onClick="@{(v) -> callback.openForm(3)}"
-                    android:text="CASE REPORT FORM - Case"
-                    android:visibility="visible" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:onClick="@{(v) -> callback.openForm(4)}"
-                    android:text="CASE REPORT FORM - CONTROL"
-                    android:visibility="visible" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:onClick="@{(v) -> callback.openForm(5)}"
-                    android:text="CAMP / HEALTH FACILITY IMMUNIZATION FORM" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:onClick="downloadData"
-                    android:text="Download Data" />
+                    android:text="Open FORM" />
 
                 <Button
                     android:id="@+id/syncServer"
