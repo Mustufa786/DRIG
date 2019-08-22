@@ -5,7 +5,16 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.edittextpicker.aliazaz.EditTextPicker;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +34,10 @@ import edu.aku.hassannaqvi.drig_survey.contracts.HFContract;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
 import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySectionABinding;
+import edu.aku.hassannaqvi.drig_survey.validation.ClearClass;
 import edu.aku.hassannaqvi.drig_survey.validation.ValidatorClass;
+
+import static java.sql.Types.INTEGER;
 
 public class SectionAActivity extends AppCompatActivity {
 
@@ -35,6 +47,14 @@ public class SectionAActivity extends AppCompatActivity {
     private List<String> hfName = new ArrayList<>(Arrays.asList("...."));
     private String screenID = "", caseID = "", tagID = "";
     private boolean eligibleFlag = false;
+
+    private final List<LinearLayout> childllArray19 = new ArrayList();
+    private final List<EditText> weekArray19 = new ArrayList();
+    private final List<EditText> monthArray19 = new ArrayList();
+    private final List<TextView> durationLabelArray19 = new ArrayList();
+
+    private final LinearLayout.LayoutParams mRparams1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+    private final LinearLayout.LayoutParams mRparams2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +68,84 @@ public class SectionAActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
+        bi.dsa15.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.dsa15b.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpSecA02, null);
+            }
+        });
 
+        bi.dsa16.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                childllArray19.clear();
+                bi.llgrpsfu309.removeAllViews();
+                monthArray19.clear();
+                weekArray19.clear();
+
+                if (bi.dsa16.getText().toString().isEmpty()) return;
+
+                int noofboxes = Integer.valueOf(bi.dsa16.getText().toString());
+                if (noofboxes == 0)
+                    return;
+
+                for (int i = 0; i < noofboxes; i++) {
+
+                    TextView DurationLabelTextView = new TextView(SectionAActivity.this);
+                    DurationLabelTextView.setLayoutParams(mRparams2);
+                    int numberss = i + 1;
+                    DurationLabelTextView.setText(getString(R.string.dsa13) + " # " + numberss);
+                    DurationLabelTextView.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                    DurationLabelTextView.setBackgroundColor(getResources().getColor(R.color.colorPrimaryAlpha));
+                    durationLabelArray19.add(DurationLabelTextView);
+                    bi.llgrpsfu309.addView(DurationLabelTextView);
+
+                    LinearLayout llchild = new LinearLayout(SectionAActivity.this);
+                    llchild.setLayoutParams(mRparams2);
+                    llchild.setOrientation(LinearLayout.HORIZONTAL);
+                    childllArray19.add(llchild);
+                    bi.llgrpsfu309.addView(llchild);
+
+                    EditTextPicker secEditText = (EditTextPicker) new EditText(SectionAActivity.this);
+                    secEditText.setLayoutParams(mRparams1);
+                    secEditText.setHint("Week " + numberss);
+                    secEditText.setInputType(INTEGER);
+                    secEditText.setType(1);
+                    secEditText.setMaxvalue(36);
+                    secEditText.setMinvalue(1);
+                    int maxLength = 2;
+                    secEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
+                    weekArray19.add(secEditText);
+                    llchild.addView(secEditText);
+
+
+                    EditTextPicker minEditText = (EditTextPicker) new EditText(SectionAActivity.this);
+                    minEditText.setLayoutParams(mRparams1);
+                    minEditText.setHint("Month " + numberss);
+                    minEditText.setInputType(INTEGER);
+                    secEditText.setType(1);
+                    secEditText.setMaxvalue(9);
+                    secEditText.setMinvalue(0);
+                    minEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
+                    monthArray19.add(minEditText);
+                    llchild.addView(minEditText);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+
+            }
+        });
     }
 
     private void loadHFFromDB() {
@@ -139,6 +236,12 @@ public class SectionAActivity extends AppCompatActivity {
         sfa.put("dsa15", bi.dsa15a.isChecked() ? "1" : bi.dsa15b.isChecked() ? "2" : "0");
         sfa.put("dsa16", bi.dsa16.getText().toString());
 
+        for (int i = 0; i < childllArray19.size(); i++) {
+            sfa.put("dsa16" + String.format("%02d", (i + 1)) + "m", monthArray19.get(i).getText().toString());
+            sfa.put("dsa16" + String.format("%02d", (i + 1)) + "w", weekArray19.get(i).getText().toString());
+        }
+
+
         MainApp.fc.setsA(String.valueOf(sfa));
     }
 
@@ -161,6 +264,17 @@ public class SectionAActivity extends AppCompatActivity {
             return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Boys count can't be greater then Under 5 count!!");
         if (girlsU2 > girlsU5)
             return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Girls count can't be greater then Under 5 count!!");
+
+        for (int i = 0; i < childllArray19.size(); i++) {
+            int numberss = i + 1;
+            if (!ValidatorClass.EmptyEditTextPicker(SectionAActivity.this, monthArray19.get(i), getString(R.string.dsa13) + " Months " + numberss)) {
+                return false;
+            }
+            if (!ValidatorClass.EmptyEditTextPicker(SectionAActivity.this, weekArray19.get(i), getString(R.string.dsa13) + " Week " + numberss)) {
+                return false;
+            }
+        }
+
 
         return true;
 

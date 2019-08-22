@@ -29,8 +29,10 @@
     <string name="dsa10girl"> بچیاں </string>
     <string name="dsa11"> کیا اس گھر میں کوئی حاملہ خاتون ہے؟[اگر جواب "ہاں" ہو تو سوال نمبر13پوچھیں ] </string>
     <string name="dsa12"> اگر ہاں تو حمل کی مدت؟ [ہفتوں اورمہینوں میں لکھیں] </string>
+    <string name="dsa13"> حمل کی مدت </string>
     <string name="dsa12week"> ہفتے </string>
     <string name="dsa12month"> مہینے </string>
+    <string name="dsa16"> حاملہ خاتون کی تعداد </string>
 
     <!--Section B-->
     <string name="dsbh"> دو سال سے کم عمر بچوں کے حفاظتی ٹیکہ جات کی تفصیل </string>
