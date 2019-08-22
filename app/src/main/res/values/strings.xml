@@ -5,90 +5,81 @@
     <string name="yes"> ہاں </string>
     <string name="no"> نہیں </string>
 
-
+    <!--Section A-->
     <string name="dsah"> سروے فارم</string>
     <string name="dsa01"> ٹا وُن کا نام اور کوڈ </string>
-
     <string name="dsa02"> یونین کونسل کا نام اور کوڈ </string>
     <string name="dsa03"> CHW </string>
-
     <string name="dsa04"> گھرانے کا نمبر رجسٹر میں سے دیکھ کر لکھیں </string>
-
     <string name="dsa05"> گھر کا پتہ </string>
-
     <string name="dsa06"> گھرانے کے سر براہ کا نام </string>
-
     <string name="dsa07"> موبائل نمبر </string>
-
     <string name="dsa08"> CNIC شناختی کارڈنمبر </string>
-
     <string name="dsa09"> اس گھر میں پانچ سال سے کم عمر بچوں کی تعداد کیا ہے؟ </string>
     <string name="dsa09total"> کل تعداد </string>
     <string name="dsa09boy"> بچے </string>
     <string name="dsa09girl"> بچیاں </string>
-
     <string name="dsa10"> اس گھر میں دو سال سے کم عمر بچوں کی تعداد کیا ہے؟ </string>
     <string name="dsa10total"> کل تعداد </string>
     <string name="dsa10boy"> بچے </string>
     <string name="dsa10girl"> بچیاں </string>
-
     <string name="dsa11"> کیا اس گھر میں کوئی حاملہ خاتون ہے؟[اگر جواب "ہاں" ہو تو سوال نمبر13پوچھیں ] </string>
-
     <string name="dsa12"> اگر ہاں تو حمل کی مدت؟ [ہفتوں اورمہینوں میں لکھیں] </string>
     <string name="dsa12week"> ہفتے </string>
     <string name="dsa12month"> مہینے </string>
 
+    <!--Section B-->
     <string name="dsbh"> دو سال سے کم عمر بچوں کے حفاظتی ٹیکہ جات کی تفصیل </string>
-
     <string name="dsb01"> بچے کا نام </string>
-
     <string name="dsb02"> والد کا نام </string>
-
     <string name="dsb03"> بچے کی جنس </string>
     <string name="dsb03boy"> لڑکا </string>
     <string name="dsb03girl"> لڑکی </string>
-
     <string name="dsb04"> بچے کی تاریخ پیدائش </string>
-
     <string name="dsb05"> بچے کی عمر </string>
-
     <string name="dsb06"> کیا حفاظتی ٹیکہ جات کا کارڈ موجود ہے؟ </string>
-
     <string name="dsb07"> حفاظتی ٹیکہ جات کے کارڈ کا QR کوڈ </string>
-
     <string name="dsb08"> بچے کاای پی آئی نمبرEPI </string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!--Section C-->
+    <string name="atbirth"> پیدائش پر </string>
+    <string name="cic3bcg"> بی سی جی </string>
+    <string name="cic3bcgdt"> DD-MM-YYYY </string>
+    <string name="cic3opv0">۔OPV  پولیو پیدائش کے وقت  </string>
+    <string name="cic3opv0dt"> DD-MM-YYYY </string>
+    <string name="at6wks">  6 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3opv1"> ۔OPV 1۔ 6 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3opv1dt"> DD-MM-YYYY </string>
+    <string name="cic3p1"> ۔Pentavalent 1۔ 6 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3p1dt"> DD-MM-YYYY </string>
+    <string name="cic3pcv1"> ۔Pneumococcal 1۔ 6 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3pcv1dt"> DD-MM-YYYY </string>
+    <string name="at10wks"> ۔10 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3opv2"> ۔OPV 2۔ 10 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3opv2dt"> DD-MM-YYYY </string>
+    <string name="cic3p2"> ۔Pentavalent 2۔ 10 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3p2dt"> DD-MM-YYYY </string>
+    <string name="cic3pcv2"> ۔Pneumococcal 2۔ 10 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3pcv2dt"> DD-MM-YYYY </string>
+    <string name="at14wks"> ۔14 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3opv3"> ۔OPV 3۔ 14 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3opv3dt"> DD-MM-YYYY </string>
+    <string name="cic3p3"> ۔Pentavalent 3۔ 14 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3p3dt"> DD-MM-YYYY </string>
+    <string name="cic3pcv3"> ۔Pneumococcal 3۔ 14 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3pcv3dt"> DD-MM-YYYY </string>
+    <string name="cic3ipv"> ۔IPV۔ 14 ہفتوں کی عمر کے وقت </string>
+    <string name="cic3ipvdt"> DD-MM-YYYY </string>
+    <string name="at9m"> 9 مہینے کی عمر کے وقت </string>
+    <string name="cic3m1"> ۔Measles 1۔ 9 مہینے کی عمر کے وقت </string>
+    <string name="cic3m1dt"> DD-MM-YYYY </string>
+    <string name="at15m">      15 مہینے کی عمر کے وقت </string>
+    <string name="cic3m2"> ۔Measles 2۔ 15 مہینے کی عمر کے وقت </string>
+    <string name="cic3m2dt"> DD-MM-YYYY </string>
+    <string name="cic3response"> Response </string>
+    <string name="cic3src"> Source </string>
+    <string name="card">کارڈ کے مطابق</string>
+    <string name="recall">ماں کے مطابق</string>
 
 
     <!-- Strings related to login -->
@@ -109,21 +100,6 @@
     <string name="dcstatus">انٹروہو کا نتیجہ</string>
     <string name="complete"> مکمل</string>
     <string name="incomplete">نا مکمل</string>
-    <!-- String related to section headings -->
-    <string name="secALabel">A: BASIC INFORMATION</string>
-    <string name="secBLabel">B: HOUSEHOLD MEMBERS’ INFORMATION </string>
-    <string name="secCLabel">C: گھر جي سماجي ۽ اقتصادي معلومات </string>
-    <string name="secDLabel">D: REPRODUCTIVE HEALTH, MATERNAL AND CHILD MORTALITY (Complete this section  for all married aged 15–49 years in the household)</string>
-    <string name="secELabel">E: Deceased Mother Information</string>
-    <string name="secFLabel">F: Deceased Child Information</string>
-    <string name="secGLabel">G: Access to LHWs </string>
-    <string name="secHALabel">(HA: ٻار جي صحت(دستن جي بيماري جي باري ۾</string>
-    <string name="secHBLabel">HB: ٻار جي صحت(ساھ کڻڻ ۾ تڪليف)</string>
-    <string name="secILabel">I: حفاظتي ٽڪن جي معلومات</string>
-    <string name="secJLabel">J: BREAST FEEDING AND NUTRITION </string>
-    <string name="secKLabel">K: پاڻي ۽ صفائي</string>
-    <string name="secLLabel">L: ھٿ ڌوئڻ</string>
-    <string name="secMLabel">M: WASH (Spot Check) </string>
 
     <string name="istatus"> OUTCOME OF INTERVIEW </string>
     <string name="istatusa"> مکمل </string>
@@ -150,486 +126,5 @@
     <string name="tcvscanum"> number </string>
 
 
-    <string name="sec_slisting">SCHOOL LISTING</string>
-    <string name="tcvsl00"> School Type </string>
-    <string name="tcvsl01"> School Name </string>
-    <string name="tcvsl02"> Type of School </string>
-    <string name="tcvsl02a"> Government </string>
-    <string name="tcvsl02b"> Private </string>
-    <string name="tcvsl02c"> Madarasa </string>
-    <string name="tcvsl03"> Union Council </string>
-    <string name="tcvsl04"> Mahulla/Area </string>
-    <string name="tcvsl05"> Complete Address including Mohalla and House No </string>
-    <string name="tcvsl06"> School Administration ready to give consent for Mass Immunization campaign </string>
-    <string name="tcvsl07"> Name of School Administrator </string>
-    <string name="tcvsl08"> Contact No </string>
-
-    <string name="sec_clisting">SCHOOL IMMUNIZATION FORM</string>
-    <string name="tcvcl01">School Name/Code</string>
-    <string name="tcvcl02">Name of Child</string>
-    <string name="tcvcl21">Class</string>
-    <string name="tcvcl03">Date of Birth or Age</string>
-    <string name="tcvcl03a">Date of Birth</string>
-    <string name="tcvcl03b">Age</string>
-    <string name="tcvcl05">Gender</string>
-    <string name="tcvcl05a">Male</string>
-    <string name="tcvcl05b">Female</string>
-    <string name="tcvcl06">Father’s Name</string>
-    <string name="tcvcl07">Father’s National Identity Card Number</string>
-    <string name="tcvcl09">Telephone Number</string>
-    <string name="tcvcl10">Alternate Telephone Number</string>
-    <string name="tcvcl11">Parents ready to give consent for vaccination</string>
-    <string name="tcvcl11h">If Refused or NO response skip to end</string>
-    <string name="tcvcl12">Child is between 6 months – 15 years</string>
-    <string name="tcvcl13">Child is NOT allergic to any medicine</string>
-    <string name="tcvcl14"><![CDATA[NO active signs of infection including fever >1000F, body ache, blisters on body, malaise, vomiting, Rashes on body, Red Spots on Abdomens, seizures, Breathing Difficulty, and loose Stools for the past three days.]]></string>
-    <string name="tcvcl15">Child is currently NOT using medications (Antibiotics and Steroids) for any infection or disease in the past 24 hours. (Pneumonia Acute Diarrhea, and seizures).</string>
-    <string name="tcvcl16">Child is NOT immunized against Typhoid During the past 3 years (Check Vaccination card)</string>
-    <string name="tcvcl17">Is the Child Present?</string>
-    <string name="tcvclH1">IF ANSWER TO ALL THE ABOVE QUESTIONS IS YES, CHILD IS ELIGIBLE TO GET VACCINATED</string>
-    <string name="tcvcl18">Vaccination ID:</string>
-    <string name="tcvcl19">Vaccination Date</string>
-    <string name="tcvcl20">Vaccination Time</string>
-    <string name="year">Year</string>
-    <string name="month">Month</string>
-
-    <string name="tcvcl11a">Consent Provided</string>
-    <string name="tcvcl11b">Consent Refused</string>
-    <string name="tcvcl11c">No Response</string>
-    <string name="absent">Absent</string>
-    <string name="present">Present</string>
-
-
-    <!---FAZAL RIZVI  -->
-    <string name="CrfCase"> Case Report Form - Impact Assessment (CASE) </string>
-    <string name="tcvscaah"> سیکشن :1 </string>
-    <string name="tcvscaa01"> نام: </string>
-    <string name="tcvscaa02"> باپ کا نام:  </string>
-    <string name="tcvscaa03"> فون نمبر: </string>
-    <string name="tcvscaa03a"> متبادل فون نمبر:  </string>
-    <string name="tcvscaa04"> مکمل پتہ :    </string>
-    <string name="tcvscaa05"> بچے کی تاریخ پیدائش/عمر </string>
-    <string name="tcvscaa05a"> بچے کی تاریخ پیدائش </string>
-    <string name="tcvscaa05b"> عمر </string>
-
-    <string name="tcvscaa06"> مریض کی جنس کیا ہے؟ </string>
-    <string name="tcvscaa06a"> لڑکا </string>
-    <string name="tcvscaa06b"> لڑکی </string>
-    <string name="tcvscaa07"> اسکرین آئی ڈی: </string>
-    <string name="tcvscaa08"> اسکرین کی تاریخ: </string>
-
-    <string name="tcvscabh"> اہلیت کی اسکریننگ </string>
-    <string name="tcvscab09">کیا مریض ۷ ماہ سے ۱۵ سال کے درمیان میں ہے؟</string>
-    <string name="tcvscab10"> کیا مریض کم سے کم پچھلے ۱ماہ سے لیاری میں رہتا ہے ؟ </string>
-    <string name="tcvscab11"> کیا مریض 3دن یا 3دن سے زیادہ بخار کی شکایت کےساتھ مرکزصحت آیا ہے؟ </string>
-    <string name="tcvscab12"> بیماری  کی تاریخ : </string>  //
-    <string name="tcvscab13"> کیا مریض کے پاس پچھلے کلچرکی رپورٹ موجود ہے؟ </string>
-    <string name="tcvscab14"> اگرہاں،تو رپورٹ کی تاریخ بتائیں </string> //
-    <string name="tcvscab15"> کیا مریض  کے پاس موجودکلچر کا نتیجہ سالمونیلا ٹائفی کے لیے مثبت ہے ؟ </string>
-    <string name="tcvscab16"> لیباٹری رسیدنمبر: </string>
-    <string name="tcvscabh17"> اگر  کلچر کا نتیجہ سالمونیلا ٹائفی کے لیے مثبت  ہوتو،مائکروبیل ریززٹینس پیٹرن بتائیں۔ </string>
-    <string name="tcvscab171"> Ampicillin </string>
-    <string name="tcvscab172"> Chloramphenicol </string>
-    <string name="tcvscab173"> Co-trimoxazole </string>
-    <string name="tcvscab174"> Fluoroquinolone </string>
-    <string name="tcvscab175"> Ceftriaxone </string>
-    <string name="tcvscab176"> other </string>
-    <string name="tcvscab18"> کیا  وزٹ کےدوران مریض کا خون کا نمونہ لیا  گیاہے. </string>
-    <string name="tcvscab19">لیباٹری رسیدنمبر: نوٹ: اگر اس وزٹ کے دوران خون کانمونہ لیاگیاہےتولیبارٹری کی آئی ڈی درج کی جائےگی اوربقایافارم کلچرکےنتیجہ آنےکےبعد بھراجائےگا۔</string>
-    <string name="tcvscab20"> کیا مریض  کے کلچر کا نتیجہ سالمونیلا ٹائفی کے لیے مثبت ہے ؟ </string>
-    <string name="tcvscab20c"> نتیجہ رُکاہوا ہے </string>
-    <string name="tcvscabh21"> اگر  کلچر کا نتیجہ سالمونیلا ٹائفی کے لیے مثبت  ہوتو،مائکروبیل ریززٹینس پیٹرن بتائیں۔ </string>
-    <string name="tcvscab211"> Ampicillin </string>
-    <string name="tcvscab212"> Chloramphenicol </string>
-    <string name="tcvscab213"> Co-trimoxazole </string>
-    <string name="tcvscab214"> Fluoroquinolone </string>
-    <string name="tcvscab215"> Ceftriaxone </string>
-    <string name="tcvscab216"> other </string>
-    <string name="tcvscab22"> کیا مریض یا والدین  مطالعہ میں  شمو لیت کے لیے  رضا مند ہے ؟ </string>
-    <string name="tcvscabh22"> اگر اوپر دیے گے سوالات (22،11،10،9اور15 یا20)کے جوابات ہاں ہیں تو مریض  مطالعہ میں شرکت کے لئے اہل ہے \n مندرجہ ذیل حصے کو بھرنا جاری رکھیں۔ </string>
-    <string name="tcvscab23"> کیس آئی ڈی : </string>
-
-    <string name="tcvscach"> سیکشن :2 </string>
-    <string name="tcvscadh"> سیکشن :3 </string>
-    <string name="tcvscad33"> کیس آئی ڈی : </string>
-    <string name="tcvscad34"> انرولمنٹ کی تاریخ: </string>
-    <string name="tcvscad01"> اس گھر میں کتنے افراد رہتے ہیں؟ </string>
-    <string name="tcvscad02"> اس گھر میں کتنے کمرے ہیں؟ </string>
-    <string name="tcvscad03"> گھر کس قسم کا ہے ؟ </string>
-    <string name="tcvscad03a"> بنگلہ </string>
-    <string name="tcvscad03b"> کچا پکا گھر </string>
-    <string name="tcvscad03c"> کچا گھر </string>
-    <string name="tcvscad04"> گھر میں کل کتنے ٹوائلٹ ہیں؟ </string>
-    <string name="tcvscad05"> گھر میں سینیٹری (لیٹرین ) کی سہولیات کیسی ہیں؟ </string>
-    <string name="tcvscad05a"> کموڈکےساتھ فلش </string>
-    <string name="tcvscad05b"> عام لیٹرین </string>
-    <string name="tcvscad05c"> میدان </string>
-    <string name="tcvscad06"> گھر میں کوڑے کو ضائع کرنے کا طریقہ کیا ہے؟ </string>
-    <string name="tcvscad06a"> سڑک پر پھیکنا </string>
-    <string name="tcvscad06b"> سویپر لے جاتا ہے </string>
-    <string name="tcvscad06c"> گندگی کے ڈھیر میں پھینک دیا </string>
-    <string name="tcvscad06d"> کوئی اوروضاحت کریں </string>
-    <string name="tcvscad07"> گھر میں سیوریج ڈسپوزل کا کیا طریقہ ہے؟ </string>
-    <string name="tcvscad07a"> میونسپل پائپ لائن </string>
-    <string name="tcvscad07b"> گھر کے باہر کھلی سیوریج </string>
-    <string name="tcvscad07c"> سویپرلے گیا </string>
-    <string name="tcvscad07d"> کوئی اوروضاحت کریں </string>
-    <string name="tcvscad08"> ینے کا پانی حاصل کرنے کا ذریعہ کیا ہے؟(ایک یا ایک سے زیادہ موزوں پہ نشان لگا سکتے ہیں) </string>
-    <string name="tcvscad0801"> پائپ کا پانی </string>
-    <string name="tcvscad0802"> ٹینکر </string>
-    <string name="tcvscad0803"> عوام کا نل </string>
-    <string name="tcvscad0804"> بورنگ کا پانی </string>
-    <string name="tcvscad0805"> بوتل والا پانی </string>
-    <string name="tcvscad09"> گھر میں پینے کے پانی کو صاف کرنے کا طریقہ؟ </string>
-    <string name="tcvscad09a"> کوئی نہیں (تو سوال نمبر 4.5پر جاہیے) </string>
-    <string name="tcvscad09b"> گھرکا فلٹرکیا ہوا (تو سوال نمبر 4.5پر جاہیے) </string>
-    <string name="tcvscad09c"> ابلا ہوا (تو سوال نمبر4.3پر جاہیے)؟؟ </string>
-    <string name="tcvscad09d"> پھٹکری </string>
-    <string name="tcvscad09e"> پانی صاف کرنے کی گولیاں (تو سوال نمبر 4.5پر جاہیے) </string>
-    <string name="tcvscad09f"> کوئی اوروضاحت کریں (تو سوال نمبر 4.5پر جاہیے) </string>
-    <string name="tcvscad10"> پانی کو کتنی دیر کے لیے چولہے پر ابالتے ہیں؟ </string>
-    <string name="tcvscad10a"> 1-3منٹ </string>
-    <string name="tcvscad10b">  5-3منٹ </string>
-    <string name="tcvscad10c"> 5 سے 10 منٹ </string>
-    <string name="tcvscad10d"> 10 منٹ سے ذیادہ </string>
-    <string name="tcvscad11"> دن میں کتنی مرتبہ پانی ابالا جاتا ہے؟ </string>
-    <string name="tcvscad11a"> دن میں ایک بار </string>
-    <string name="tcvscad11b"> دن میں دو بار </string>
-    <string name="tcvscad11c"> دن میں تین بار </string>
-    <string name="tcvscad12"> گھر میں پانی کہاں رکھتے ہیں </string>
-    <string name="tcvscad12a"> کولر میں </string>
-    <string name="tcvscad12b"> ریفریجریٹر </string>
-    <string name="tcvscad12c"> مٹکا </string>
-    <string name="tcvscad12d"> بغیر ڈھکا ہوا کنٹینر </string>
-    <string name="tcvscad13"> آپ برف کہاں سے حاصل کرتے ہیں؟ </string>
-    <string name="tcvscad13a"> گھر میں بناتے ہیں </string>
-    <string name="tcvscad13b"> برف ڈپو </string>
-    <string name="tcvscad13c"> پڑوسی سے </string>
-    <string name="tcvscad14"> اگر گھر میں برف بناتے ہیں تو آپ صاف پانی استعمال کرتے ہیں؟ </string>
-    <string name="tcvscad14a"> ہمیشہ </string>
-    <string name="tcvscad14b"> کبھی کبھی </string>
-    <string name="tcvscad14c"> کبھی نہیں </string>
-    <string name="tcvscad15"> گھر میں کھانا کون پکاتا ہے؟ </string>
-    <string name="tcvscad15a"> گھر کا فرد </string>
-    <string name="tcvscad15b"> ملازمین </string>
-    <string name="tcvscad15c"> کوئی اوروضاحت کریں </string>
-    <string name="tcvscad15d"> اگر گھر کا فرد کھانا پکاتا ہے تو گھر کے سربراہ سے اُس کا کیا تعلق ہے </string>
-    <string name="tcvscad16"> کیا کھانا پکانے والا /والی کھانا پکانے سے پہلے اپنے ہاتھ دھوتے ہیں؟ </string>
-    <string name="tcvscad16a"> ہمیشہ </string>
-    <string name="tcvscad16b"> کبھی کبھی </string>
-    <string name="tcvscad16c"> کبھی نہیں </string>
-    <string name="tcvscad17"> کیا گھر پر کھانا پکانے والا/والی کو کبھی ٹائیفائیڈڈائیگنوس ہوا ہے؟ </string>
-    <string name="tcvscad17a"> ہاں </string>
-    <string name="tcvscad17b"> نہیں </string>
-    <string name="tcvscad17c"> معلوم نہیں </string>
-    <string name="tcvscad17a01"> اگر ” ہاں“تو کلچر لیا تھا؟ </string>
-    <string name="tcvscad18"> گھر میں ایک دن میں کتنی بارکھاناپکاتے ہیں ؟ </string>
-    <string name="tcvscad18a"> دن میں ایک بار </string>
-    <string name="tcvscad18b"> دن میں دو بار </string>
-    <string name="tcvscad18c"> دن میں تین بار </string>
-    <string name="tcvscad18d"> دن میں تین بارسے زیادہ </string>
-    <string name="tcvscad19"> کیا آپ عام طور پرکھاناریفریجریٹر میں رکھتے ہیں؟ </string>
-    <string name="tcvscad19a"> ہمیشہ </string>
-    <string name="tcvscad19b"> کبھی کبھی </string>
-    <string name="tcvscad19c"> کبھی نہیں </string>
-    <string name="tcvscad20"> کیا بچے ہوئےکھانے کو آپ دوبارہ گرم کرکے کھاتےہیں ؟ </string>
-    <string name="tcvscad20a"> ہمیشہ </string>
-    <string name="tcvscad20b"> کبھی کبھی </string>
-    <string name="tcvscad20c"> کبھی نہیں </string>
-    <string name="tcvscad21"> تقریباً آپ مہینے میں کتنی بار گھر سے باہر کھانا کھا تے ہیں؟ </string>
-    <string name="tcvscad21a"> دن میں ایک بار سے زیادہ </string>
-    <string name="tcvscad21b"> دن میں ایک بار </string>
-    <string name="tcvscad21c"> دن میں دو سے تیں بار </string>
-    <string name="tcvscad21d"> ہفتہ میں ایک بار </string>
-    <string name="tcvscad21e"> مہینے میں دو سے تیں بار </string>
-    <string name="tcvscad21f"> مہینے میں ایک بار </string>
-    <string name="tcvscad21g"> کبھی نہیں </string>
-    <string name="tcvscad22"> کیا تحقیق میں شامل بچہ اسکول میں دوپہر کے کھانے کےلیے پیسے لے کر جاتا/جاتی ہے؟ </string>
-    <string name="tcvscad22a"> ہر روز </string>
-    <string name="tcvscad22b"> کبھی کبھی </string>
-    <string name="tcvscad22c"> کبھی نہیں </string>
-    <string name="tcvscad23"> دوپہر کے کھانے کے پیسے کہاں خرچ کرتا ہے؟ </string>
-    <string name="tcvscad23a"> اسکول کینٹین </string>
-    <string name="tcvscad23b"> سڑک کنارے وینڈرز </string>
-    <string name="tcvscad24"> کیا تحقیق میں شامل بچہ/شخص اسکول یاکام کی جگہ پر اپنا کھانا دوستوں کے ساتھ بانٹ کے کھاتا ہے؟ </string>
-    <string name="tcvscad24a"> ہر روز </string>
-    <string name="tcvscad24b"> کبھی کبھی </string>
-    <string name="tcvscad24c"> کبھی نہیں </string>
-    <string name="tcvscad25"> کیا تحقیق میں شامل بچہ کو پچھلے ۴ ہفتہ میں ٹائیفائیڈ ہوا؟ </string>
-    <string name="tcvscad26"> کیا اس تحقیق میں شامل شخص نے پچھلے ۴ ہفتوں میں نیچے دئیے گئے جگہ کا غیر ابلا ہواپانی پیا ہے </string>
-    <string name="tcvscad2601"> کام کی جگہ </string>
-    <string name="tcvscad2602"> اسکول </string>
-    <string name="tcvscad2603"> سڑک کنارے وینڈرز </string>
-    <string name="tcvscad2604"> عوام کا نل </string>
-    <string name="tcvscad2605"> مسجد </string>
-    <string name="tcvscad2606"> دوست/پڑوسی کے گھر </string>
-    <string name="tcvscad27"> کیا اس تحقیق میں شامل شخص نے پچھلے ۴ ہفتوں میں نیچے دئیے گئے جگہ کا کھانا کھایا ہے؟ </string>
-    <string name="tcvscad2701"> سڑک کنارے وینڈرز </string>
-    <string name="tcvscad2702"> ریستوران </string>
-    <string name="tcvscad2703"> ٹھیلا </string>
-    <string name="tcvscad2704"> کام کی جگہ/ اسکول </string>
-    <string name="tcvscad2705"> دوست/پڑوسی کے گھر </string>
-    <string name="tcvscad2706"> شادی/ پارٹی </string>
-    <string name="tcvscad28"> مندرجہ ذیل کھانے کےبارے میں بتائیں (جو کھانا گھر،آفس،اسکول کے باہرکھایا ہے وہ بھی شامل کریں) </string>
-    <string name="tcvscad2801"> آلو چاٹ </string>
-    <string name="tcvscad2802"> گنا </string>
-    <string name="tcvscad2803"> فروٹ چاٹ </string>
-    <string name="tcvscad2804"> مٹھائی </string>
-    <string name="tcvscad2805"> تلی ہوی مچھلی </string>
-    <string name="tcvscad2806"> قلفی </string>
-    <string name="tcvscad2807"> آئس کریم </string>
-    <string name="tcvscad2808"> فرش جوس </string>
-    <string name="tcvscad29"> کیا تحقیق میں شامل مریض کو ٹائیفائیڈ بخار سے بچاو کا ٹیکہ لگا ہے؟ </string>
-    <string name="tcvscad30"> اگر ہاں ،تو کیا یہ حفاظتی ٹیکہ آغا خان یونیورسٹی والوں نے حالیہ ویکسینیشن مہم میں کھارادر جنرل ہسپتال کے ذریعے مہیا کی تھی؟ </string>
-    <string name="tcvscad31"> اگر ہاں تو ویکسین کاڑد پر درج انرولمنٹ آئی ڈی لکھیں(مطالعہ کے اسٹاف کو اس مطلہ میں فراہم کیا گیا ویکسینشن کارڈ دیکھنا ہو گا) </string>
-    <string name="tcvscad32"> ویکسینیشن کی تاریخ: </string>
-    <string name="tcvscad32dd"> دن </string>
-    <string name="tcvscad32mm"> مہینہ </string>
-    <string name="tcvscad32yy"> سا ل </string>
-
-    <!---FAZAL RIZVI  -->
-    <string name="CrfControl"> Case Report Form - Impact Assessment (CONTROL) </string>
-    <string name="tcvsclah"> اہلیت کی اسکریننگ </string>
-    <string name="tcvsclah1"> اگر اوپر دیے گے سوالات کے جوابات "ہاں" ہیں تو مریض مطالعہ میں شرکت کے لئے اہل ہے مندرجہ ذیل حصے کو بھرنا جاری رکھیں۔ </string>
-    <string name="tcvsclbh"> سیکشن :1 </string>
-    <string name="tcvsclb01"> نام: </string>
-    <string name="tcvsclb02"> پتہ: </string>
-    <string name="tcvsclb03"> فون نمبر: </string>
-    <string name="tcvsclb04"> انرولمنٹ کی تاریخ: </string>
-    <string name="tcvsclb05"> بچے کی تاریخ پیدائش: </string>
-    <string name="tcvsclb06"> عمر(مہینے): </string>
-    <string name="tcvsclb07"> مریض کی جنس کیا ہے؟ </string>
-    <string name="tcvsclb07a"> لڑکا </string>
-    <string name="tcvsclb07b"> لڑکی </string>
-    <string name="tcvsclb08"> متعلقہ کیس کی شناخت آئی ڈی:  </string>
-    <string name="tcvsclb09"> کنٹرو ل نمبر:   </string>
-    <string name="tcvsclb10"> کنٹرو ل آئی ڈی:  </string>
-    <string name="tcvsclb11"> کنٹرول   ٹائپ:  </string>
-    <string name="tcvsclb11a"> کمیونٹی  </string>
-    <string name="tcvsclb11b"> ہسپتال  </string>
-    <string name="tcvsclc"> سیکشن :2 </string>
-    <string name="tcvsclc34"> کنٹرو ل آئی ڈی: </string>
-    <string name="tcvsclc35"> انرولمنٹ کی تاریخ: </string>
-    <string name="tcvsclc01"> اس  گھر میں کتنے افراد رہتے ہیں؟ </string>
-    <string name="tcvsclc02"> اس  گھر میں کتنے کمرے ہیں؟ </string>
-    <string name="tcvsclc03"> گھر کس قسم کا ہے ؟ </string>
-    <string name="tcvsclc03a"> بنگلہ </string>
-    <string name="tcvsclc03b"> کچا پکا گھر </string>
-    <string name="tcvsclc03c"> کچا گھر </string>
-    <string name="tcvsclc04"> گھر میں کل کتنے ٹوائلٹ ہیں؟ </string>
-    <string name="tcvsclc05"> گھر میں سینیٹری (لیٹرین ) کی سہولیات کیسی ہیں؟ </string>
-    <string name="tcvsclc05a"> کموڈکےساتھ فلش </string>
-    <string name="tcvsclc05b"> عام لیٹرین </string>
-    <string name="tcvsclc05c"> میدان </string>
-    <string name="tcvsclc05d"> کوئی اوروضاحت کریں </string>
-    <string name="tcvsclc06"> گھر میں کوڑے کو ضائع کرنے کا طریقہ کیا ہے؟ </string>
-    <string name="tcvsclc06a"> سڑک پر پھیکنا </string>
-    <string name="tcvsclc06b"> سویپر لے جاتا ہے </string>
-    <string name="tcvsclc06c"> گندگی کے ڈھر میں پھک دیا </string>
-    <string name="tcvsclc06d"> کوئی اوروضاحت کریں </string>
-    <string name="tcvsclc07"> گھر میں سیوریج ڈسپوزل کا کیا طریقہ ہے؟ </string>
-    <string name="tcvsclc07a"> میونسپل پائپ لائن </string>
-    <string name="tcvsclc07b"> گھر کے باہر کھلی سیوریج </string>
-    <string name="tcvsclc07c"> سویپرلے گیا </string>
-    <string name="tcvsclc08"> پینے کا پانی حاصل کرنے کا ذریعہ کیا ہے؟(ایک یا ایک سے زیادہ موزوں پہ نشان لگا سکتے ہیں) </string>
-    <string name="tcvsclc0801"> پائپ کا پانی </string>
-    <string name="tcvsclc0802"> ٹینکر </string>
-    <string name="tcvsclc0803"> عوام کا نل </string>
-    <string name="tcvsclc0804"> ریڑھی کے ساتھ چھوٹی ٹنکی </string>
-    <string name="tcvsclc0805"> بورنگ کا پانی </string>
-    <string name="tcvsclc0806"> بوتل والا پانی </string>
-    <string name="tcvsclc09"> گھر میں پینے کے پانی کو صاف کرنے کا طریقہ؟ </string>
-    <string name="tcvsclc09a"> کوئی نہیں (تو سوال نمبر 4.5پر جاہیے) </string>
-    <string name="tcvsclc09b"> گھرکا فلٹرکیا ہوا (تو سوال نمبر 4.5پر جاہیے) </string>
-    <string name="tcvsclc09c"> ابلا ہوا (تو سوال نمبر4.3پر جاہیے) </string>
-    <string name="tcvsclc09d"> پھٹکری </string>
-    <string name="tcvsclc09e"> پانی صاف کرنے کی گولیاں (تو سوال نمبر 4.5پر جاہیے) </string>
-    <string name="tcvsclc09f"> کوئی اوروضاحت کریں (تو سوال نمبر 4.5پر جاہیے) </string>
-    <string name="tcvsclc10"> پانی کو کتنی دیر کے لیے چولہے پر ابالتے ہیں؟ </string>
-    <string name="tcvsclc10a"> 1-3منٹ </string>
-    <string name="tcvsclc10b"> 5-3منٹ </string>
-    <string name="tcvsclc10c"> 10-5منٹ </string>
-    <string name="tcvsclc10d">10 منٹ سے ذیادہ</string>
-    <string name="tcvsclc11"> دن میں کتنی مرتبہ پانی اُبالا جاتا ہے؟ </string>
-    <string name="tcvsclc11a"> دن میں ایک بار </string>
-    <string name="tcvsclc11b"> دن میں دو بار </string>
-    <string name="tcvsclc11c"> دن میں تین بار </string>
-    <string name="tcvsclc12"> گھر میں پانی کہاں رکہتے ہیں </string>
-    <string name="tcvsclc12a"> کولر میں </string>
-    <string name="tcvsclc12b"> ریفریجریٹر </string>
-    <string name="tcvsclc12c"> مٹکا </string>
-    <string name="tcvsclc12d"> بغیر ڈھکا ہوا کنٹینر </string>
-    <string name="tcvsclc13"> آپ برف کہا ں سے حاصل کرتے ہیں؟ </string>
-    <string name="tcvsclc13a"> گھر میں بناتے ہیں </string>
-    <string name="tcvsclc13b"> برف ڈپو </string>
-    <string name="tcvsclc13c"> پڑوسی سے </string>
-    <string name="tcvsclc14"> اگر گھر میں برف بناتے ہیں تو آپ صاف پانی استعمال کرتے ہیں؟ </string>
-    <string name="tcvsclc14a"> ہمیشہ </string>
-    <string name="tcvsclc14b"> کبھی کبھی </string>
-    <string name="tcvsclc15"> گھر میں کھانا کون پکاتا ہے؟ </string>
-    <string name="tcvsclc15a"> گھر کا فرد </string>
-    <string name="tcvsclc15b"> ملازمین </string>
-    <string name="tcvsclc15c"> کوئی اوروضاحت کریں </string>
-    <string name="tcvsclc15d"> اگر گھر کا فرد کھانا پکاتا ہے تو گھر کے سربراہ سے اُس کا کیا تعلق ہے </string>
-    <string name="tcvsclc16"> کیا کھانا پکانے والا /والی کھانا پکانے سے پہلے اپنے ہاتھ دھوتے ہیں؟ </string>
-    <string name="tcvsclc16a"> ہمیشہ </string>
-    <string name="tcvsclc16b"> کبھی کبھی </string>
-    <string name="tcvsclc17"> کیا گھر پر کھانا پکانے والا/والی کو کبھی ٹائیفائیڈ ڈائیگنوس ہوا ہے؟ </string>
-    <string name="tcvsclc17a"> ہاں </string>
-    <string name="tcvsclc17b"> نہیں </string>
-    <string name="tcvsclc17c"> معلوم نہیں </string>
-    <string name="tcvsclc17a1"> اگر ” ہاں“تو کلچر لیا تھا؟ </string>
-    <string name="tcvsclc17a1a"> نہیں </string>
-    <string name="tcvsclc17a1b"> معلوم نہیں </string>
-    <string name="tcvsclc18"> گھر میں ایک دن میں کتنی بارکھاناپکاتے ہیں ؟ </string>
-    <string name="tcvsclc18a"> دن میں ایک بار </string>
-    <string name="tcvsclc18b"> دن میں دو بار </string>
-    <string name="tcvsclc18c"> دن میں تین بار </string>
-    <string name="tcvsclc18d"> دن میں تین بارسے زیادہ </string>
-    <string name="tcvsclc19"> کیا آپ عام طور پرکھاناریفریجریٹر میں رکھتے ہیں؟ </string>
-    <string name="tcvsclc19a"> ہمیشہ </string>
-    <string name="tcvsclc19b"> کبھی کبھی </string>
-    <string name="tcvsclc20"> کیا بچے ہوئے کھانے کو آپ دوبارہ گرم کرکے کھاتےہیں ؟ </string>
-    <string name="tcvsclc20a"> ہمیشہ </string>
-    <string name="tcvsclc20b"> کبھی کبھی </string>
-    <string name="tcvsclc21"> اندازاً آپ مہینے میں کتنی بار گھر سے باہر کھانا کھا تے ہیں؟ </string>
-    <string name="tcvsclc21a"> دن میں ایک بار سے زیادہ </string>
-    <string name="tcvsclc21b"> دن میں ایک بار </string>
-    <string name="tcvsclc21c"> دن میں دو سے تیں بار </string>
-    <string name="tcvsclc21d"> ہفتہ میں ایک بار </string>
-    <string name="tcvsclc21e"> مہینے میں دو سے تیں بار </string>
-    <string name="tcvsclc21f"> مہینے میں ایک بار </string>
-
-    <string name="tcvsclc22"> کیا بچہ اسکول جاتا ہے؟ </string>
-    <string name="tcvsclc22a"> ہاں </string>
-    <string name="tcvsclc22a1"> اگر ہاں،اسکول کا نام: </string>
-    <string name="tcvsclc22a2"> کلاس: </string>
-    <string name="tcvsclc22b"> نہیں </string>
-    <string name="tcvsclc23"> کیا تحقیق میں شامل بچہ اسکول میں  دوپہر کے کھانے کےلیے  پیسے لے کر جاتا/جاتی ہے؟ </string>
-    <string name="tcvsclc23a"> ہر روز </string>
-    <string name="tcvsclc23b"> کبھی کبھی </string>
-    <string name="tcvsclc24"> دوپہر کے کھانے کے پیسے کہاں خرچ کرتا ہے؟ </string>
-    <string name="tcvsclc24a"> اسکول کینٹین </string>
-    <string name="tcvsclc24b"> سڑک کنارے وینڈرز </string>
-    <string name="tcvsclc25"> کیا تحقیق میں شامل بچہ/شخص  اسکول یاکام کی جگہ پر  اپنا کھانا دوستوں کے ساتھ بانٹ کے کھاتا ہے؟ </string>
-    <string name="tcvsclc25a"> ہر روز </string>
-    <string name="tcvsclc25b"> کبھی کبھی </string>
-    <string name="tcvsclc26"> کیا تحقیق میں شامل بچہ کا پچھلے ۴ ہفتہ میںکسی ایسے شخص سے رابطہ ہوا جو  ٹائیفائیڈکی بیماری میں مبتلا ہو؟ </string>
-    <string name="tcvsclc27"> کیا اس تحقیق میں شامل شخص نے پچھلے ۴ ہفتوں میں نیچے دئیے گئے جگہ کا غیر ابلا ہواپانی پیا ہے </string>
-    <string name="tcvsclc2701"> 1. کام کی جگہ </string>
-    <string name="tcvsclc2702">2. اسکول </string>
-    <string name="tcvsclc2703">3. سڑک کنارے وینڈرز </string>
-    <string name="tcvsclc2704">4. عوام  کا نل </string>
-    <string name="tcvsclc2705">5. مسجد </string>
-    <string name="tcvsclc2706">6. دوست/پڑوسی کے گھر </string>
-    <string name="tcvsclc28"> کیا اس تحقیق میں شامل شخص نے پچھلے ۴ ہفتوں میں نیچے دئیے گئے جگہ کا کھانا کھایا ہے؟ </string>
-    <string name="tcvsclc2801">1. سڑک کنارے وینڈرز </string>
-    <string name="tcvsclc2802">2. ریستوران </string>
-    <string name="tcvsclc2803">3. ٹھیلا </string>
-    <string name="tcvsclc2804">4. کام کی جگہ/ اسکول </string>
-    <string name="tcvsclc2805">5. دوست/پڑوسی کے گھر</string>
-    <string name="tcvsclc2806">6. شادی/ پارٹی </string>
-    <string name="tcvsclc29"> مندرجہ ذیل کھانے کےبارے میں بتائیں (جو کھانا گھر،آفس،اسکول کے باہرکھایا ہے وہ بھی شامل کریں) </string>
-    <string name="tcvsclc2901">1. آلو چاٹ </string>
-    <string name="tcvsclc2902">2. گنا</string>
-    <string name="tcvsclc2903">3. فروٹ چاٹ </string>
-    <string name="tcvsclc2904">4. مٹھائی</string>
-    <string name="tcvsclc2905">5. تلی ہوی مچھلی </string>
-    <string name="tcvsclc2906">6. قلفی</string>
-    <string name="tcvsclc2907">7. آئس  کریم </string>
-    <string name="tcvsclc2908">8. فرش جوس </string>
-    <string name="tcvsclc30"> کیا تحقیق میں شامل مریض کو ٹائیفائیڈ بخار سے بچاو کا ٹیکہ لگا ہے؟ </string>
-    <string name="tcvsclc31"> اگر ہاں ،تو کیا یہ حفاظتی ٹیکہ آغا خان یونیورسٹی والوں نے حالیہ ویکسینیشن مہم میں کھارادر جنرل ہسپتال کے ذریعے مہیا کی تھی؟ </string>
-    <string name="tcvsclc32"> اگر ہاں تو ویکسین کاڑد پر درج انرولمنٹ آئی ڈی لکھیں(مطالعہ کے اسٹاف کو اس مطالعے میں فراہم کیا گیا ویکسینشن کارڈ دیکھنا ہو گا) </string>
-    <string name="tcvsclc33"> ویکسینیشن کی تاریخ: </string>
-    <string name="tcvsclc30dd"> دن </string>
-    <string name="tcvsclc30mm"> مہینہ </string>
-    <string name="tcvsclc30yy"> سا ل </string>
-
-
-
-    <!--- Waqar Farooqui (CRF Control)-->
-    <string name="tcvsclah01"> سیکشن :1 </string>
-    <string name="tcvscla01"> نام: </string>
-    <string name="tcvscla02"> باپ کا نام: </string>
-    <string name="tcvscla03"> فون نمبر: </string>
-    <string name="tcvscla03a"> متبادل فون نمبر </string>
-    <string name="tcvscla04"> مکمل پتہ: </string>
-    <string name="tcvscla05"> بچے کی تاریخ پیدائش/عمر </string>
-    <string name="tcvscla05a"> بچے کی تاریخ پیدائش </string>
-    <string name="tcvscla05b"> عمر </string>
-    <string name="tcvscla06"> مریض کی جنس کیا ہے؟ </string>
-    <string name="tcvscla06a"> لڑکا </string>
-    <string name="tcvscla06b"> لڑکی </string>
-    <string name="tcvscla07"> کنٹرول کی قسم: </string>
-    <string name="tcvscla07a"> کمیونٹی </string>
-    <string name="tcvscla07b"> ہسپتال </string>
-    <string name="tcvscla08"> اسکرین آئی ڈی: </string>
-    <string name="tcvscla09">اسکرین کی تاریخ:</string>
-    <string name="tcvsclah02"> اہلیت کی اسکریننگ </string>
-    <string name="tcvscla10">کیاکیس کی عمر 6  سے 36 ماہ کے درمیان ہو نے کی صور ت میں شرکاء کی عمر کا فرق متعلقہ کیس کی عمر سے 6 ماہ سے زیادہ یا کم ہے ؟ یا</string>
-    <string name="tcvscla10a">کیس کی عمر 3  سے 15 سال کے درمیان ہو نے کی صور ت میں شرکاء کی عمر کا فرق متعلقہ کیس کی عمر سے 3سال سے زیادہ یا کم ہے ؟اور بچے کی عمر 7ماہ سے پندرہ سال کے درمیان ہے؟ </string>
-    <string name="tcvscla11">کیا شرکاء متعلقہ کیس کا پروسی ہے؟(صرف کمیونٹی کنٹرول)</string>
-    <string name="tcvscla12">کیا شرکاء ٹائیفائیڈ کےعلاوہ  کسی سرجیکل کنڈیشن کی وجہ سے ہسپتال آیا ہے اور"بخار"یا "انفیکشن" کی شکایت کےساتھ نہ آیا ہو؟(صرف ہسپتال کنٹرول)</string>
-    <string name="tcvscla13">کیا شرکاءکم سے کم پچھلے ۴ہفتوں سے صحت مند ہے؟(صرف کمیونٹی کنٹرول)</string>
-    <string name="tcvscla14">کیا شرکاء اور اس کے والدین مطالعہ میں حصہ لینے کے لیے رضا مند ہیں؟</string>
-    <string name="tcvscla15">کیامریض کو مطالعہ میں شامل کر لیا گیا ہے؟</string>
-    <string name="tcvscla16">اگر نہیں تو وجہ بیان کریں</string>
-    <string name="tcvsclah03">اگر اوپر دیے گے سوالات کے جوابات"ہاں" ہیں تو مریض  مطالعہ میں شرکت کے لئے اہل ہے مندرجہ ذیل حصے کو بھرنا جاری رکھیں۔</string>
-    <string name="tcvscla17">متعلقہ کیس کی شناخت آئی ڈی :</string>
-    <string name="tcvscla18">کنٹرو ل نمبر :</string>
-    <string name="tcvscla19">کنٹرو ل آئی ڈی :</string>
-
-    <!--- Waqar Farooqui (CRF Case)-->
-    <string name="tcvsclaah01"> سیکشن :1 </string>
-    <string name="tcvsclaa001"> نام: </string>
-    <string name="tcvsclaa002"> باپ کا نام: </string>
-    <string name="tcvsclaa003"> فون نمبر: </string>
-    <string name="tcvsclaa003a"> متبادل فون نمبر </string>
-    <string name="tcvsclaa004"> مکمل پتہ: </string>
-    <string name="tcvsclaa005"> بچے کی تاریخ پیدائش: </string>
-    <string name="tcvsclaa005a"> عمر </string>
-    <string name="tcvsclaa006"> مریض کی جنس کیا ہے؟ </string>
-    <string name="tcvsclaa006a"> لڑکا </string>
-    <string name="tcvsclaa006b"> لڑکی </string>
-    <string name="tcvsclaa007"> اسکرین آئی ڈی: </string>
-    <string name="tcvsclaa008">اسکرین کی تاریخ:</string>
-
-
-
-
-    <!--Mass Imunization-->
-    <string name="sec_mi">HEALTH FACILITY IMMUNIZATION FORM</string>
-    <string name="sec_mi02">CAMP - HEALTH FACILITY IMMUNIZATION FORM</string>
-    <string name="tcvmi00"> School Type </string>
-    <string name="tcvmi01"> Health Facility </string>
-    <string name="tcvmi02"> Name of Child </string>
-    <string name="tcvmi03">Date of Birth or Age</string>
-    <string name="tcvmi03a">Date of Birth</string>
-    <string name="tcvmi03b">Age</string>
-    <string name="tcvmi05"> Sex </string>
-    <string name="tcvmi05a">Male</string>
-    <string name="tcvmi05b">Female</string>
-    <string name="tcvmi06"> Father’s Name </string>
-    <string name="tcvmi07"> Father’s National Identity Card Number </string>
-    <string name="tcvmi08"> Complete Address including Mohalla and House No </string>
-    <string name="tcvmi09"> Telephone No </string>
-    <string name="tcvmi10"> Alternate Telephone No </string>
-    <string name="tcvmi11"> Parents ready to give consent for vaccination </string>
-    <string name="tcvmi11h">If Refused or NO response skip to end</string>
-    <string name="tcvmi11a">Consent Provided</string>
-    <string name="tcvmi11b">Consent Refused</string>
-    <string name="tcvmi11c">No Response</string>
-    <string name="tcvmi12"> Child is between 6 months -15 years </string>
-    <string name="tcvmi13"> Child is not allergic to any medicine </string>
-    <string name="tcvmi14"> No active signs of infection including fever >1000F, body ache, blisters on body, malaise, vomiting, Rashes on body, Red Spots on Abdomens, seizures, Breathing Difficulty, and loose Stools for the past three days </string>
-    <string name="tcvmi15"> Child is currently not using medications (Antibiotics and Steroids) for any infection or disease in the past 24 hours. (Pneumonia Acute Diarrhea, and seizures) </string>
-    <string name="tcvmi16"> Child is NOT immunized against Typhoid During the past 3 years (Check Vaccination card) </string>
-    <string name="tcvmi17">Is the Child Present?</string>
-    <string name="tcvmi18">Vaccination ID:</string>
-    <string name="tcvmi19">Vaccination Date</string>
-    <string name="tcvmi20">Vaccination Time</string>
-    <string name="tcvmi21">Is the child is School going?</string>
-    <string name="tcvmi24">Class</string>
 
 </resources>

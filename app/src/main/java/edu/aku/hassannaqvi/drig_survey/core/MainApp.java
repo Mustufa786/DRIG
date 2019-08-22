@@ -33,7 +33,6 @@ import java.util.Date;
 import edu.aku.hassannaqvi.drig_survey.R;
 import edu.aku.hassannaqvi.drig_survey.contracts.ChildContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.FormsContract;
-import edu.aku.hassannaqvi.drig_survey.contracts.SchoolContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.drig_survey.ui.EndingActivity;
 import edu.aku.hassannaqvi.drig_survey.utils.DateUtils;
@@ -87,8 +86,6 @@ public class MainApp extends Application {
     public static Boolean admin = false;
     public static FormsContract fc;
     public static ChildContract cc;
-    public static SchoolContract sc;
-    public static EnrollmentContract ec;
     public static String userName = "0000";
     public static long versionCode;
     public static int totalChild = 0;
@@ -97,33 +94,8 @@ public class MainApp extends Application {
     public static Integer areaCode;
     protected static LocationManager locationManager;
 
-    public static String[] schTypes = new String[]{"....",
-            "Government Boys/Girls Primary School",
-            "Government Boys/Girls Secondary School", "Private", "Madarasa", "Other"};
-
-    public static String[] schClasses = new String[]{"....",
-            "Playgroup", "KG-I", "KG-II", "Montessori-J", "Montessori-S", "Class-I", "Class-II",
-            "Class-III", "Class-IV", "Class-V", "Class-VI", "Class-VII", "Class-VIII",
-            "Class-IX", "Class-X", "Other"
-    };
-
-    public static final String childListing = "SECRET";
-    public static final String massImunization = "SECRETMI";
-    public static final String casecontrol = "SECRETCC";
-    public static final String CHILDLISTINGTYPE = "cl";
-    public static final String SCHOOLLISTINGTYPE = "sl";
-    public static final String MASSIMMUNIZATIONTYPE = "mi";
-    public static final String CRFCase = "sca";
-    public static final String CRFCaseEnroll = "sca_enroll";
-    public static final String CRFControl = "scl";
-    public static final String HF = "hfType";
-    public static final String CAMPHF = "chf";
-    public static final String SCHOOLHF = "shf";
-
-    public static final String CASESCR = "cas";
-    public static final String CASEID = "caid";
-    public static final String CONTROLSCR = "cls";
-    public static final String CONTROLID = "clid";
+    public static final String SFA = "sfa";
+    public static final String SFB = "sfb";
 
     public static int monthsBetweenDates(Date startDate, Date endDate) {
 

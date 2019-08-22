@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.SectionAActivity">
 
@@ -22,286 +21,276 @@
         <LinearLayout style="@style/linearlayout_view">
 
             <LinearLayout
-                android:id="@+id/llcrfCase"
+                android:id="@+id/llcacrf01"
                 style="@style/linearlayout_view">
 
-                <LinearLayout
-                    android:id="@+id/llcacrf01"
-                    style="@style/linearlayout_view">
+                <!--Spinner dsa01-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    <TextView
-                        style="@style/textview_fm_lst_h"
-                        android:text="@string/dsah" />
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--Spinner dsa01-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa01" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <Spinner
+                            android:id="@+id/dsa01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="20dp" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa01" />
+                    </LinearLayout>
 
-                            <Spinner
-                                android:id="@+id/hfcodea01"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="20dp" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--Spinner dsa02-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--Spinner dsa02-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa02" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <Spinner
+                            android:id="@+id/dsa02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="20dp" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa02" />
+                    </LinearLayout>
 
-                            <Spinner
-                                android:id="@+id/hfcodea02"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="20dp" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--Spinner dsa03 CHW-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--Spinner dsa03 CHW-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa03" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <Spinner
+                            android:id="@+id/dsa03"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="20dp" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa03" />
+                    </LinearLayout>
 
-                            <Spinner
-                                android:id="@+id/hfcodea03"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="20dp" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--EditText dsa04-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--EditText dsa04 CHW-->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa04" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <EditText
+                            android:id="@+id/dsa04"
+                            style="@style/EditText_number"
+                            android:hint="@string/dsa04"
+                            android:maxLength="4" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa04" />
+                    </LinearLayout>
 
-                            <EditText
-                                android:id="@+id/dsa04"
-                                style="@style/EditText_number"
-                                android:maxLength="4"
-                                android:hint="@string/dsa04" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--EditText dsa05 -->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--EditText dsa05 -->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa05" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <EditText
+                            android:id="@+id/dsa05"
+                            style="@style/EditText"
+                            android:hint="@string/dsa05"
+                            android:maxLines="2" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa05" />
+                    </LinearLayout>
 
-                            <EditText
-                                android:id="@+id/dsa05"
-                                style="@style/EditText"
-                                android:maxLines="2"
-                                android:hint="@string/dsa05" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--EditText dsa06 -->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--EditText dsa06 -->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa06" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <EditText
+                            android:id="@+id/dsa06"
+                            style="@style/EditText"
+                            android:hint="@string/dsa06" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa06" />
+                    </LinearLayout>
 
-                            <EditText
-                                android:id="@+id/dsa06"
-                                style="@style/EditText"
-                                android:hint="@string/dsa06" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--EditText dsa07 -->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--EditText dsa07 -->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa07" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <EditText
+                            android:id="@+id/dsa07"
+                            style="@style/EditText_number"
+                            android:hint="@string/dsa07" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa07" />
+                    </LinearLayout>
 
-                            <EditText
-                                android:id="@+id/dsa07"
-                                style="@style/EditText_number"
-                                android:hint="@string/dsa07" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--EditText dsa08 -->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--EditText dsa08 -->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa08" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <EditText
+                            android:id="@+id/dsa08"
+                            style="@style/EditText_number"
+                            android:hint="@string/dsa08"
+                            android:maxLength="13" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa08" />
+                    </LinearLayout>
 
-                            <EditText
-                                android:id="@+id/dsa08"
-                                style="@style/EditText_number"
-                                android:maxLength="13"
-                                android:hint="@string/dsa08" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--EditText dsa09 -->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--EditText dsa09 -->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa09" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <EditText
+                            android:id="@+id/dsa09"
+                            style="@style/EditText_number"
+                            android:hint="@string/dsa09total" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa09" />
+                        <EditText
+                            android:id="@+id/dsa10"
+                            style="@style/EditText_number"
+                            android:hint="@string/dsa09boy" />
 
-                            <EditText
-                                android:id="@+id/dsa09"
-                                style="@style/EditText_number"
-                                android:hint="@string/dsa09total" />
+                        <EditText
+                            android:id="@+id/dsa11"
+                            style="@style/EditText_number"
+                            android:hint="@string/dsa09girl" />
 
-                            <EditText
-                                android:id="@+id/dsa10"
-                                style="@style/EditText_number"
-                                android:hint="@string/dsa09boy" />
+                    </LinearLayout>
 
-                            <EditText
-                                android:id="@+id/dsa11"
-                                style="@style/EditText_number"
-                                android:hint="@string/dsa09girl" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--EditText dsa10 -->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--EditText dsa10 -->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa10" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <EditText
+                            android:id="@+id/dsa12"
+                            style="@style/EditText_number"
+                            android:hint="@string/dsa10total" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa10" />
+                        <EditText
+                            android:id="@+id/dsa13"
+                            style="@style/EditText_number"
+                            android:hint="@string/dsa10boy" />
 
-                            <EditText
-                                android:id="@+id/dsa12"
-                                style="@style/EditText_number"
-                                android:hint="@string/dsa10total" />
+                        <EditText
+                            android:id="@+id/dsa14"
+                            style="@style/EditText_number"
+                            android:hint="@string/dsa10girl" />
 
-                            <EditText
-                                android:id="@+id/dsa13"
-                                style="@style/EditText_number"
-                                android:hint="@string/dsa10boy" />
+                    </LinearLayout>
 
-                            <EditText
-                                android:id="@+id/dsa14"
-                                style="@style/EditText_number"
-                                android:hint="@string/dsa10girl" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--Radio Button dsa15 -->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--Radio Button dsa15 -->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa11" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <RadioGroup
+                            android:id="@+id/dsa15"
+                            style="@style/i_radiogroup">
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa11" />
+                            <RadioButton
+                                android:id="@+id/dsa15a"
+                                style="@style/i_radiobutton"
+                                android:text="@string/yes" />
 
-                            <RadioGroup
-                                android:id="@+id/dsa15"
-                                style="@style/i_radiogroup">
+                            <RadioButton
+                                android:id="@+id/dsa15b"
+                                style="@style/i_radiobutton"
+                                android:text="@string/no" />
 
-                                <RadioButton
-                                    android:id="@+id/dsa15a"
-                                    style="@style/i_radiobutton"
-                                    android:text="@string/yes" />
+                        </RadioGroup>
 
-                                <RadioButton
-                                    android:id="@+id/dsa15b"
-                                    style="@style/i_radiobutton"
-                                    android:text="@string/no" />
+                    </LinearLayout>
 
-                            </RadioGroup>
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--EditText dsa16 -->
+                <android.support.v7.widget.CardView
+                    style="@style/cardView"
+                    android:visibility='@{dsa15a.checked ? View.VISIBLE : View.GONE}'>
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--EditText dsa16 -->
-                    <android.support.v7.widget.CardView
-                        style="@style/cardView"
-                        android:visibility='@{dsa15a.checked ? View.VISIBLE : View.GONE}'>
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="Count PW" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <EditText
+                            android:id="@+id/dsa16"
+                            style="@style/EditText_number"
+                            android:hint="Count PW" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="Count PW" />
+                    </LinearLayout>
 
-                            <EditText
-                                android:id="@+id/dsa16"
-                                style="@style/EditText_number"
-                                android:hint="Count PW" />
+                </android.support.v7.widget.CardView>
 
-                        </LinearLayout>
+                <!--EditText dsa17 -->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </android.support.v7.widget.CardView>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <!--EditText dsa17 -->
-                    <android.support.v7.widget.CardView style="@style/cardView">
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa12" />
 
-                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+                    </LinearLayout>
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa12" />
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                </LinearLayout>
+                </android.support.v7.widget.CardView>
 
             </LinearLayout>
 

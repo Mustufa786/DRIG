@@ -5,10 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -29,8 +26,6 @@ import edu.aku.hassannaqvi.drig_survey.contracts.HFContract;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
 import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySection00CrfCaseBinding;
-import edu.aku.hassannaqvi.drig_survey.other.CheckingIDCC;
-import edu.aku.hassannaqvi.drig_survey.validation.ClearClass;
 import edu.aku.hassannaqvi.drig_survey.validation.ValidatorClass;
 
 public class SectionAActivity extends AppCompatActivity {
@@ -55,65 +50,6 @@ public class SectionAActivity extends AppCompatActivity {
 
     private void setListeners() {
 
-        bi.tcvscab13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                if (!bi.tcvscab13b.isChecked()) {
-                    ClearClass.ClearAllFields(bi.llcrfCase01, null);
-                }
-            }
-        });
-
-        bi.tcvscab18.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                if (!bi.tcvscab18b.isChecked()) {
-                    ClearClass.ClearAllFields(bi.llcrfCase02, null);
-                }
-            }
-        });
-
-        bi.hfcode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 0) return;
-
-                if (screenID.equals("")) {
-                    // ACCESSING SCREEN FOR CASE
-                    screenID = CheckingIDCC.accessingFile(SectionAActivity.this, tagID
-                            , MainApp.casecontrol
-                            , MainApp.CASESCR
-                            , hfMap.get(bi.hfcode.getSelectedItem()).getHfcode() + "1"
-                            , false
-                    );
-
-                    // ACCESSING ID FOR CASE
-                    caseID = CheckingIDCC.accessingFile(SectionAActivity.this, tagID
-                            , MainApp.casecontrol
-                            , MainApp.CASEID
-                            , hfMap.get(bi.hfcode.getSelectedItem()).getHfcode() + "4"
-                            , false
-                    );
-
-                } else {
-                    String[] screenIDS = screenID.split("-");
-                    screenID = screenID.replace(screenIDS[screenIDS.length - 1].substring(0, 1), hfMap.get(bi.hfcode.getSelectedItem()).getHfcode());
-
-                    String[] caseIDS = caseID.split("-");
-                    caseID = caseID.replace(caseIDS[caseIDS.length - 1].substring(0, 1), hfMap.get(bi.hfcode.getSelectedItem()).getHfcode());
-                }
-
-                bi.tcvscaa07.setText(screenID);
-                bi.tcvscab23.setText(caseID);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
     }
 
     private void loadHFFromDB() {
@@ -134,7 +70,7 @@ public class SectionAActivity extends AppCompatActivity {
     }
 
     private void setContentUI() {
-        this.setTitle(R.string.CrfCase);
+        this.setTitle(R.string.dsah);
         // Initialize db
         db = new DatabaseHelper(this);
         tagID = getSharedPreferences("tagName", MODE_PRIVATE).getString("tagName", null);
@@ -151,27 +87,6 @@ public class SectionAActivity extends AppCompatActivity {
                 Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
                 return;
             } else {
-
-//              INCREMENT SCREEN ID FOR CASE
-                CheckingIDCC.accessingFile(SectionAActivity.this, tagID
-                        , MainApp.casecontrol
-                        , MainApp.CASESCR
-                        , hfMap.get(bi.hfcode.getSelectedItem()).getHfcode() + "1"
-                        , true
-                );
-
-                if (eligibleFlag) {
-
-//              INCREMENT CASE ID FOR CASE
-                    CheckingIDCC.accessingFile(SectionAActivity.this, tagID
-                            , MainApp.casecontrol
-                            , MainApp.CASEID
-                            , hfMap.get(bi.hfcode.getSelectedItem()).getHfcode() + "4"
-                            , true
-                    );
-                }
-
-
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
             }
 
@@ -204,7 +119,7 @@ public class SectionAActivity extends AppCompatActivity {
                 Settings.Secure.ANDROID_ID));
         MainApp.fc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
         settingGPS(MainApp.fc);
-        MainApp.fc.setFormtype(MainApp.CRFCase);
+        MainApp.fc.setFormtype(MainApp.SFA);
 
         JSONObject crfCase = new JSONObject();
 

@@ -337,79 +337,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void openForm(final int type) {
+    public void openForm() {
         LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
 
                 if (!permissiongrantedStuff()) return;
 
-                switch (type) {
-                    case 1:
-                        startActivity(new Intent(MainActivity.this, SectionSListingActivity.class));
-                        break;
-                    case 2:
-                        startActivity(new Intent(MainActivity.this, SectionBActivity.class));
-                        break;
-                    case 3:
-                        builder = new AlertDialog.Builder(this);
-                        builder.setTitle("Please Select");
-                        builder.setMessage("Where you want to go?");
-                        builder.setIcon(android.R.drawable.ic_dialog_info);
-                        builder.setNegativeButton("Screening", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-
-                                startActivity(new Intent(MainActivity.this, SectionAActivity.class));
-                                dialogInterface.dismiss();
-
-
-                            }
-                        });
-                        builder.setPositiveButton("Enrollment", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-
-                                startActivity(new Intent(MainActivity.this, Section01CRFCaseActivity.class));
-                                dialogInterface.dismiss();
-                            }
-                        });
-                        dialog = builder.create();
-                        dialog.show();
-                        break;
-                    case 4:
-                        startActivity(new Intent(MainActivity.this, Section00CRFControlActivity.class));
-                        break;
-                    case 5:
-
-                        builder = new AlertDialog.Builder(this);
-                        builder.setTitle("Please Select");
-                        builder.setMessage("Where you want to go?");
-                        builder.setIcon(android.R.drawable.ic_dialog_info);
-                        builder.setNegativeButton("Camp-HF Immunization", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-
-                                startActivity(new Intent(MainActivity.this, SectionMImmunizeActivity.class).putExtra(MainApp.HF, MainApp.CAMPHF));
-                                dialogInterface.dismiss();
-
-
-                            }
-                        });
-                        builder.setPositiveButton("School-HF Immunization", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-
-                                startActivity(new Intent(MainActivity.this, SectionMImmunizeActivity.class).putExtra(MainApp.HF, MainApp.SCHOOLHF));
-                                dialogInterface.dismiss();
-                            }
-                        });
-                        dialog = builder.create();
-                        dialog.show();
-                        break;
-
-
-                }
+                startActivity(new Intent(MainActivity.this, SectionAActivity.class));
 
             } else {
                 builder = new AlertDialog.Builder(MainActivity.this);
@@ -483,11 +418,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openA(View v) {
-        Intent iA = new Intent(this, SectionSListingActivity.class);
-        startActivity(iA);
-    }
-
     public void testGPS(View v) {
 
         SharedPreferences sharedPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
@@ -521,65 +451,24 @@ public class MainActivity extends AppCompatActivity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            Toast.makeText(getApplicationContext(), "Syncing School Forms", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
-                    "School-Listings",
+                    "Forms",
                     "updateSyncedForms",
                     FormsContract.class,
                     FormsContract.FormsTable._URL1,
-                    db.getUnsyncedForms(MainApp.SCHOOLLISTINGTYPE)
+                    db.getUnsyncedForms(MainApp.SFA)
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Child Forms", Toast.LENGTH_SHORT).show();
             new SyncAllData(
                     this,
-                    "Children-Listings",
+                    "Child-Forms",
                     "updateSyncedForms",
                     FormsContract.class,
-                    FormsContract.FormsTable._URL2
-                    ,
-                    db.getUnsyncedForms(MainApp.CHILDLISTINGTYPE)
-            ).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing Mass Immunization Forms", Toast.LENGTH_SHORT).show();
-            new SyncAllData(
-                    this,
-                    "CRF-MI's",
-                    "updateSyncedForms",
-                    FormsContract.class,
-                    FormsContract.FormsTable._URL3,
-                    db.getUnsyncedForms(MainApp.MASSIMMUNIZATIONTYPE)
-            ).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing CRF Case Screening Forms", Toast.LENGTH_SHORT).show();
-            new SyncAllData(
-                    this,
-                    "CRF-Case",
-                    "updateSyncedForms",
-                    FormsContract.class,
-                    FormsContract.FormsTable._URL4,
-                    db.getUnsyncedForms(MainApp.CRFCase)
-            ).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing CRF Case Enrolment Forms", Toast.LENGTH_SHORT).show();
-            new SyncAllData(
-                    this,
-                    "CRF-Case",
-                    "updateSyncedForms",
-                    FormsContract.class,
-                    FormsContract.FormsTable._URL5,
-                    db.getUnsyncedForms(MainApp.CRFCaseEnroll)
-            ).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing CRF Control Forms", Toast.LENGTH_SHORT).show();
-            new SyncAllData(
-                    this,
-                    "CRF-Control",
-                    "updateSyncedForms",
-                    FormsContract.class,
-                    FormsContract.FormsTable._URL6,
-                    db.getUnsyncedForms(MainApp.CRFControl)
+                    FormsContract.FormsTable._URL2,
+                    db.getUnsyncedForms(MainApp.SFB)
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);

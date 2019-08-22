@@ -50,7 +50,7 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     private void setContentUI() {
-        this.setTitle(R.string.sec_clisting);
+        this.setTitle(R.string.dsbh);
 
         // Initialize db
         db = new DatabaseHelper(this);
@@ -220,7 +220,7 @@ public class SectionBActivity extends AppCompatActivity {
 
 
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionBActivity.class));
 
         } catch (JSONException e) {
             e.printStackTrace();

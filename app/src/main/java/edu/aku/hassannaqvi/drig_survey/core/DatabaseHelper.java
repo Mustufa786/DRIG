@@ -489,7 +489,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
         String whereClause = FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_ISTATUS + " =?";
-        String[] whereArgs = {MainApp.CRFCase, "1"};
+        String[] whereArgs = {MainApp.SFA, "1"};
         String groupBy = null;
         String having = null;
 
@@ -597,7 +597,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
         String whereClause = FormsTable.COLUMN_FORMTYPE + " =? AND " + FormsTable.COLUMN_ISTATUS + " =?";
-        String[] whereArgs = {MainApp.CRFControl, "1"};
+        String[] whereArgs = {MainApp.SFB, "1"};
         String groupBy = null;
         String having = null;
 

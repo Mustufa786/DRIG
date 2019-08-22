@@ -394,10 +394,6 @@ public class FormsContract {
         public static final String COLUMN_APP_VERSION = "appversion";
 
         public static String _URL1 = "forms.php";
-        public static String _URL2 = "forms_mi.php";
-        public static String _URL3 = "crf_mi.php";
-        public static String _URL4 = "crf_sca.php";
-        public static String _URL5 = "crf_scaenroll.php";
-        public static String _URL6 = "crf_scl.php";
+        public static String _URL2 = "forms_child.php";
     }
 }
