@@ -24,10 +24,6 @@
                 android:id="@+id/childSec"
                 style="@style/linearlayout_view_wt_bound">
 
-                <TextView
-                    style="@style/textview_fm_lst_h"
-                    android:text="@string/dsbh" />
-
                 <!--EditText dsb01 -->
                 <android.support.v7.widget.CardView style="@style/cardView">
 
@@ -107,14 +103,14 @@
                             style="@style/i_radiogroup">
 
                             <RadioButton
-                                android:id="@+id/tcvcl03Agea"
+                                android:id="@+id/dsb04Agea"
                                 style="@style/i_radiobutton"
-                                android:text="@string/tcvcl03a" />
+                                android:text="@string/dsb04a" />
 
                             <RadioButton
-                                android:id="@+id/tcvcl03Ageb"
+                                android:id="@+id/dsb04Ageb"
                                 style="@style/i_radiobutton"
-                                android:text="@string/tcvcl03b" />
+                                android:text="@string/dsb04b" />
 
                         </RadioGroup>
 
@@ -131,12 +127,12 @@
 
                         <TextView
                             style="@style/i_textview"
-                            android:text="@string/dsb04" />
+                            android:text="@string/dsb04a" />
 
                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                             android:id="@+id/dsb04"
                             style="@style/EditText"
-                            android:hint="@string/dsb04"
+                            android:hint="@string/dsb04a"
                             android:text='@{!dsb04Agea.checked ?  "" : dsb04.getText.toString }'
                             app:dateFormat="dd-MM-yyyy"
                             app:maxDate="CR_DATE" />
@@ -153,7 +149,7 @@
 
                         <TextView
                             style="@style/i_textview"
-                            android:text="@string/dsb05" />
+                            android:text="@string/dsb04b" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/dsb05y"
@@ -275,8 +271,7 @@
                     android:background="@color/red"
                     android:onClick="@{() -> callback.BtnEnd()}"
                     android:text="@string/end_interview"
-                    android:textColor="@color/white"
-                    android:visibility="gone" />
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/btn_Continue"

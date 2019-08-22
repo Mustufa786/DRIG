@@ -17,12 +17,12 @@ import edu.aku.hassannaqvi.drig_survey.R;
 import edu.aku.hassannaqvi.drig_survey.contracts.ChildContract;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
-import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySectionCListingBinding;
+import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySectionBBinding;
 import edu.aku.hassannaqvi.drig_survey.validation.ValidatorClass;
 
 public class SectionBActivity extends AppCompatActivity {
 
-    ActivitySectionCListingBinding bi;
+    ActivitySectionBBinding bi;
     DatabaseHelper db;
 
     @Override
@@ -90,53 +90,29 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.cc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
         MainApp.cc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
+        MainApp.cc.set_UUID(MainApp.fc.getUID());
         settingGPS(MainApp.cc);
 
-        JSONObject child = new JSONObject();
+        JSONObject sfb = new JSONObject();
 
-        child.put("tcvcl02", bi.tcvcl02.getText().toString());
-        child.put("tcvcl21", bi.tcvcl21.getSelectedItem().toString()); //Newly added when the app is already on field
+        sfb.put("dsb01", bi.dsb01.getText().toString());
+        sfb.put("dsb02", bi.dsb02.getText().toString());
+        sfb.put("dsb03", bi.dsb03a.isChecked() ? "1" : bi.dsb03b.isChecked() ? "2" : "0");
 
-        child.put("tcvcl03Age", bi.tcvcl03Agea.isChecked() ? "1" : bi.tcvcl03Ageb.isChecked() ? "2" : "0");
-        child.put("tcvcl03", bi.tcvcl03.getText().toString());
-        child.put("tcvcl04y", bi.tcvcl04y.getText().toString());
-        child.put("tcvcl04m", bi.tcvcl04m.getText().toString());
-        child.put("tcvcl05", bi.tcvcl05a.isChecked() ? "1" : bi.tcvcl05b.isChecked() ? "2" : "0");
-        child.put("tcvcl06", bi.tcvcl06.getText().toString());
-        child.put("tcvcl07", bi.tcvcl07.getText().toString());
-        child.put("tcvcl08", bi.tcvcl08.getText().toString());
-        child.put("tcvcl09", bi.tcvcl09.getText().toString());
-        child.put("tcvcl10", bi.tcvcl10.getText().toString());
-        child.put("tcvcl11", bi.tcvcl11a.isChecked() ? "1" : bi.tcvcl11b.isChecked() ? "2" : bi.tcvcl11c.isChecked() ? "3" : "0");
-        child.put("tcvcl12", bi.tcvcl12a.isChecked() ? "1" : bi.tcvcl12b.isChecked() ? "2" : "0");
-        child.put("tcvcl13", bi.tcvcl13a.isChecked() ? "1" : bi.tcvcl13b.isChecked() ? "2" : "0");
-        child.put("tcvcl14", bi.tcvcl14a.isChecked() ? "1" : bi.tcvcl14b.isChecked() ? "2" : "0");
-        child.put("tcvcl15", bi.tcvcl15a.isChecked() ? "1" : bi.tcvcl15b.isChecked() ? "2" : "0");
-        child.put("tcvcl16", bi.tcvcl16a.isChecked() ? "1" : bi.tcvcl16b.isChecked() ? "2" : "0");
-        child.put("tcvcl17", bi.tcvcl17a.isChecked() ? "1" : bi.tcvcl17b.isChecked() ? "2" : "0");
+        sfb.put("dsb06", bi.dsb06a.isChecked() ? "1" : bi.dsb06b.isChecked() ? "2" : "0");
+        sfb.put("dsb07", bi.dsb07.getText().toString());
+        sfb.put("dsb08", bi.dsb08.getText().toString());
 
-        if (bi.tcvcl12a.isChecked() &&
-                bi.tcvcl13a.isChecked() &&
-                bi.tcvcl14a.isChecked() &&
-                bi.tcvcl15a.isChecked() &&
-                bi.tcvcl16a.isChecked()
-        ) {
-            child.put("tcvcl18", bi.tcvcl18.getText().toString());
-            child.put("tcvcl19", new SimpleDateFormat("dd-MM-yyyy").format(new Date().getTime()));
-            child.put("tcvcl20", new SimpleDateFormat("HH:MM:SS").format(new Date().getTime()));
-        } else
-            child.put("tcvcl18", "");
-
-        MainApp.cc.setsA(String.valueOf(child));
+        MainApp.cc.setsA(String.valueOf(sfb));
     }
 
     private boolean formValidation() {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.childSec))
             return false;
 
-        if (bi.tcvcl03Ageb.isChecked()) {
-            if (Integer.valueOf(bi.tcvcl04y.getText().toString()) == 0 && Integer.valueOf(bi.tcvcl04m.getText().toString()) < 6)
-                return ValidatorClass.EmptyCustomeTextBox(this, bi.tcvcl04y, "Days and Months criteria not meet!!");
+        if (bi.dsb04Ageb.isChecked()) {
+            if (Integer.valueOf(bi.dsb05y.getText().toString()) == 0 && Integer.valueOf(bi.dsb05m.getText().toString()) == 0 && Integer.valueOf(bi.dsb05d.getText().toString()) == 0)
+                return ValidatorClass.EmptyCustomeTextBox(this, bi.dsb05y, "Days, Months & Year criteria not meet!!");
         }
 
         return true;

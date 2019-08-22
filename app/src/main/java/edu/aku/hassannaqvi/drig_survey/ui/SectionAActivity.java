@@ -5,7 +5,6 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -25,12 +24,12 @@ import edu.aku.hassannaqvi.drig_survey.contracts.FormsContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.HFContract;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
-import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySection00CrfCaseBinding;
+import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySectionABinding;
 import edu.aku.hassannaqvi.drig_survey.validation.ValidatorClass;
 
 public class SectionAActivity extends AppCompatActivity {
 
-    private ActivitySection00CrfCaseBinding bi;
+    private ActivitySectionABinding bi;
     private DatabaseHelper db;
     private Map<String, HFContract> hfMap;
     private List<String> hfName = new ArrayList<>(Arrays.asList("...."));
@@ -66,7 +65,7 @@ public class SectionAActivity extends AppCompatActivity {
     }
 
     private void filledSpinners(List<String> hfNames) {
-        bi.hfcode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, hfNames));
+//        bi.hfcode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, hfNames));
     }
 
     private void setContentUI() {
@@ -122,63 +121,30 @@ public class SectionAActivity extends AppCompatActivity {
         settingGPS(MainApp.fc);
         MainApp.fc.setFormtype(MainApp.SFA);
 
-        JSONObject crfCase = new JSONObject();
+        JSONObject sfa = new JSONObject();
 
-        crfCase.put("hf_code", hfMap.get(bi.hfcode.getSelectedItem().toString()).getHfcode());
-        crfCase.put("tcvscaa01", bi.tcvscaa01.getText().toString());
-        crfCase.put("tcvscaa02", bi.tcvscaa02.getText().toString());
-        crfCase.put("tcvscaa03", bi.tcvscaa03.getText().toString());
-        crfCase.put("tcvscaa03a", bi.tcvscaa03a.getText().toString());
-        crfCase.put("tcvscaa04", bi.tcvscaa04.getText().toString());
-        crfCase.put("tcvscaa05Age", bi.tcvscaa05Agea.isChecked() ? "1" : bi.tcvscaa05Ageb.isChecked() ? "2" : "0");
-        crfCase.put("tcvscaa05", bi.tcvscaa05.getText().toString());
-        crfCase.put("tcvscaa05y", bi.tcvscaa05y.getText().toString());
-        crfCase.put("tcvscaa05m", bi.tcvscaa05m.getText().toString());
-        crfCase.put("tcvscaa06", bi.tcvscaa06a.isChecked() ? "1" : bi.tcvscaa06b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscaa07", bi.tcvscaa07.getText().toString());
-        crfCase.put("tcvscaa08", new SimpleDateFormat("dd-MM-yyyy").format(new Date().getTime()));
+        sfa.put("dsa01", hfMap.get(bi.dsa01.getSelectedItem().toString()).getHfcode());
+        sfa.put("dsa02", hfMap.get(bi.dsa02.getSelectedItem().toString()).getHfcode());
+        sfa.put("dsa03", hfMap.get(bi.dsa03.getSelectedItem().toString()).getHfcode());
+        sfa.put("dsa04", bi.dsa04.getText().toString());
+        sfa.put("dsa05", bi.dsa05.getText().toString());
+        sfa.put("dsa06", bi.dsa06.getText().toString());
+        sfa.put("dsa07", bi.dsa07.getText().toString());
+        sfa.put("dsa08", bi.dsa08.getText().toString());
+        sfa.put("dsa09", bi.dsa09.getText().toString());
+        sfa.put("dsa10", bi.dsa10.getText().toString());
+        sfa.put("dsa11", bi.dsa11.getText().toString());
+        sfa.put("dsa12", bi.dsa12.getText().toString());
+        sfa.put("dsa13", bi.dsa13.getText().toString());
+        sfa.put("dsa14", bi.dsa14.getText().toString());
+        sfa.put("dsa15", bi.dsa15a.isChecked() ? "1" : bi.dsa15b.isChecked() ? "2" : "0");
+        sfa.put("dsa16", bi.dsa16.getText().toString());
 
-        crfCase.put("tcvscab09", bi.tcvscab09a.isChecked() ? "1" : bi.tcvscab09b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab10", bi.tcvscab10a.isChecked() ? "1" : bi.tcvscab10b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab11", bi.tcvscab11a.isChecked() ? "1" : bi.tcvscab11b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab12", bi.tcvscab12.getText().toString());
-        crfCase.put("tcvscab13", bi.tcvscab13a.isChecked() ? "1" : bi.tcvscab13b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab14", bi.tcvscab14.getText().toString());
-        crfCase.put("tcvscab15", bi.tcvscab15a.isChecked() ? "1" : bi.tcvscab15b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab16", bi.tcvscab16.getText().toString());
-        crfCase.put("tcvscab171", bi.tcvscab171a.isChecked() ? "1" : bi.tcvscab171b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab172", bi.tcvscab172a.isChecked() ? "1" : bi.tcvscab172b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab173", bi.tcvscab173a.isChecked() ? "1" : bi.tcvscab173b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab174", bi.tcvscab174a.isChecked() ? "1" : bi.tcvscab174b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab175", bi.tcvscab175a.isChecked() ? "1" : bi.tcvscab175b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab176", bi.tcvscab176a.isChecked() ? "1" : bi.tcvscab176b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab176x", bi.tcvscab176x.getText().toString());
-        crfCase.put("tcvscab18", bi.tcvscab18a.isChecked() ? "1" : bi.tcvscab18b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab19", bi.tcvscab19.getText().toString());
-        crfCase.put("tcvscab20", bi.tcvscab20a.isChecked() ? "1" : bi.tcvscab20b.isChecked() ? "2" : bi.tcvscab20c.isChecked() ? "3" : "0");
-        crfCase.put("tcvscab211", bi.tcvscab211a.isChecked() ? "1" : bi.tcvscab211b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab212", bi.tcvscab212a.isChecked() ? "1" : bi.tcvscab212b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab213", bi.tcvscab213a.isChecked() ? "1" : bi.tcvscab213b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab214", bi.tcvscab214a.isChecked() ? "1" : bi.tcvscab214b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab215", bi.tcvscab215a.isChecked() ? "1" : bi.tcvscab215b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab216", bi.tcvscab216a.isChecked() ? "1" : bi.tcvscab216b.isChecked() ? "2" : "0");
-        crfCase.put("tcvscab216x", bi.tcvscab216x.getText().toString());
-        crfCase.put("tcvscab22", bi.tcvscab22a.isChecked() ? "1" : bi.tcvscab22b.isChecked() ? "2" : "0");
-
-        eligibleFlag = bi.tcvscab09a.isChecked() && bi.tcvscab10a.isChecked() && bi.tcvscab11a.isChecked() && bi.tcvscab15a.isChecked() && bi.tcvscab22a.isChecked() && bi.tcvscab20a.isChecked();
-
-        if (eligibleFlag) {
-            crfCase.put("tcvscab23", bi.tcvscab23.getText().toString());
-            crfCase.put("tcvscab24", new SimpleDateFormat("dd-MM-yyyy").format(new Date().getTime()));
-            crfCase.put("tcvscab25", new SimpleDateFormat("HH:MM:SS").format(new Date().getTime()));
-        }
-
-        MainApp.fc.setsA(String.valueOf(crfCase));
-
+        MainApp.fc.setsA(String.valueOf(sfa));
     }
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyCheckingContainer(this, bi.llcrfCase);
+        return ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01);
     }
 
     public void BtnEnd() {

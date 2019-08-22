@@ -126,6 +126,7 @@
 
     <!-- Irfan RadioButton  -->
     <style name="i_radiobutton">
+        <item name="android:layoutDirection">rtl</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">1dp</item>
@@ -187,6 +188,7 @@
         <item name="android:colorAccent">@color/colorAccent</item>
         <item name="android:colorForeground">@color/black</item>
     </style>
+
     <style name="CustomShowcaseTheme" parent="ShowcaseView.Light">
         <item name="sv_backgroundColor">#33b78ff7</item>
         <item name="sv_showcaseColor">@color/colorPrimaryDark</item>
