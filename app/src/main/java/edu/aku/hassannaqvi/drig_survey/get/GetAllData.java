@@ -71,9 +71,6 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     case "School":
                         url = new URL(hostItem + SchoolContract.SchoolTable._URI);
                         break;
-                    case "CCChildren":
-                        url = new URL(hostItem + CCChildrenContract.ChildrenEntry._URI);
-                        break;
                     case "Appversion":
                         url = new URL(MainApp._UPDATE_URL + VersionAppContract.VersionAppTable._URL);
                         break;
@@ -134,9 +131,6 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             break;
                         case "School":
                             db.syncSchools(jsonArray);
-                            break;
-                        case "CCChildren":
-                            db.syncCCChildren(jsonArray);
                             break;
                         case "Appversion":
                             MainApp.savingAppVersion(mContext, jsonArray);

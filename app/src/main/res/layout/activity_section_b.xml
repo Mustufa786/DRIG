@@ -121,7 +121,7 @@
                 <!--EditText dsb04DOB-->
                 <android.support.v7.widget.CardView
                     style="@style/cardView"
-                    android:visibility='@{tcvcl03Agea.checked ? View.VISIBLE : View.GONE}'>
+                    android:visibility='@{dsb04Agea.checked ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout style="@style/linearlayout_view_wt_bound">
 
@@ -156,7 +156,7 @@
                             style="@style/EditText_number"
                             android:hint="@string/year"
                             android:maxLength="2"
-                            android:text='@{!tcvcl03Ageb.checked ?  "" : tcvcl04y.getText.toString }'
+                            android:text='@{!dsb04Ageb.checked ?  "" : dsb05y.getText.toString }'
                             app:maxValue="15"
                             app:minValue="0"
                             app:required="true"
@@ -167,7 +167,7 @@
                             style="@style/EditText_number"
                             android:hint="@string/month"
                             android:maxLength="2"
-                            android:text='@{!tcvcl03Ageb.checked ?  "" : tcvcl04m.getText.toString }'
+                            android:text='@{!dsb04Ageb.checked ?  "" : dsb05m.getText.toString }'
                             app:maxValue="11"
                             app:minValue="0"
                             app:required="true"
@@ -178,7 +178,7 @@
                             style="@style/EditText_number"
                             android:hint="@string/day"
                             android:maxLength="2"
-                            android:text='@{!tcvcl03Ageb.checked ?  "" : tcvcl04m.getText.toString }'
+                            android:text='@{!dsb04Ageb.checked ?  "" : dsb05m.getText.toString }'
                             app:maxValue="11"
                             app:minValue="0"
                             app:required="true"
