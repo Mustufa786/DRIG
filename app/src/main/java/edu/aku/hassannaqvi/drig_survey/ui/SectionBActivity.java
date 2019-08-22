@@ -99,6 +99,12 @@ public class SectionBActivity extends AppCompatActivity {
         sfb.put("dsb02", bi.dsb02.getText().toString());
         sfb.put("dsb03", bi.dsb03a.isChecked() ? "1" : bi.dsb03b.isChecked() ? "2" : "0");
 
+        sfb.put("dsb04Age", bi.dsb04Agea.isChecked() ? "1" : bi.dsb04Ageb.isChecked() ? "2" : "0");
+        sfb.put("dsb04", bi.dsb04.getText().toString());
+        sfb.put("dsb05y", bi.dsb05y.getText().toString());
+        sfb.put("dsb05m", bi.dsb05y.getText().toString());
+        sfb.put("dsb05d", bi.dsb05y.getText().toString());
+
         sfb.put("dsb06", bi.dsb06a.isChecked() ? "1" : bi.dsb06b.isChecked() ? "2" : "0");
         sfb.put("dsb07", bi.dsb07.getText().toString());
         sfb.put("dsb08", bi.dsb08.getText().toString());
