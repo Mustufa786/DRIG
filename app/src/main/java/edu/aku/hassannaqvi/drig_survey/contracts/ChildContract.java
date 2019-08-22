@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 public class ChildContract {
 
-    private final String projectName = "DMU-TOICSCREENING";
+    private final String projectName = "DMU-DRIG_SURVEY";
     private String _ID = "";
     private String _UID = "";
     private String _UUID = "";
@@ -285,7 +285,7 @@ public class ChildContract {
         public static final String COLUMN_SYNCED_DATE = "synced_date";
         public static final String COLUMN_APP_VERSION = "appversion";
 
-        public static String _URL = "forms_child.php";
+        public static String _URL = "children.php";
     }
 
 }

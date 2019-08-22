@@ -18,7 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout style="@style/linearlayout_view">
+        <LinearLayout
+            style="@style/linearlayout_view"
+            android:layout_marginTop="0dp">
 
             <!--Child Card-->
             <include
@@ -164,7 +166,7 @@
                             android:hint="@string/year"
                             android:maxLength="2"
                             android:text='@{!dsb04Ageb.checked ?  "" : dsb05y.getText.toString }'
-                            app:maxValue="2"
+                            app:maxValue="1"
                             app:minValue="0"
                             app:type="range" />
 
@@ -236,6 +238,7 @@
                             android:id="@+id/dsb07"
                             style="@style/EditText"
                             android:hint="@string/dsb07"
+                            android:inputType="textCapCharacters"
                             android:text='@{!dsb06a.checked ?  "" : dsb07.getText.toString }' />
 
                     </LinearLayout>
@@ -254,7 +257,8 @@
                         <EditText
                             android:id="@+id/dsb08"
                             style="@style/EditText_number"
-                            android:hint="@string/dsb08" />
+                            android:hint="@string/dsb08"
+                            android:maxLength="4" />
 
                     </LinearLayout>
 

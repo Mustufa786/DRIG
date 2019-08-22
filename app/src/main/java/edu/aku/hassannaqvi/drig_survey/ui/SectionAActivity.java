@@ -269,10 +269,7 @@ public class SectionAActivity extends AppCompatActivity {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01))
             return false;
 
-//        ChildC = new ChildrenCounter(0, 0, 0, 0, 0, 0);
-
         if (!bi.dsa18a.isChecked()) return true;
-
 
         int boysU5 = Integer.valueOf(bi.dsa10.getText().toString()), girlsU5 = Integer.valueOf(bi.dsa11.getText().toString());
         int totalU5 = boysU5 + girlsU5;
@@ -293,10 +290,10 @@ public class SectionAActivity extends AppCompatActivity {
 
         for (int i = 0; i < childllArray16.size(); i++) {
             int numbers = i + 1;
-            if (!ValidatorClass.EmptyTextBox02(SectionAActivity.this, monthArray16.get(i), getString(R.string.dsa13) + " month " + numbers)) {
+            if (!ValidatorClass.RangeTextBox02(SectionAActivity.this, monthArray16.get(i), 0, 9, getString(R.string.dsa13) + " month " + numbers, " Range")) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox02(SectionAActivity.this, weekArray16.get(i), getString(R.string.dsa13) + " week " + numbers)) {
+            if (!ValidatorClass.RangeTextBox02(SectionAActivity.this, weekArray16.get(i), 1, 36, getString(R.string.dsa13) + " week " + numbers, " Range")) {
                 return false;
             }
         }

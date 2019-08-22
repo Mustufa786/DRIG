@@ -43,13 +43,13 @@ import edu.aku.hassannaqvi.drig_survey.utils.DateUtils;
 
 public class MainApp extends Application {
 
-    public static final String _IP = "43.245.131.159"; // Test PHP server
+    public static final String _IP = "f38158"; // Test PHP server
     public static final String _ALTERNATE_IP = "58.65.211.13"; // Test PHP server
-    public static final Integer _PORT = 8080; // Port - with colon (:)
+    public static final Integer _PORT = 80; // Port - with colon (:)
     public static final String _HOST_URL_1 = "http://" + MainApp._IP + ":" + MainApp._PORT + "/drig/api/";
     public static final String _HOST_URL_2 = "http://" + MainApp._ALTERNATE_IP + ":" + MainApp._PORT + "/drig/api/";
     public static final String _TEST_URL = "http://f49461:" + MainApp._PORT + "/drig/api/";
-    public static final String[] HOST = new String[]{_HOST_URL_1, _HOST_URL_2};
+    public static final String[] HOST = new String[]{_HOST_URL_1};
     public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/drig/app/";
 
     public static final Integer MONTHS_LIMIT = 11;

@@ -74,23 +74,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_TALUKAS = "DROP TABLE IF EXISTS " + HFTable.TABLE_NAME;
     private static final String SQL_CREATE_CHILD_FORMS = "CREATE TABLE "
             + ChildFormsTable.TABLE_NAME + "("
-            + ChildContract.ChildFormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ChildFormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + ChildFormsTable.COLUMN_PROJECT_NAME + " TEXT,"
             + ChildFormsTable.COLUMN_UID + " TEXT," +
             ChildFormsTable.COLUMN_UUID + " TEXT," +
             ChildFormsTable.COLUMN_FORMDATE + " TEXT," +
             ChildFormsTable.COLUMN_USER + " TEXT," +
-            ChildContract.ChildFormsTable.COLUMN_SB + " TEXT," +
+            ChildFormsTable.COLUMN_SA + " TEXT," +
+            ChildFormsTable.COLUMN_SB + " TEXT," +
             ChildFormsTable.COLUMN_ISTATUS + " TEXT," +
             ChildFormsTable.COLUMN_GPSLAT + " TEXT," +
-            ChildContract.ChildFormsTable.COLUMN_GPSLNG + " TEXT," +
+            ChildFormsTable.COLUMN_GPSLNG + " TEXT," +
             ChildFormsTable.COLUMN_GPSDATE + " TEXT," +
             ChildFormsTable.COLUMN_GPSACC + " TEXT," +
-            ChildContract.ChildFormsTable.COLUMN_DEVICEID + " TEXT," +
+            ChildFormsTable.COLUMN_DEVICEID + " TEXT," +
             ChildFormsTable.COLUMN_DEVICETAGID + " TEXT," +
-            ChildContract.ChildFormsTable.COLUMN_APP_VERSION + " TEXT," +
+            ChildFormsTable.COLUMN_APP_VERSION + " TEXT," +
             ChildFormsTable.COLUMN_SYNCED + " TEXT," +
-            ChildContract.ChildFormsTable.COLUMN_SYNCED_DATE + " TEXT"
+            ChildFormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + UsersContract.UsersTable.TABLE_NAME;
     final String SQL_CREATE_UC = "CREATE TABLE " + UCsTable.TABLE_NAME + " (" +
@@ -103,7 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
     private static final String SQL_DELETE_SCHOOL = "DROP TABLE IF EXISTS " + SchoolTable.TABLE_NAME;
     private static final String SQL_DELETE_HF = "DROP TABLE IF EXISTS " + HFTable.TABLE_NAME;
-    private static final String SQL_DELETE_CHILD_FORMS = "DROP TABLE IF EXISTS " + ChildContract.ChildFormsTable.TABLE_NAME;
+    private static final String SQL_DELETE_CHILD_FORMS = "DROP TABLE IF EXISTS " + ChildFormsTable.TABLE_NAME;
     final String SQL_CREATE_HF = "CREATE TABLE " + HFTable.TABLE_NAME + " (" +
             HFTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             HFTable.COLUMN_HF_CODE + " TEXT, " +
@@ -406,8 +407,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Long addChildForm(ChildContract fc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(ChildContract.ChildFormsTable.COLUMN_PROJECT_NAME, fc.getProjectName());
-        values.put(ChildContract.ChildFormsTable.COLUMN_UID, fc.get_UID());
+        values.put(ChildFormsTable.COLUMN_PROJECT_NAME, fc.getProjectName());
+        values.put(ChildFormsTable.COLUMN_UID, fc.get_UID());
         values.put(ChildFormsTable.COLUMN_UID, fc.get_UID());
         values.put(ChildFormsTable.COLUMN_FORMDATE, fc.getFormDate());
         values.put(ChildFormsTable.COLUMN_USER, fc.getUser());
@@ -417,19 +418,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildFormsTable.COLUMN_SB, fc.getsB());
         values.put(ChildFormsTable.COLUMN_GPSLAT, fc.getGpsLat());
         values.put(ChildFormsTable.COLUMN_GPSLNG, fc.getGpsLng());
-        values.put(ChildContract.ChildFormsTable.COLUMN_GPSDATE, fc.getGpsDT());
-        values.put(ChildContract.ChildFormsTable.COLUMN_GPSACC, fc.getGpsAcc());
+        values.put(ChildFormsTable.COLUMN_GPSDATE, fc.getGpsDT());
+        values.put(ChildFormsTable.COLUMN_GPSACC, fc.getGpsAcc());
         values.put(ChildFormsTable.COLUMN_DEVICETAGID, fc.getDevicetagID());
         values.put(ChildFormsTable.COLUMN_DEVICEID, fc.getDeviceID());
-        values.put(ChildContract.ChildFormsTable.COLUMN_SYNCED, fc.getSynced());
+        values.put(ChildFormsTable.COLUMN_SYNCED, fc.getSynced());
         values.put(ChildFormsTable.COLUMN_SYNCED_DATE, fc.getSynced_date());
         values.put(ChildFormsTable.COLUMN_APP_VERSION, fc.getAppversion());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(
-                ChildContract.ChildFormsTable.TABLE_NAME,
-                ChildContract.ChildFormsTable.COLUMN_NAME_NULLABLE,
+                ChildFormsTable.TABLE_NAME,
+                ChildFormsTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -462,11 +463,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildFormsTable.COLUMN_SYNCED_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = ChildContract.ChildFormsTable._ID + " = ?";
+        String where = ChildFormsTable._ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
-                ChildContract.ChildFormsTable.TABLE_NAME,
+                ChildFormsTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
@@ -575,18 +576,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                ChildContract.ChildFormsTable._ID,
+                ChildFormsTable._ID,
                 ChildFormsTable.COLUMN_UID,
-                ChildContract.ChildFormsTable.COLUMN_UUID,
-                ChildContract.ChildFormsTable.COLUMN_FORMDATE,
-                ChildContract.ChildFormsTable.COLUMN_USER,
+                ChildFormsTable.COLUMN_UUID,
+                ChildFormsTable.COLUMN_FORMDATE,
+                ChildFormsTable.COLUMN_USER,
                 ChildFormsTable.COLUMN_ISTATUS,
                 ChildFormsTable.COLUMN_SA,
-                ChildContract.ChildFormsTable.COLUMN_SB,
-                ChildContract.ChildFormsTable.COLUMN_GPSLAT,
+                ChildFormsTable.COLUMN_SB,
+                ChildFormsTable.COLUMN_GPSLAT,
                 ChildFormsTable.COLUMN_GPSLNG,
-                ChildContract.ChildFormsTable.COLUMN_GPSDATE,
-                ChildContract.ChildFormsTable.COLUMN_GPSACC,
+                ChildFormsTable.COLUMN_GPSDATE,
+                ChildFormsTable.COLUMN_GPSACC,
                 ChildFormsTable.COLUMN_DEVICETAGID,
                 ChildFormsTable.COLUMN_DEVICEID,
                 ChildFormsTable.COLUMN_SYNCED,
@@ -604,7 +605,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Collection<ChildContract> allFC = new ArrayList<ChildContract>();
         try {
             c = db.query(
-                    ChildContract.ChildFormsTable.TABLE_NAME,  // The table to query
+                    ChildFormsTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause

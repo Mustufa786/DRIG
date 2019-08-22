@@ -29,6 +29,12 @@ public class EndingActivity extends AppCompatActivity {
         Boolean check = getIntent().getExtras().getBoolean("complete");
         type = getIntent().getIntExtra("type", 0);
 
+        if (type == 1)
+            this.setTitle("FORM-ENDING ACTIVITY");
+        else
+            this.setTitle("CHILD-ENDING ACTIVITY");
+
+
         if (check) {
             binding.istatusa.setEnabled(true);
             binding.istatusb.setEnabled(false);
@@ -62,8 +68,11 @@ public class EndingActivity extends AppCompatActivity {
 
                 Intent endSec = new Intent(this, MainActivity.class);
 
-                if (SectionAActivity.ChildC.getTotal() > SectionAActivity.ChildC.getTotalCount()) {
-                    endSec = new Intent(this, SectionBActivity.class);
+                if (type != 1) {
+                    if (SectionAActivity.ChildC.getTotal() > SectionAActivity.ChildC.getTotalCount()) {
+                        endSec = new Intent(this, SectionBActivity.class);
+                    } else
+                        endSec = new Intent(this, EndingActivity.class).putExtra("complete", true).putExtra("type", 1);
                 }
 
                 startActivity(endSec);

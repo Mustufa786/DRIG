@@ -459,7 +459,7 @@ public class MainActivity extends AppCompatActivity {
                     "updateSyncedForms",
                     FormsContract.class,
                     FormsContract.FormsTable._URL,
-                    db.getUnsyncedForms(MainApp.SFA)
+                    db.getUnsyncedForms(null)
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Child Forms", Toast.LENGTH_SHORT).show();

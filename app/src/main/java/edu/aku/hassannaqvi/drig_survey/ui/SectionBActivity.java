@@ -77,7 +77,7 @@ public class SectionBActivity extends AppCompatActivity {
             }
 
             finish();
-            startActivity(new Intent(this, SectionBActivity.class));
+            startActivity(new Intent(this, SectionCActivity.class));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -151,6 +151,8 @@ public class SectionBActivity extends AppCompatActivity {
         if (!ValidatorClass.EmptyTextBox(this, bi.dsb01, getString(R.string.dsb01)))
             return;
         if (!ValidatorClass.EmptyTextBox(this, bi.dsb02, getString(R.string.dsb02)))
+            return;
+        if (!ValidatorClass.EmptyRadioButton(this, bi.dsb03, bi.dsb03a, getString(R.string.dsb03)))
             return;
 
         new AlertDialog.Builder(this)

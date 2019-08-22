@@ -170,6 +170,24 @@ public abstract class ValidatorClass {
         }
     }
 
+    public static boolean RangeTextBox02(Context context, EditText txt, int min, int max, String msg, String type) {
+
+        if (!EmptyTextBox02(context, txt, msg)) return false;
+
+        if (Integer.valueOf(txt.getText().toString()) < min || Integer.valueOf(txt.getText().toString()) > max) {
+            Toast.makeText(context, "ERROR(invalid): " + msg, Toast.LENGTH_SHORT).show();
+            txt.setError("Range is " + min + " to " + max + type + " ... ");    // Set Error on last radio button
+            txt.setFocusableInTouchMode(true);
+            txt.requestFocus();
+//            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": Range is " + min + " to " + max + " times...  ");
+            return false;
+        } else {
+            txt.setError(null);
+            txt.clearFocus();
+            return true;
+        }
+    }
+
 
     public static boolean RangeTextBox(Context context, EditText txt, double min, double max, String msg, String type) {
 
