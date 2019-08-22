@@ -26,7 +26,9 @@
                 style="@style/linearlayout_view">
 
                 <!--Spinner dsa01-->
-                <android.support.v7.widget.CardView style="@style/cardView">
+                <android.support.v7.widget.CardView
+                    style="@style/cardView"
+                    android:visibility="gone">
 
                     <LinearLayout style="@style/linearlayout_view_wt_bound">
 
@@ -45,7 +47,9 @@
                 </android.support.v7.widget.CardView>
 
                 <!--Spinner dsa02-->
-                <android.support.v7.widget.CardView style="@style/cardView">
+                <android.support.v7.widget.CardView
+                    style="@style/cardView"
+                    android:visibility="gone">
 
                     <LinearLayout style="@style/linearlayout_view_wt_bound">
 
@@ -64,7 +68,9 @@
                 </android.support.v7.widget.CardView>
 
                 <!--Spinner dsa03 CHW-->
-                <android.support.v7.widget.CardView style="@style/cardView">
+                <android.support.v7.widget.CardView
+                    style="@style/cardView"
+                    android:visibility="gone">
 
                     <LinearLayout style="@style/linearlayout_view_wt_bound">
 
@@ -91,12 +97,11 @@
                             style="@style/i_textview"
                             android:text="@string/dsa04" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <EditText
                             android:id="@+id/dsa04"
                             style="@style/EditText_number"
                             android:hint="@string/dsa04"
-                            android:maxLength="4"
-                            app:type="range" />
+                            android:maxLength="4" />
 
                     </LinearLayout>
 
@@ -115,6 +120,7 @@
                             android:id="@+id/dsa05"
                             style="@style/EditText"
                             android:hint="@string/dsa05"
+                            android:maxLength="35"
                             android:maxLines="2" />
 
                     </LinearLayout>
@@ -149,176 +155,10 @@
                                 style="@style/i_radiobutton"
                                 android:text="@string/dsa18c" />
 
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <!--EditText dsa06 -->
-                <android.support.v7.widget.CardView style="@style/cardView">
-
-                    <LinearLayout style="@style/linearlayout_view_wt_bound">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/dsa06" />
-
-                        <EditText
-                            android:id="@+id/dsa06"
-                            style="@style/EditText"
-                            android:hint="@string/dsa06" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <!--EditText dsa07 -->
-                <android.support.v7.widget.CardView style="@style/cardView">
-
-                    <LinearLayout style="@style/linearlayout_view_wt_bound">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/dsa07" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/dsa07"
-                            style="@style/EditText_number"
-                            android:hint="@string/dsa07"
-                            android:maxLength="11"
-                            app:type="range" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <!--EditText dsa08 -->
-                <android.support.v7.widget.CardView style="@style/cardView">
-
-                    <LinearLayout
-                        style="@style/linearlayout_view_wt_bound"
-                        android:layoutDirection="ltr">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/dsa08" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/dsa08"
-                            style="@style/EditText_number"
-                            android:hint="#####-#######-#"
-                            android:inputType="number"
-                            app:mask="#####-#######-#"
-                            app:pattern="^(\\d{5,5}\\-\\d{7,7}\\-\\d{1,1})$"
-                            app:type="equal" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <!--EditText dsa09 -->
-                <android.support.v7.widget.CardView style="@style/cardView">
-
-                    <LinearLayout style="@style/linearlayout_view_wt_bound">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/dsa09" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/dsa09"
-                            style="@style/EditText_number"
-                            android:hint="@string/dsa09total"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/dsa10"
-                            style="@style/EditText_number"
-                            android:hint="@string/dsa09boy"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/dsa11"
-                            style="@style/EditText_number"
-                            android:hint="@string/dsa09girl"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <!--EditText dsa10 -->
-                <android.support.v7.widget.CardView style="@style/cardView">
-
-                    <LinearLayout style="@style/linearlayout_view_wt_bound">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/dsa10" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/dsa12"
-                            style="@style/EditText_number"
-                            android:hint="@string/dsa10total"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/dsa13"
-                            style="@style/EditText_number"
-                            android:hint="@string/dsa10boy"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/dsa14"
-                            style="@style/EditText_number"
-                            android:hint="@string/dsa10girl"
-                            android:maxLength="2"
-                            app:maxValue="15"
-                            app:minValue="0"
-                            app:type="range" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <!--Radio Button dsa15 -->
-                <android.support.v7.widget.CardView style="@style/cardView">
-
-                    <LinearLayout style="@style/linearlayout_view_wt_bound">
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/dsa11" />
-
-                        <RadioGroup
-                            android:id="@+id/dsa15"
-                            style="@style/i_radiogroup">
-
                             <RadioButton
-                                android:id="@+id/dsa15a"
+                                android:id="@+id/dsa18d"
                                 style="@style/i_radiobutton"
-                                android:text="@string/yes" />
-
-                            <RadioButton
-                                android:id="@+id/dsa15b"
-                                style="@style/i_radiobutton"
-                                android:text="@string/no" />
+                                android:text="@string/dsa18d" />
 
                         </RadioGroup>
 
@@ -327,34 +167,154 @@
                 </android.support.v7.widget.CardView>
 
                 <LinearLayout
-                    android:id="@+id/fldGrpSecA02"
+                    android:id="@+id/fldGrpSecA01"
                     style="@style/linearlayout_view_wt_bound"
-                    android:visibility='@{dsa15a.checked ? View.VISIBLE : View.GONE}'>
+                    android:visibility='@{dsa18a.checked ? View.VISIBLE : View.GONE}'>
 
-                    <!--EditText dsa16 -->
+                    <!--EditText dsa06 -->
                     <android.support.v7.widget.CardView style="@style/cardView">
 
                         <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                             <TextView
                                 style="@style/i_textview"
-                                android:text="@string/dsa16" />
+                                android:text="@string/dsa06" />
+
+                            <EditText
+                                android:id="@+id/dsa06"
+                                style="@style/EditText"
+                                android:hint="@string/dsa06"
+                                android:maxLength="20" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <!--EditText dsa07 -->
+                    <android.support.v7.widget.CardView style="@style/cardView">
+
+                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+                            <TextView
+                                style="@style/i_textview"
+                                android:text="@string/dsa07" />
+
+                            <EditText
+                                android:id="@+id/dsa07"
+                                style="@style/EditText_number"
+                                android:hint="@string/dsa07"
+                                android:maxLength="11" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <!--EditText dsa08 -->
+                    <android.support.v7.widget.CardView style="@style/cardView">
+
+                        <LinearLayout
+                            style="@style/linearlayout_view_wt_bound"
+                            android:layoutDirection="ltr">
+
+                            <TextView
+                                style="@style/i_textview"
+                                android:text="@string/dsa08" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/dsa16"
+                                android:id="@+id/dsa08"
                                 style="@style/EditText_number"
-                                android:hint="@string/dsa16"
+                                android:hint="#####-#######-#"
+                                android:inputType="number"
+                                app:defaultValue=""
+                                app:mask="#####-#######-#"
+                                app:pattern="^(\\d{5,5}\\-\\d{7,7}\\-\\d{1,1})$"
+                                app:type="equal" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <!--EditText dsa09 -->
+                    <android.support.v7.widget.CardView style="@style/cardView">
+
+                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+                            <TextView
+                                style="@style/i_textview"
+                                android:text="@string/dsa09" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/dsa09"
+                                style="@style/EditText_number"
+                                android:hint="@string/dsa09total"
                                 android:maxLength="2"
-                                android:text='@{dsa15a.checked ? dsa16.getText.toString : ""}'
-                                app:maxValue="5"
-                                app:minValue="1"
+                                app:maxValue="15"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/dsa10"
+                                style="@style/EditText_number"
+                                android:hint="@string/dsa09boy"
+                                android:maxLength="2"
+                                app:maxValue="15"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/dsa11"
+                                style="@style/EditText_number"
+                                android:hint="@string/dsa09girl"
+                                android:maxLength="2"
+                                app:maxValue="15"
+                                app:minValue="0"
                                 app:type="range" />
 
                         </LinearLayout>
 
                     </android.support.v7.widget.CardView>
 
-                    <!--EditText dsa17 -->
+                    <!--EditText dsa10 -->
+                    <android.support.v7.widget.CardView style="@style/cardView">
+
+                        <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+                            <TextView
+                                style="@style/i_textview"
+                                android:text="@string/dsa10" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/dsa12"
+                                style="@style/EditText_number"
+                                android:hint="@string/dsa10total"
+                                android:maxLength="2"
+                                app:maxValue="15"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/dsa13"
+                                style="@style/EditText_number"
+                                android:hint="@string/dsa10boy"
+                                android:maxLength="2"
+                                app:maxValue="15"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/dsa14"
+                                style="@style/EditText_number"
+                                android:hint="@string/dsa10girl"
+                                android:maxLength="2"
+                                app:maxValue="15"
+                                app:minValue="0"
+                                app:type="range" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <!--Radio Button dsa15 -->
                     <android.support.v7.widget.CardView style="@style/cardView">
 
                         <LinearLayout style="@style/linearlayout_view_wt_bound">
@@ -363,20 +323,81 @@
                                 style="@style/i_textview"
                                 android:text="@string/dsa11" />
 
-                            <TextView
-                                style="@style/i_textview"
-                                android:text="@string/dsa12" />
+                            <RadioGroup
+                                android:id="@+id/dsa15"
+                                style="@style/i_radiogroup">
 
-                            <LinearLayout
-                                android:id="@+id/llgrpsfu309"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical" />
+                                <RadioButton
+                                    android:id="@+id/dsa15a"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/yes" />
 
+                                <RadioButton
+                                    android:id="@+id/dsa15b"
+                                    style="@style/i_radiobutton"
+                                    android:text="@string/no" />
+
+                            </RadioGroup>
 
                         </LinearLayout>
 
                     </android.support.v7.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/fldGrpSecA02"
+                        style="@style/linearlayout_view_wt_bound"
+                        android:visibility='@{dsa15a.checked ? View.VISIBLE : View.GONE}'>
+
+                        <!--EditText dsa16 -->
+                        <android.support.v7.widget.CardView style="@style/cardView">
+
+                            <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+                                <TextView
+                                    style="@style/i_textview"
+                                    android:text="@string/dsa16" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/dsa16"
+                                    style="@style/EditText_number"
+                                    android:hint="@string/dsa16"
+                                    android:maxLength="2"
+                                    android:text='@{dsa15a.checked ? dsa16.getText.toString : ""}'
+                                    app:maxValue="5"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <!--EditText dsa17 -->
+                        <android.support.v7.widget.CardView
+                            style="@style/cardView"
+                            android:tag="-1">
+
+                            <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+                                <TextView
+                                    style="@style/i_textview"
+                                    android:text="@string/dsa11" />
+
+                                <TextView
+                                    style="@style/i_textview"
+                                    android:text="@string/dsa12" />
+
+                                <LinearLayout
+                                    android:id="@+id/llgrpsfu309"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical" />
+
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

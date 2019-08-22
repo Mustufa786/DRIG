@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_20sdp"
                     android:padding="0dp"
-                    android:text="abcdef"
+                    android:text="BOYS"
                     android:textAlignment="center"
                     android:textColor="@color/blackOverlay"
                     android:textSize="@dimen/_9sdp" />
@@ -46,12 +46,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginEnd="@dimen/_3sdp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/_1sdp"
                 android:layout_marginTop="@dimen/_6sdp"
                 android:layout_marginRight="@dimen/_1sdp"
                 android:layout_weight="90"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -69,13 +71,13 @@
                         android:textSize="@dimen/_8sdp" />
 
                     <TextView
-                        android:id="@+id/screen_id1"
+                        android:id="@+id/totalB"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="50"
-                        android:text="abc1234"
+                        android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
 
@@ -95,11 +97,11 @@
                         android:textSize="@dimen/_8sdp" />
 
                     <TextView
-                        android:id="@+id/dob1"
+                        android:id="@+id/boyC"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="50"
-                        android:text="01"
+                        android:text="0"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10sdp" />
 
@@ -129,7 +131,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_20sdp"
                     android:padding="0dp"
-                    android:text="abcdef"
+                    android:text="GIRL"
                     android:textAlignment="center"
                     android:textColor="@color/blackOverlay"
                     android:textSize="@dimen/_9sdp" />
@@ -143,6 +145,7 @@
                 android:layout_marginTop="@dimen/_6sdp"
                 android:layout_marginRight="@dimen/_1sdp"
                 android:layout_weight="90"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -160,13 +163,13 @@
                         android:textSize="@dimen/_8sdp" />
 
                     <TextView
-                        android:id="@+id/screen_id2"
+                        android:id="@+id/totalG"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="50"
-                        android:text="abc1234"
+                        android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_8sdp" />
+                        android:textSize="@dimen/_10sdp" />
 
                 </LinearLayout>
 
@@ -186,11 +189,11 @@
                         android:textSize="@dimen/_8sdp" />
 
                     <TextView
-                        android:id="@+id/dob2"
+                        android:id="@+id/girlC"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="50"
-                        android:text="01"
+                        android:text="0"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10sdp" />
 
@@ -200,5 +203,6 @@
             </LinearLayout>
 
         </LinearLayout>
+
     </android.support.v7.widget.CardView>
 </layout>

@@ -268,7 +268,7 @@ public class MainActivity extends AppCompatActivity {
                 if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
                     bi.lblAppVersion.setVisibility(View.VISIBLE);
 
-                    String fileName = MainApp.DATABASE_NAME.replace(".db", "-New-Apps");
+                    String fileName = DatabaseHelper.DATABASE_NAME.replace(".db", "-New-Apps");
                     file = new File(Environment.getExternalStorageDirectory() + File.separator + fileName, versionAppContract.getPathname());
 
                     if (file.exists()) {
@@ -343,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
         if (mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
 
-                if (!permissiongrantedStuff()) return;
+//                if (!permissiongrantedStuff()) return;
 
                 startActivity(new Intent(MainActivity.this, SectionAActivity.class));
 

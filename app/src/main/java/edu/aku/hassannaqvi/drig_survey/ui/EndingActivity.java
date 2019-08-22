@@ -17,6 +17,7 @@ public class EndingActivity extends AppCompatActivity {
     private static final String TAG = EndingActivity.class.getSimpleName();
 
     ActivityEndingBinding binding;
+    int type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class EndingActivity extends AppCompatActivity {
         binding.setCallback(this);
 
         Boolean check = getIntent().getExtras().getBoolean("complete");
+        type = getIntent().getIntExtra("type", 0);
 
         if (check) {
             binding.istatusa.setEnabled(true);
@@ -59,6 +61,11 @@ public class EndingActivity extends AppCompatActivity {
                 finish();
 
                 Intent endSec = new Intent(this, MainActivity.class);
+
+                if (SectionAActivity.ChildC.getTotal() > SectionAActivity.ChildC.getTotalCount()) {
+                    endSec = new Intent(this, SectionBActivity.class);
+                }
+
                 startActivity(endSec);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -67,10 +74,14 @@ public class EndingActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() {
+        String statusCode = binding.istatusa.isChecked() ? "1" : binding.istatusb.isChecked() ? "2" : "0";
 
-        MainApp.fc.setIstatus(binding.istatusa.isChecked() ? "1"
-                : binding.istatusb.isChecked() ? "2"
-                : "0");
+        if (type == 1)
+            MainApp.fc.setIstatus(statusCode);
+        else {
+            MainApp.cc.setIstatus(statusCode);
+            SectionAActivity.ChildC.setTotalCount(SectionAActivity.ChildC.getTotalCount() + 1);
+        }
 
 //        MainApp.fc.setIstatus88x(istatus88x.getText().toString());
     }
@@ -78,7 +89,12 @@ public class EndingActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateEnding();
+        int updcount = 0;
+
+        if (type == 1)
+            updcount = db.updateEnding();
+        else
+            updcount = db.updateChildEnding();
 
         if (updcount == 1) {
             return true;

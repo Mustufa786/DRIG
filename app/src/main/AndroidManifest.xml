@@ -16,7 +16,7 @@
     <application
         android:name="edu.aku.hassannaqvi.drig_survey.core.MainApp"
         android:allowBackup="true"
-        android:icon="@drawable/typbar_tcv"
+        android:icon="@drawable/agakhan"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -38,7 +38,7 @@
         <activity
             android:name="edu.aku.hassannaqvi.drig_survey.ui.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name="edu.aku.hassannaqvi.drig_survey.core.AndroidDatabaseManager"

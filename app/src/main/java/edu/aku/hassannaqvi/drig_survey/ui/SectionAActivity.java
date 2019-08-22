@@ -8,13 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.edittextpicker.aliazaz.EditTextPicker;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,14 +49,14 @@ public class SectionAActivity extends AppCompatActivity {
     private boolean eligibleFlag = false;
     public static ChildrenCounter ChildC;
 
-    private final List<LinearLayout> childllArray19 = new ArrayList();
-    private final List<EditText> weekArray19 = new ArrayList();
-    private final List<EditText> monthArray19 = new ArrayList();
+    private final List<LinearLayout> childllArray16 = new ArrayList();
+    private final List<EditText> weekArray16 = new ArrayList();
+    private final List<EditText> monthArray16 = new ArrayList();
     private final List<TextView> durationLabelArray19 = new ArrayList();
 
     private final LinearLayout.LayoutParams mRparams1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
     private final LinearLayout.LayoutParams mRparams2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-    private int totalU2 = 0;
+    private int totalU2 = 0, boysU2 = 0, girlsU2 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,10 +87,10 @@ public class SectionAActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                childllArray19.clear();
+                childllArray16.clear();
                 bi.llgrpsfu309.removeAllViews();
-                monthArray19.clear();
-                weekArray19.clear();
+                monthArray16.clear();
+                weekArray16.clear();
 
                 if (bi.dsa16.getText().toString().isEmpty()) return;
 
@@ -105,7 +104,8 @@ public class SectionAActivity extends AppCompatActivity {
                     DurationLabelTextView.setLayoutParams(mRparams2);
                     int numberss = i + 1;
                     DurationLabelTextView.setText(getString(R.string.dsa13) + " # " + numberss);
-                    DurationLabelTextView.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                    DurationLabelTextView.setTextColor(getResources().getColor(R.color.white));
+                    DurationLabelTextView.setTextSize(15);
                     DurationLabelTextView.setBackgroundColor(getResources().getColor(R.color.colorPrimaryAlpha));
                     durationLabelArray19.add(DurationLabelTextView);
                     bi.llgrpsfu309.addView(DurationLabelTextView);
@@ -113,32 +113,34 @@ public class SectionAActivity extends AppCompatActivity {
                     LinearLayout llchild = new LinearLayout(SectionAActivity.this);
                     llchild.setLayoutParams(mRparams2);
                     llchild.setOrientation(LinearLayout.HORIZONTAL);
-                    childllArray19.add(llchild);
+                    childllArray16.add(llchild);
                     bi.llgrpsfu309.addView(llchild);
 
-                    EditTextPicker secEditText = (EditTextPicker) new EditText(SectionAActivity.this);
-                    secEditText.setLayoutParams(mRparams1);
-                    secEditText.setHint("Week " + numberss);
-                    secEditText.setInputType(INTEGER);
-                    secEditText.setType(1);
+
+                    EditText weekEditText = new EditText(SectionAActivity.this);
+                    weekEditText.setLayoutParams(mRparams1);
+                    weekEditText.setHint("Week " + numberss);
+                    weekEditText.setInputType(INTEGER);
+                    /*secEditText.setType(1);
                     secEditText.setMaxvalue(36);
-                    secEditText.setMinvalue(1);
-                    int maxLength = 2;
-                    secEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
-                    weekArray19.add(secEditText);
-                    llchild.addView(secEditText);
+                    secEditText.setMinvalue(1);*/
+                    weekEditText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
+                    weekEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
+                    weekArray16.add(weekEditText);
+                    llchild.addView(weekEditText);
 
 
-                    EditTextPicker minEditText = (EditTextPicker) new EditText(SectionAActivity.this);
-                    minEditText.setLayoutParams(mRparams1);
-                    minEditText.setHint("Month " + numberss);
-                    minEditText.setInputType(INTEGER);
-                    secEditText.setType(1);
+                    EditText monthEditText = new EditText(SectionAActivity.this);
+                    monthEditText.setLayoutParams(mRparams1);
+                    monthEditText.setHint("Month " + numberss);
+                    monthEditText.setInputType(INTEGER);
+                    /*secEditText.setType(1);
                     secEditText.setMaxvalue(9);
-                    secEditText.setMinvalue(0);
-                    minEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
-                    monthArray19.add(minEditText);
-                    llchild.addView(minEditText);
+                    secEditText.setMinvalue(0);*/
+                    monthEditText.setKeyListener(DigitsKeyListener.getInstance("0123456789"));
+                    monthEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(1)});
+                    monthArray16.add(monthEditText);
+                    llchild.addView(monthEditText);
                 }
 
             }
@@ -147,6 +149,14 @@ public class SectionAActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
 
 
+            }
+        });
+
+        bi.dsa18.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.dsa18a.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpSecA01, null);
             }
         });
     }
@@ -190,6 +200,7 @@ public class SectionAActivity extends AppCompatActivity {
             finish();
             startActivity(new Intent(this, totalU2 > 0 ? SectionBActivity.class : EndingActivity.class)
                     .putExtra("childCounter", ChildC)
+                    .putExtra("type", 1)
                     .putExtra("complete", true));
 
         } catch (JSONException e) {
@@ -224,9 +235,9 @@ public class SectionAActivity extends AppCompatActivity {
 
         JSONObject sfa = new JSONObject();
 
-        sfa.put("dsa01", hfMap.get(bi.dsa01.getSelectedItem().toString()).getHfcode());
+        /*sfa.put("dsa01", hfMap.get(bi.dsa01.getSelectedItem().toString()).getHfcode());
         sfa.put("dsa02", hfMap.get(bi.dsa02.getSelectedItem().toString()).getHfcode());
-        sfa.put("dsa03", hfMap.get(bi.dsa03.getSelectedItem().toString()).getHfcode());
+        sfa.put("dsa03", hfMap.get(bi.dsa03.getSelectedItem().toString()).getHfcode());*/
         sfa.put("dsa04", bi.dsa04.getText().toString());
         sfa.put("dsa05", bi.dsa05.getText().toString());
         sfa.put("dsa06", bi.dsa06.getText().toString());
@@ -240,27 +251,36 @@ public class SectionAActivity extends AppCompatActivity {
         sfa.put("dsa14", bi.dsa14.getText().toString());
         sfa.put("dsa15", bi.dsa15a.isChecked() ? "1" : bi.dsa15b.isChecked() ? "2" : "0");
         sfa.put("dsa16", bi.dsa16.getText().toString());
-        sfa.put("dsa18", bi.dsa18a.isChecked() ? "1" : bi.dsa18b.isChecked() ? "2" : bi.dsa18c.isChecked() ? "3" : "0");
+        sfa.put("dsa18", bi.dsa18a.isChecked() ? "1" : bi.dsa18b.isChecked() ? "2" : bi.dsa18c.isChecked() ? "3" : bi.dsa18d.isChecked() ? "4" : "0");
 
-        for (int i = 0; i < childllArray19.size(); i++) {
-            sfa.put("dsa16" + String.format("%02d", (i + 1)) + "m", monthArray19.get(i).getText().toString());
-            sfa.put("dsa16" + String.format("%02d", (i + 1)) + "w", weekArray19.get(i).getText().toString());
+        for (int i = 0; i < childllArray16.size(); i++) {
+            sfa.put("dsa16" + String.format("%02d", (i + 1)) + "m", monthArray16.get(i).getText().toString());
+            sfa.put("dsa16" + String.format("%02d", (i + 1)) + "w", weekArray16.get(i).getText().toString());
         }
 
-
         MainApp.fc.setsA(String.valueOf(sfa));
+
+
+        ChildC = new ChildrenCounter(totalU2, boysU2, girlsU2);
+
     }
 
     private boolean formValidation() {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01))
             return false;
 
+//        ChildC = new ChildrenCounter(0, 0, 0, 0, 0, 0);
+
+        if (!bi.dsa18a.isChecked()) return true;
+
+
         int boysU5 = Integer.valueOf(bi.dsa10.getText().toString()), girlsU5 = Integer.valueOf(bi.dsa11.getText().toString());
         int totalU5 = boysU5 + girlsU5;
         if (Integer.valueOf(bi.dsa09.getText().toString()) != totalU5)
             return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa09, "Boys and Girls count not match!!");
 
-        int boysU2 = Integer.valueOf(bi.dsa13.getText().toString()), girlsU2 = Integer.valueOf(bi.dsa14.getText().toString());
+        boysU2 = Integer.valueOf(bi.dsa13.getText().toString());
+        girlsU2 = Integer.valueOf(bi.dsa14.getText().toString());
         totalU2 = boysU2 + girlsU2;
         if (Integer.valueOf(bi.dsa12.getText().toString()) != totalU2)
             return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Boys and Girls count not match!!");
@@ -271,17 +291,15 @@ public class SectionAActivity extends AppCompatActivity {
         if (girlsU2 > girlsU5)
             return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Girls count can't be greater then Under 5 count!!");
 
-        for (int i = 0; i < childllArray19.size(); i++) {
-            int numberss = i + 1;
-            if (!ValidatorClass.EmptyEditTextPicker(SectionAActivity.this, monthArray19.get(i), getString(R.string.dsa13) + " Months " + numberss)) {
+        for (int i = 0; i < childllArray16.size(); i++) {
+            int numbers = i + 1;
+            if (!ValidatorClass.EmptyTextBox02(SectionAActivity.this, monthArray16.get(i), getString(R.string.dsa13) + " month " + numbers)) {
                 return false;
             }
-            if (!ValidatorClass.EmptyEditTextPicker(SectionAActivity.this, weekArray19.get(i), getString(R.string.dsa13) + " Week " + numberss)) {
+            if (!ValidatorClass.EmptyTextBox02(SectionAActivity.this, weekArray16.get(i), getString(R.string.dsa13) + " week " + numbers)) {
                 return false;
             }
         }
-
-        ChildC = new ChildrenCounter(totalU2, boysU2, girlsU2);
 
         return true;
 
@@ -297,7 +315,7 @@ public class SectionAActivity extends AppCompatActivity {
                 Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
                 return;
             } else
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false).putExtra("type", 1));
 
         } catch (JSONException e) {
             e.printStackTrace();

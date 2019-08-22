@@ -46,13 +46,12 @@ public class MainApp extends Application {
     public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final String _ALTERNATE_IP = "58.65.211.13"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
-    public static final String _HOST_URL_1 = "http://" + MainApp._IP + ":" + MainApp._PORT + "/typbar/api/";
-    public static final String _HOST_URL_2 = "http://" + MainApp._ALTERNATE_IP + ":" + MainApp._PORT + "/typbar/api/";
-    public static final String _TEST_URL = "http://f49461:" + MainApp._PORT + "/typbar/api/";
+    public static final String _HOST_URL_1 = "http://" + MainApp._IP + ":" + MainApp._PORT + "/drig/api/";
+    public static final String _HOST_URL_2 = "http://" + MainApp._ALTERNATE_IP + ":" + MainApp._PORT + "/drig/api/";
+    public static final String _TEST_URL = "http://f49461:" + MainApp._PORT + "/drig/api/";
     public static final String[] HOST = new String[]{_HOST_URL_1, _HOST_URL_2};
-    public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/typbar/app/";
+    public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/drig/app/";
 
-    public static String DATABASE_NAME = "typbar_tcv";
     public static final Integer MONTHS_LIMIT = 11;
     public static final Integer DAYS_LIMIT = 29;
     private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 1; // in Meters
@@ -198,6 +197,7 @@ public class MainApp extends Application {
                                 activity.finish();
                                 Intent end_intent = new Intent(context, EndingActivity.class);
                                 end_intent.putExtra("complete", flag);
+                                end_intent.putExtra("type", 2);
                                 context.startActivity(end_intent);
                             }
                         });

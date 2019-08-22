@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.drig_survey.ui;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import edu.aku.hassannaqvi.drig_survey.contracts.ChildContract;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
 import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySectionBBinding;
+import edu.aku.hassannaqvi.drig_survey.utils.DateUtils;
 import edu.aku.hassannaqvi.drig_survey.validation.ValidatorClass;
 
 public class SectionBActivity extends AppCompatActivity {
@@ -33,6 +36,7 @@ public class SectionBActivity extends AppCompatActivity {
 
         setContentUI();
         setListeners();
+        fillView();
     }
 
     private void setContentUI() {
@@ -40,8 +44,21 @@ public class SectionBActivity extends AppCompatActivity {
 
         // Initialize db
         db = new DatabaseHelper(this);
+
+        bi.dsb04.setMinDate(DateUtils.getMonthsBack("dd/MM/yyyy", -24));
     }
 
+    private void fillView() {
+        bi.viewGroup01.totalB.setText(String.valueOf(SectionAActivity.ChildC.getTotalBoy()));
+        bi.viewGroup01.totalG.setText(String.valueOf(SectionAActivity.ChildC.getTotalGirl()));
+        bi.viewGroup01.boyC.setText(String.valueOf(SectionAActivity.ChildC.getTotalBCount()));
+        bi.viewGroup01.girlC.setText(String.valueOf(SectionAActivity.ChildC.getTotalGCount()));
+
+        if (SectionAActivity.ChildC.getTotalBoy() == SectionAActivity.ChildC.getTotalBCount())
+            bi.dsb03a.setEnabled(false);
+        else if (SectionAActivity.ChildC.getTotalGirl() == SectionAActivity.ChildC.getTotalGCount())
+            bi.dsb03b.setEnabled(false);
+    }
 
     private void setListeners() {
 
@@ -110,6 +127,12 @@ public class SectionBActivity extends AppCompatActivity {
         sfb.put("dsb08", bi.dsb08.getText().toString());
 
         MainApp.cc.setsA(String.valueOf(sfb));
+
+        if (bi.dsb03a.isChecked())
+            SectionAActivity.ChildC.setTotalBCount(SectionAActivity.ChildC.getTotalBCount() + 1);
+        else
+            SectionAActivity.ChildC.setTotalGCount(SectionAActivity.ChildC.getTotalGCount() + 1);
+
     }
 
     private boolean formValidation() {
@@ -125,7 +148,39 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     public void BtnEnd() {
-        MainApp.endActivity(this, this, false);
+        if (!ValidatorClass.EmptyTextBox(this, bi.dsb01, getString(R.string.dsb01)))
+            return;
+        if (!ValidatorClass.EmptyTextBox(this, bi.dsb02, getString(R.string.dsb02)))
+            return;
+
+        new AlertDialog.Builder(this)
+                .setTitle("END INTERVIEW")
+                .setIcon(R.drawable.ic_power_settings_new_black_24dp)
+                .setCancelable(false)
+                .setCancelable(false)
+                .setMessage("Do you want to End Interview??")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        try {
+                            SaveDraft();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if (!UpdateDB()) {
+                            Toast.makeText(SectionBActivity.this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        startActivity(new Intent(SectionBActivity.this, EndingActivity.class).putExtra("complete", false).putExtra("type", 2));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .show();
     }
 
     public void settingGPS(ChildContract cc) {

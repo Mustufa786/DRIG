@@ -16,10 +16,11 @@
     <string name="dsa03"> CHW </string>
     <string name="dsa04"> گھرانے کا نمبر رجسٹر میں سے دیکھ کر لکھیں </string>
     <string name="dsa05"> گھر کا پتہ </string>
-    <string name="dsa18"> اگر یہ فارم مکمل نہ ہو سکا، تو کیا وجہ تھی؟ </string>
-    <string name="dsa18a"> انٹرویو کے دوران منع کر دیا </string>
-    <string name="dsa18b"> گهر بند تھا </string>
-    <string name="dsa18c"> بالغ جوابدہندہ موجود نہیں تھا </string>
+    <string name="dsa18"> کیا اجازات مل گی اور نہ ملی تو کیا وجہ تھی؟ </string>
+    <string name="dsa18a"> اجازات مل گی </string>
+    <string name="dsa18b"> انٹرویو کے دوران منع کر دیا </string>
+    <string name="dsa18c"> گهر بند تھا </string>
+    <string name="dsa18d"> بالغ جوابدہندہ موجود نہیں تھا </string>
     <string name="dsa06"> گھرانے کے سر براہ کا نام </string>
     <string name="dsa07"> موبائل نمبر </string>
     <string name="dsa08"> شناختی کارڈنمبر </string>

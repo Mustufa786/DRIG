@@ -20,6 +20,13 @@
 
         <LinearLayout style="@style/linearlayout_view">
 
+            <!--Child Card-->
+            <include
+                android:id="@+id/viewGroup01"
+                layout="@layout/participant_card"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
             <LinearLayout
                 android:id="@+id/childSec"
                 style="@style/linearlayout_view_wt_bound">
@@ -157,7 +164,7 @@
                             android:hint="@string/year"
                             android:maxLength="2"
                             android:text='@{!dsb04Ageb.checked ?  "" : dsb05y.getText.toString }'
-                            app:maxValue="15"
+                            app:maxValue="2"
                             app:minValue="0"
                             app:type="range" />
 
@@ -215,7 +222,9 @@
                 </android.support.v7.widget.CardView>
 
                 <!--EditText dsb07 -->
-                <android.support.v7.widget.CardView style="@style/cardView">
+                <android.support.v7.widget.CardView
+                    style="@style/cardView"
+                    android:visibility='@{dsb06a.checked ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout style="@style/linearlayout_view_wt_bound">
 
@@ -226,7 +235,8 @@
                         <EditText
                             android:id="@+id/dsb07"
                             style="@style/EditText"
-                            android:hint="@string/dsb07" />
+                            android:hint="@string/dsb07"
+                            android:text='@{!dsb06a.checked ?  "" : dsb07.getText.toString }' />
 
                     </LinearLayout>
 

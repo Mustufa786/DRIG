@@ -48,6 +48,22 @@ public abstract class ValidatorClass {
 
     }
 
+    public static boolean EmptyTextBox02(Context context, EditText txt, String msg) {
+        if (TextUtils.isEmpty(txt.getText().toString())) {
+            Toast.makeText(context, "ERROR(empty): " + msg, Toast.LENGTH_SHORT).show();
+            txt.setError("This data is Required! ");    // Set Error on last radio button
+            txt.setFocusableInTouchMode(true);
+            txt.requestFocus();
+//            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": This data is Required!");
+            return false;
+        } else {
+            txt.setError(null);
+            txt.clearFocus();
+            return true;
+        }
+
+    }
+
     public static boolean EmptyEditTextPicker(Context context, EditText txt, String msg) {
         String messageConv = "";
         boolean flag = true;

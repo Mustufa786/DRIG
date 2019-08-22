@@ -12,6 +12,15 @@ public class ChildrenCounter implements Serializable {
         this.totalGirl = totalGirl;
     }
 
+    public ChildrenCounter(int total, int totalCount, int totalBoy, int totalGirl, int totalBCount, int totalGCount) {
+        this.total = total;
+        this.totalCount = totalCount;
+        this.totalBoy = totalBoy;
+        this.totalGirl = totalGirl;
+        this.totalBCount = totalBCount;
+        this.totalGCount = totalGCount;
+    }
+
     public int getTotal() {
         return total;
     }
