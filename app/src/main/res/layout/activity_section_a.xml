@@ -121,6 +121,40 @@
 
                 </android.support.v7.widget.CardView>
 
+                <!--Radio Button dsa18 -->
+                <android.support.v7.widget.CardView style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/dsa18" />
+
+                        <RadioGroup
+                            android:id="@+id/dsa18"
+                            style="@style/i_radiogroup">
+
+                            <RadioButton
+                                android:id="@+id/dsa18a"
+                                style="@style/i_radiobutton"
+                                android:text="@string/dsa18a" />
+
+                            <RadioButton
+                                android:id="@+id/dsa18b"
+                                style="@style/i_radiobutton"
+                                android:text="@string/dsa18b" />
+
+                            <RadioButton
+                                android:id="@+id/dsa18c"
+                                style="@style/i_radiobutton"
+                                android:text="@string/dsa18c" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
                 <!--EditText dsa06 -->
                 <android.support.v7.widget.CardView style="@style/cardView">
 
