@@ -34,6 +34,7 @@ import edu.aku.hassannaqvi.drig_survey.contracts.HFContract;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
 import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySectionABinding;
+import edu.aku.hassannaqvi.drig_survey.other.ChildrenCounter;
 import edu.aku.hassannaqvi.drig_survey.validation.ClearClass;
 import edu.aku.hassannaqvi.drig_survey.validation.ValidatorClass;
 
@@ -47,6 +48,7 @@ public class SectionAActivity extends AppCompatActivity {
     private List<String> hfName = new ArrayList<>(Arrays.asList("...."));
     private String screenID = "", caseID = "", tagID = "";
     private boolean eligibleFlag = false;
+    public static ChildrenCounter ChildC;
 
     private final List<LinearLayout> childllArray19 = new ArrayList();
     private final List<EditText> weekArray19 = new ArrayList();
@@ -55,6 +57,7 @@ public class SectionAActivity extends AppCompatActivity {
 
     private final LinearLayout.LayoutParams mRparams1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
     private final LinearLayout.LayoutParams mRparams2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+    private int totalU2 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,7 +188,9 @@ public class SectionAActivity extends AppCompatActivity {
             }
 
             finish();
-            startActivity(new Intent(this, SectionBActivity.class));
+            startActivity(new Intent(this, totalU2 > 0 ? SectionBActivity.class : EndingActivity.class)
+                    .putExtra("childCounter", ChildC)
+                    .putExtra("complete", true));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -255,7 +260,7 @@ public class SectionAActivity extends AppCompatActivity {
             return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa09, "Boys and Girls count not match!!");
 
         int boysU2 = Integer.valueOf(bi.dsa13.getText().toString()), girlsU2 = Integer.valueOf(bi.dsa14.getText().toString());
-        int totalU2 = boysU2 + girlsU2;
+        totalU2 = boysU2 + girlsU2;
         if (Integer.valueOf(bi.dsa12.getText().toString()) != totalU2)
             return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Boys and Girls count not match!!");
         if (totalU2 > totalU5)
@@ -275,6 +280,7 @@ public class SectionAActivity extends AppCompatActivity {
             }
         }
 
+        ChildC = new ChildrenCounter(totalU2, boysU2, girlsU2);
 
         return true;
 
