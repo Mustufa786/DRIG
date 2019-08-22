@@ -76,132 +76,132 @@ public class SectionCActivity extends AppCompatActivity {
         JSONObject sB = new JSONObject();
 
 //at birth
-//          cic3bcg
-        sB.put("cic3bcg", bi.cic3bcga.isChecked() ? "1"
-                : bi.cic3bcgb.isChecked() ? "2"
+//          dsb09bcg
+        sB.put("dsb09bcg", bi.dsb09bcga.isChecked() ? "1"
+                : bi.dsb09bcgb.isChecked() ? "2"
                 : "0");
-        sB.put("cic3bcgsrc", bi.cic3bcgsrca.isChecked() ? "1"
-                : bi.cic3bcgsrcb.isChecked() ? "2"
+        sB.put("dsb09bcgsrc", bi.dsb09bcgsrca.isChecked() ? "1"
+                : bi.dsb09bcgsrcb.isChecked() ? "2"
                 : "0");
 
 
-//          cic3opv0
-        sB.put("cic3opv0", bi.cic3opv0a.isChecked() ? "1"
-                : bi.cic3opv0b.isChecked() ? "2"
+//          dsb09opv0
+        sB.put("dsb09opv0", bi.dsb09opv0a.isChecked() ? "1"
+                : bi.dsb09opv0b.isChecked() ? "2"
                 : "0");
-        sB.put("cic3opv0src", bi.cic3opv0srca.isChecked() ? "1"
-                : bi.cic3opv0srcb.isChecked() ? "2"
+        sB.put("dsb09opv0src", bi.dsb09opv0srca.isChecked() ? "1"
+                : bi.dsb09opv0srcb.isChecked() ? "2"
                 : "0");
 
 
 //       at age of 6
 
-//          cic3opv1
-        sB.put("cic3opv1", bi.cic3opv1a.isChecked() ? "1"
-                : bi.cic3opv1b.isChecked() ? "2"
+//          dsb09opv1
+        sB.put("dsb09opv1", bi.dsb09opv1a.isChecked() ? "1"
+                : bi.dsb09opv1b.isChecked() ? "2"
                 : "0");
-        sB.put("cic3opv1src", bi.cic3opv1srca.isChecked() ? "1"
-                : bi.cic3opv1srcb.isChecked() ? "2"
-                : "0");
-
-//          cic3p1
-        sB.put("cic3p1", bi.cic3p1a.isChecked() ? "1"
-                : bi.cic3p1b.isChecked() ? "2"
-                : "0");
-        sB.put("cic3p1src", bi.cic3p1srca.isChecked() ? "1"
-                : bi.cic3p1srcb.isChecked() ? "2"
+        sB.put("dsb09opv1src", bi.dsb09opv1srca.isChecked() ? "1"
+                : bi.dsb09opv1srcb.isChecked() ? "2"
                 : "0");
 
-
-//          cic3pcv1
-        sB.put("cic3pcv1", bi.cic3pcv1a.isChecked() ? "1"
-                : bi.cic3pcv1b.isChecked() ? "2"
+//          dsb09p1
+        sB.put("dsb09p1", bi.dsb09p1a.isChecked() ? "1"
+                : bi.dsb09p1b.isChecked() ? "2"
                 : "0");
-        sB.put("cic3pcv1src", bi.cic3pcv1srca.isChecked() ? "1"
-                : bi.cic3pcv1srcb.isChecked() ? "2"
+        sB.put("dsb09p1src", bi.dsb09p1srca.isChecked() ? "1"
+                : bi.dsb09p1srcb.isChecked() ? "2"
+                : "0");
+
+
+//          dsb09pcv1
+        sB.put("dsb09pcv1", bi.dsb09pcv1a.isChecked() ? "1"
+                : bi.dsb09pcv1b.isChecked() ? "2"
+                : "0");
+        sB.put("dsb09pcv1src", bi.dsb09pcv1srca.isChecked() ? "1"
+                : bi.dsb09pcv1srcb.isChecked() ? "2"
                 : "0");
 
 //       at age of 10 weeks
 
-//          cic3opv2
-        sB.put("cic3opv2", bi.cic3opv2a.isChecked() ? "1"
-                : bi.cic3opv2b.isChecked() ? "2"
+//          dsb09opv2
+        sB.put("dsb09opv2", bi.dsb09opv2a.isChecked() ? "1"
+                : bi.dsb09opv2b.isChecked() ? "2"
                 : "0");
-        sB.put("cic3opv2src", bi.cic3opv2srca.isChecked() ? "1"
-                : bi.cic3opv2srcb.isChecked() ? "2"
-                : "0");
-
-//          cic3p2
-        sB.put("cic3p2", bi.cic3p2a.isChecked() ? "1"
-                : bi.cic3p2b.isChecked() ? "2"
-                : "0");
-        sB.put("cic3p2src", bi.cic3p2srca.isChecked() ? "1"
-                : bi.cic3p2srcb.isChecked() ? "2"
+        sB.put("dsb09opv2src", bi.dsb09opv2srca.isChecked() ? "1"
+                : bi.dsb09opv2srcb.isChecked() ? "2"
                 : "0");
 
-
-//          cic3pcv2
-        sB.put("cic3pcv2", bi.cic3pcv2a.isChecked() ? "1"
-                : bi.cic3pcv2b.isChecked() ? "2"
+//          dsb09p2
+        sB.put("dsb09p2", bi.dsb09p2a.isChecked() ? "1"
+                : bi.dsb09p2b.isChecked() ? "2"
                 : "0");
-        sB.put("cic3pcv2src", bi.cic3pcv2srca.isChecked() ? "1"
-                : bi.cic3pcv2srcb.isChecked() ? "2"
+        sB.put("dsb09p2src", bi.dsb09p2srca.isChecked() ? "1"
+                : bi.dsb09p2srcb.isChecked() ? "2"
+                : "0");
+
+
+//          dsb09pcv2
+        sB.put("dsb09pcv2", bi.dsb09pcv2a.isChecked() ? "1"
+                : bi.dsb09pcv2b.isChecked() ? "2"
+                : "0");
+        sB.put("dsb09pcv2src", bi.dsb09pcv2srca.isChecked() ? "1"
+                : bi.dsb09pcv2srcb.isChecked() ? "2"
                 : "0");
 
 
 //       at age of 14 weeks
 
-//          cic3opv3
-        sB.put("cic3opv3", bi.cic3opv3a.isChecked() ? "1"
-                : bi.cic3opv3b.isChecked() ? "2"
+//          dsb09opv3
+        sB.put("dsb09opv3", bi.dsb09opv3a.isChecked() ? "1"
+                : bi.dsb09opv3b.isChecked() ? "2"
                 : "0");
-        sB.put("cic3opv3src", bi.cic3opv3srca.isChecked() ? "1"
-                : bi.cic3opv3srcb.isChecked() ? "2"
-                : "0");
-
-//          cic3p3
-        sB.put("cic3p3", bi.cic3p3a.isChecked() ? "1"
-                : bi.cic3p3b.isChecked() ? "2"
-                : "0");
-        sB.put("cic3p3src", bi.cic3p3srca.isChecked() ? "1"
-                : bi.cic3p3srcb.isChecked() ? "2"
+        sB.put("dsb09opv3src", bi.dsb09opv3srca.isChecked() ? "1"
+                : bi.dsb09opv3srcb.isChecked() ? "2"
                 : "0");
 
+//          dsb09p3
+        sB.put("dsb09p3", bi.dsb09p3a.isChecked() ? "1"
+                : bi.dsb09p3b.isChecked() ? "2"
+                : "0");
+        sB.put("dsb09p3src", bi.dsb09p3srca.isChecked() ? "1"
+                : bi.dsb09p3srcb.isChecked() ? "2"
+                : "0");
 
-//          cic3pcv3
-        sB.put("cic3pcv3", bi.cic3pcv3a.isChecked() ? "1"
-                : bi.cic3pcv3b.isChecked() ? "2"
+
+//          dsb09pcv3
+        sB.put("dsb09pcv3", bi.dsb09pcv3a.isChecked() ? "1"
+                : bi.dsb09pcv3b.isChecked() ? "2"
                 : "0");
-        sB.put("cic3pcv3src", bi.cic3pcv3srca.isChecked() ? "1"
-                : bi.cic3pcv3srcb.isChecked() ? "2"
+        sB.put("dsb09pcv3src", bi.dsb09pcv3srca.isChecked() ? "1"
+                : bi.dsb09pcv3srcb.isChecked() ? "2"
                 : "0");
 
-//          cic3ipv
-        sB.put("cic3ipv", bi.cic3ipva.isChecked() ? "1"
-                : bi.cic3ipvb.isChecked() ? "2"
+//          dsb09ipv
+        sB.put("dsb09ipv", bi.dsb09ipva.isChecked() ? "1"
+                : bi.dsb09ipvb.isChecked() ? "2"
                 : "0");
-        sB.put("cic3ipvsrc", bi.cic3ipvsrca.isChecked() ? "1"
-                : bi.cic3ipvsrcb.isChecked() ? "2"
+        sB.put("dsb09ipvsrc", bi.dsb09ipvsrca.isChecked() ? "1"
+                : bi.dsb09ipvsrcb.isChecked() ? "2"
                 : "0");
 
 
 //at the age of 9 months
-//          cic3m1
-        sB.put("cic3m1", bi.cic3m1a.isChecked() ? "1"
-                : bi.cic3m1b.isChecked() ? "2"
+//          dsb09m1
+        sB.put("dsb09m1", bi.dsb09m1a.isChecked() ? "1"
+                : bi.dsb09m1b.isChecked() ? "2"
                 : "0");
-        sB.put("cic3m1src", bi.cic3m1srca.isChecked() ? "1"
-                : bi.cic3m1srcb.isChecked() ? "2"
+        sB.put("dsb09m1src", bi.dsb09m1srca.isChecked() ? "1"
+                : bi.dsb09m1srcb.isChecked() ? "2"
                 : "0");
 
 
 //at age of 15 months
-//          cic3m2
-        sB.put("cic3m2", bi.cic3m2a.isChecked() ? "1"
-                : bi.cic3m2b.isChecked() ? "2"
+//          dsb09m2
+        sB.put("dsb09m2", bi.dsb09m2a.isChecked() ? "1"
+                : bi.dsb09m2b.isChecked() ? "2"
                 : "0");
-        sB.put("cic3m2src", bi.cic3m2srca.isChecked() ? "1"
-                : bi.cic3m2srcb.isChecked() ? "2"
+        sB.put("dsb09m2src", bi.dsb09m2srca.isChecked() ? "1"
+                : bi.dsb09m2srcb.isChecked() ? "2"
                 : "0");
 
         MainApp.fc.setsB(String.valueOf(sB));
