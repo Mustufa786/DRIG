@@ -144,7 +144,12 @@ public class SectionAActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01);
+        if (!ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01))
+            return false;
+
+        int total =
+        if (Integer.valueOf(bi.dsa09.getText().toString()) == 0 && Integer.valueOf(bi.dsa10.getText().toString()) == 0 && Integer.valueOf(bi.dsa11.getText().toString()) == 0)
+            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa09, "Total are not Equal");
     }
 
     public void BtnEnd() {
