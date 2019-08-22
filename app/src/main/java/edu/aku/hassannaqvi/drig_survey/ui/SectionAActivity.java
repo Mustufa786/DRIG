@@ -119,7 +119,6 @@ public class SectionAActivity extends AppCompatActivity {
                 Settings.Secure.ANDROID_ID));
         MainApp.fc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
         settingGPS(MainApp.fc);
-        MainApp.fc.setFormtype(MainApp.SFA);
 
         JSONObject sfa = new JSONObject();
 
@@ -144,7 +143,27 @@ public class SectionAActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01);
+        if (!ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01))
+            return false;
+
+        int boysU5 = Integer.valueOf(bi.dsa10.getText().toString()), girlsU5 = Integer.valueOf(bi.dsa11.getText().toString());
+        int totalU5 = boysU5 + girlsU5;
+        if (Integer.valueOf(bi.dsa09.getText().toString()) != totalU5)
+            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa09, "Boys and Girls count not match!!");
+
+        int boysU2 = Integer.valueOf(bi.dsa13.getText().toString()), girlsU2 = Integer.valueOf(bi.dsa14.getText().toString());
+        int totalU2 = boysU2 + girlsU2;
+        if (Integer.valueOf(bi.dsa12.getText().toString()) != totalU2)
+            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Boys and Girls count not match!!");
+        if (totalU2 > totalU5)
+            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Count can't be greater then Under 5 count!!");
+        if (boysU2 > boysU5)
+            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Boys count can't be greater then Under 5 count!!");
+        if (girlsU2 > girlsU5)
+            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Girls count can't be greater then Under 5 count!!");
+
+        return true;
+
     }
 
     public void BtnEnd() {

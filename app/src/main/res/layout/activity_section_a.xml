@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.SectionAActivity">
 
     <data>
@@ -173,10 +173,11 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/dsa08"
                             style="@style/EditText_number"
-                            android:hint="@string/dsa08"
+                            android:hint="#####-#######-#"
                             android:inputType="number"
                             app:mask="#####-#######-#"
-                            app:required="false" />
+                            app:pattern="^(\\d{5,5}\\-\\d{7,7}\\-\\d{1,1})$"
+                            app:type="equal" />
 
                     </LinearLayout>
 

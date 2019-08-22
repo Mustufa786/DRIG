@@ -18,7 +18,7 @@
     <string name="dsa05"> گھر کا پتہ </string>
     <string name="dsa06"> گھرانے کے سر براہ کا نام </string>
     <string name="dsa07"> موبائل نمبر </string>
-    <string name="dsa08"> CNIC شناختی کارڈنمبر </string>
+    <string name="dsa08"> شناختی کارڈنمبر </string>
     <string name="dsa09"> اس گھر میں پانچ سال سے کم عمر بچوں کی تعداد کیا ہے؟ </string>
     <string name="dsa09total"> کل تعداد </string>
     <string name="dsa09boy"> بچے </string>
@@ -43,7 +43,7 @@
     <string name="dsb05"> بچے کی عمر </string>
     <string name="dsb06"> کیا حفاظتی ٹیکہ جات کا کارڈ موجود ہے؟ </string>
     <string name="dsb07"> حفاظتی ٹیکہ جات کے کارڈ کا QR کوڈ </string>
-    <string name="dsb08"> بچے کاای پی آئی نمبرEPI </string>
+    <string name="dsb08"> بچے کاای پی آئی نمبر </string>
     <string name="dsb04a">تاریخ پیدائش</string>
     <string name="dsb04b">عمر</string>
 

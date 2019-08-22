@@ -178,8 +178,8 @@
                             style="@style/EditText_number"
                             android:hint="@string/day"
                             android:maxLength="2"
-                            android:text='@{!dsb04Ageb.checked ?  "" : dsb05m.getText.toString }'
-                            app:maxValue="11"
+                            android:text='@{!dsb04Ageb.checked ?  "" : dsb05d.getText.toString }'
+                            app:maxValue="29"
                             app:minValue="0"
                             app:required="true"
                             app:type="range" />
