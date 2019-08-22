@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.drig_survey.ui;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -15,7 +16,7 @@ import edu.aku.hassannaqvi.drig_survey.core.MainApp;
 import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySectionCBinding;
 import edu.aku.hassannaqvi.drig_survey.validation.ValidatorClass;
 
-public class SectionCActivity {
+public class SectionCActivity extends AppCompatActivity {
 
     ActivitySectionCBinding bi;
     DatabaseHelper db;
@@ -212,7 +213,7 @@ public class SectionCActivity {
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSB();
+        int updcount = db.updateCSB();
 
         if (updcount == 1) {
             return true;

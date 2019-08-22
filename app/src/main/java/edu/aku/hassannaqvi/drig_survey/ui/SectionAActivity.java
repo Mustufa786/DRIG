@@ -86,9 +86,10 @@ public class SectionAActivity extends AppCompatActivity {
             if (!UpdateDB()) {
                 Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
                 return;
-            } else {
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
             }
+
+            finish();
+            startActivity(new Intent(this, SectionBActivity.class));
 
         } catch (JSONException e) {
             e.printStackTrace();

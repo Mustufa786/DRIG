@@ -5,39 +5,25 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import edu.aku.hassannaqvi.drig_survey.R;
-import edu.aku.hassannaqvi.drig_survey.contracts.FormsContract;
-import edu.aku.hassannaqvi.drig_survey.contracts.SchoolContract;
+import edu.aku.hassannaqvi.drig_survey.contracts.ChildContract;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
 import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySectionCListingBinding;
-import edu.aku.hassannaqvi.drig_survey.other.CheckingID;
-import edu.aku.hassannaqvi.drig_survey.validation.ClearClass;
 import edu.aku.hassannaqvi.drig_survey.validation.ValidatorClass;
 
 public class SectionBActivity extends AppCompatActivity {
 
     ActivitySectionCListingBinding bi;
     DatabaseHelper db;
-    Map<String, SchoolContract> schoolMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,154 +40,11 @@ public class SectionBActivity extends AppCompatActivity {
 
         // Initialize db
         db = new DatabaseHelper(this);
-        filledSpinners();
     }
 
-    private void filledSpinners() {
-
-        List<String> temp_type = new ArrayList<>();
-
-        for (String stype : MainApp.schTypes) {
-            if (stype.equals("Other")) continue;
-            temp_type.add(stype);
-        }
-
-        bi.tcvcl00.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, temp_type));
-        bi.tcvcl21.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.schClasses));
-    }
 
     private void setListeners() {
-        bi.tcvcl11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == bi.tcvcl11b.getId())
-                    ClearClass.ClearAllFields(bi.childSec01, null);
-            }
-        });
 
-        //settting spinner listeners
-        bi.tcvcl00.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                ArrayList<String> schNames = new ArrayList<>();
-
-                if (i != 0) {
-
-                    ArrayList<SchoolContract> schoolContract = db.getSchoolWRTType(String.valueOf(bi.tcvcl00.getSelectedItemPosition()), "0");
-                    schoolMap = new HashMap<>();
-
-                    for (SchoolContract school : schoolContract) {
-                        schoolMap.put(school.getSch_name().toUpperCase() + "-" + school.getSch_code(), school);
-                        schNames.add(school.getSch_name().toUpperCase() + "-" + school.getSch_code());
-                    }
-
-                } else {
-                    bi.childSec00.setVisibility(View.GONE);
-                    ClearClass.ClearAllFields(bi.childSec00, null);
-                    bi.childSec00a.setVisibility(View.GONE);
-                }
-
-                bi.tcvcl01.setText(null);
-                bi.tcvcl01.setAdapter(new ArrayAdapter<>(SectionBActivity.this, android.R.layout.simple_spinner_dropdown_item, schNames));
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        bi.tcvcl01.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                bi.childSec00.setVisibility(View.GONE);
-                bi.childSec00a.setVisibility(View.GONE);
-                settingSchLabels(null, null);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });
-
-        bi.tcvcl01.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (schoolMap.get(bi.tcvcl01.getText().toString()) == null) {
-                    settingSchLabels(null, null);
-                    return;
-                }
-
-                settingSchLabels(schoolMap.get(bi.tcvcl01.getText().toString()).getSch_code(), schoolMap.get(bi.tcvcl01.getText().toString()).getSch_add());
-            }
-        });
-
-        bi.tcvcl11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.tcvcl11a.getId())
-                    ClearClass.ClearAllFields(bi.childSec01, null);
-            }
-        });
-
-        bi.tcvcl17.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.tcvcl17.getId())
-                    ClearClass.ClearAllFields(bi.childSec02, null);
-            }
-        });
-
-    }
-
-    private void settingSchLabels(String schCode, String schAdd) {
-        bi.txtschcode.setText(schCode);
-        bi.txtschadd.setText(schAdd);
-    }
-
-    public void BtnCheckSchool() {
-
-        if (!formValidation()) return;
-
-        if (schoolMap.get(bi.tcvcl01.getText().toString()) == null) {
-            ValidatorClass.EmptyCustomeTextBox(this, bi.tcvcl01, "This data is not accurate!!");
-            return;
-        }
-
-        SchoolContract schoolContract = db.getSchoolWRTTypeAndCode(
-                String.valueOf(bi.tcvcl00.getSelectedItemPosition()),
-                schoolMap.get(bi.tcvcl01.getText().toString()).getSch_code());
-
-        bi.childSec00.setVisibility(View.GONE);
-        ClearClass.ClearAllFields(bi.childSec00, null);
-        bi.childSec00a.setVisibility(View.GONE);
-
-        if (schoolContract == null) {
-            Toast.makeText(SectionBActivity.this, "School not found!!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (schoolContract.getSch_status() == null) {
-            Toast.makeText(SectionBActivity.this, "School not found!!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-
-        if (CheckingID.checkFile(SectionBActivity.this, MainApp.childListing)) {
-            String vacID = CheckingID.accessingFile(getSharedPreferences("tagName", MODE_PRIVATE).getString("tagName", null), MainApp.childListing, false);
-            bi.tcvcl18.setText(vacID);
-        }
-
-
-        bi.childSec00.setVisibility(View.VISIBLE);
-        bi.childSec00a.setVisibility(View.VISIBLE);
     }
 
     public void BtnContinue() {
@@ -209,15 +52,12 @@ public class SectionBActivity extends AppCompatActivity {
 
             if (!formValidation()) return;
 
-//            if (!MainApp.checkingGPSRules(this)) return;
-
             SaveDraft();
 
             if (!UpdateDB()) {
                 Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
                 return;
             }
-
 
             finish();
             startActivity(new Intent(this, SectionBActivity.class));
@@ -230,19 +70,11 @@ public class SectionBActivity extends AppCompatActivity {
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
-        long updcount = db.addForm(MainApp.fc);
-        MainApp.fc.set_ID(String.valueOf(updcount));
+        long updcount = db.addChildForm(MainApp.cc);
+        MainApp.cc.set_ID(String.valueOf(updcount));
         if (updcount > 0) {
-            MainApp.fc.setUID((MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
-            db.updateFormID();
-
-            if (bi.tcvcl12a.isChecked() &&
-                    bi.tcvcl13a.isChecked() &&
-                    bi.tcvcl14a.isChecked() &&
-                    bi.tcvcl15a.isChecked() &&
-                    bi.tcvcl16a.isChecked()
-            )
-                CheckingID.accessingFile(null, MainApp.childListing, true);
+            MainApp.cc.set_UID((MainApp.cc.getDeviceID() + MainApp.cc.get_ID()));
+            db.updateChildFormID();
 
             return true;
         }
@@ -251,23 +83,16 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        MainApp.fc = new FormsContract();
-        MainApp.fc.setDevicetagID(getSharedPreferences("tagName", MODE_PRIVATE).getString("tagName", null));
-        MainApp.fc.setFormDate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
-        MainApp.fc.setUser(MainApp.userName);
-        MainApp.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+        MainApp.cc = new ChildContract();
+        MainApp.cc.setDevicetagID(getSharedPreferences("tagName", MODE_PRIVATE).getString("tagName", null));
+        MainApp.cc.setFormDate(new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime()));
+        MainApp.cc.setUser(MainApp.userName);
+        MainApp.cc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
-        MainApp.fc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
-        settingGPS(MainApp.fc);
-        MainApp.fc.setFormtype(MainApp.CHILDLISTINGTYPE);
+        MainApp.cc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
+        settingGPS(MainApp.cc);
 
         JSONObject child = new JSONObject();
-//        child.put("tcvcl00", bi.tcvcl00.getSelectedItem());
-
-        child.put("sch_code", schoolMap.get(bi.tcvcl01.getText().toString()).getSch_code());
-        child.put("sch_add", schoolMap.get(bi.tcvcl01.getText().toString()).getSch_add());
-        child.put("sch_type", schoolMap.get(bi.tcvcl01.getText().toString()).getSch_type());
-        child.put("tcvcl01", schoolMap.get(bi.tcvcl01.getText().toString()).getSch_name());
 
         child.put("tcvcl02", bi.tcvcl02.getText().toString());
         child.put("tcvcl21", bi.tcvcl21.getSelectedItem().toString()); //Newly added when the app is already on field
@@ -302,7 +127,7 @@ public class SectionBActivity extends AppCompatActivity {
         } else
             child.put("tcvcl18", "");
 
-        MainApp.fc.setsA(String.valueOf(child));
+        MainApp.cc.setsA(String.valueOf(child));
     }
 
     private boolean formValidation() {
@@ -314,21 +139,6 @@ public class SectionBActivity extends AppCompatActivity {
                 return ValidatorClass.EmptyCustomeTextBox(this, bi.tcvcl04y, "Days and Months criteria not meet!!");
         }
 
-        if (!bi.tcvcl07.getText().toString().isEmpty()) {
-            if (bi.tcvcl07.getText().toString().length() != 15)
-                return ValidatorClass.EmptyCustomeTextBox(this, bi.tcvcl07, "Length is not accurate!!");
-        }
-
-        if (!bi.tcvcl09.getText().toString().isEmpty()) {
-            if (bi.tcvcl09.getText().toString().length() != 11)
-                return ValidatorClass.EmptyCustomeTextBox(this, bi.tcvcl09, "Length is not accurate!!");
-        }
-
-        if (!bi.tcvcl10.getText().toString().isEmpty()) {
-            if (bi.tcvcl10.getText().toString().length() != 11)
-                return ValidatorClass.EmptyCustomeTextBox(this, bi.tcvcl10, "Length is not accurate!!");
-        }
-
         return true;
     }
 
@@ -336,11 +146,11 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.endActivity(this, this, false);
     }
 
-    public void settingGPS(FormsContract fc) {
+    public void settingGPS(ChildContract cc) {
         MainApp.LocClass locClass = MainApp.setGPS(this);
-        fc.setGpsLat(locClass.getLatitude());
-        fc.setGpsLng(locClass.getLongitude());
-        fc.setGpsAcc(locClass.getAccuracy());
-        fc.setGpsDT(locClass.getTime());
+        cc.setGpsLat(locClass.getLatitude());
+        cc.setGpsLng(locClass.getLongitude());
+        cc.setGpsAcc(locClass.getAccuracy());
+        cc.setGpsDT(locClass.getTime());
     }
 }

@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.drig_survey.R;
+import edu.aku.hassannaqvi.drig_survey.contracts.ChildContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.FormsContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.VersionAppContract;
 import edu.aku.hassannaqvi.drig_survey.core.AndroidDatabaseManager;
@@ -457,7 +458,7 @@ public class MainActivity extends AppCompatActivity {
                     "Forms",
                     "updateSyncedForms",
                     FormsContract.class,
-                    FormsContract.FormsTable._URL1,
+                    FormsContract.FormsTable._URL,
                     db.getUnsyncedForms(MainApp.SFA)
             ).execute();
 
@@ -465,10 +466,10 @@ public class MainActivity extends AppCompatActivity {
             new SyncAllData(
                     this,
                     "Child-Forms",
-                    "updateSyncedForms",
-                    FormsContract.class,
-                    FormsContract.FormsTable._URL2,
-                    db.getUnsyncedForms(MainApp.SFB)
+                    "updateSyncedChildForms",
+                    ChildContract.class,
+                    ChildContract.ChildFormsTable._URL,
+                    db.getUnsyncedChildForms()
             ).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
