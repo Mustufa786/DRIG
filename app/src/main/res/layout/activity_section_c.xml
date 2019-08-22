@@ -17,6 +17,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:layoutDirection="rtl"
             android:id="@+id/fldGrpcic303"
             style="@style/linearlayout_view">
 
@@ -34,7 +35,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:orientation="vertical">
 
                 <!-- bcg -->
