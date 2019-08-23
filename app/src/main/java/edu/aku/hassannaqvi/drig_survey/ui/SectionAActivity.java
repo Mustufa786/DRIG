@@ -151,14 +151,6 @@ public class SectionAActivity extends AppCompatActivity {
 
             }
         });
-
-        bi.dsa18.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i != bi.dsa18a.getId())
-                    ClearClass.ClearAllFields(bi.fldGrpSecA01, null);
-            }
-        });
     }
 
     private void loadHFFromDB() {
@@ -251,7 +243,6 @@ public class SectionAActivity extends AppCompatActivity {
         sfa.put("dsa14", bi.dsa14.getText().toString());
         sfa.put("dsa15", bi.dsa15a.isChecked() ? "1" : bi.dsa15b.isChecked() ? "2" : "0");
         sfa.put("dsa16", bi.dsa16.getText().toString());
-        sfa.put("dsa18", bi.dsa18a.isChecked() ? "1" : bi.dsa18b.isChecked() ? "2" : bi.dsa18c.isChecked() ? "3" : bi.dsa18d.isChecked() ? "4" : "0");
 
         for (int i = 0; i < childllArray16.size(); i++) {
             sfa.put("dsa16" + String.format("%02d", (i + 1)) + "m", monthArray16.get(i).getText().toString());
@@ -268,8 +259,6 @@ public class SectionAActivity extends AppCompatActivity {
     private boolean formValidation() {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01))
             return false;
-
-        if (!bi.dsa18a.isChecked()) return true;
 
         int boysU5 = Integer.valueOf(bi.dsa10.getText().toString()), girlsU5 = Integer.valueOf(bi.dsa11.getText().toString());
         int totalU5 = boysU5 + girlsU5;

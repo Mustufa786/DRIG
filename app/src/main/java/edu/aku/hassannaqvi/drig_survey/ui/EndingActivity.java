@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
 import edu.aku.hassannaqvi.drig_survey.R;
@@ -16,15 +17,15 @@ public class EndingActivity extends AppCompatActivity {
 
     private static final String TAG = EndingActivity.class.getSimpleName();
 
-    ActivityEndingBinding binding;
+    ActivityEndingBinding bi;
     int type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_ending);
-        binding.setCallback(this);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_ending);
+        bi.setCallback(this);
 
         Boolean check = getIntent().getExtras().getBoolean("complete");
         type = getIntent().getIntExtra("type", 0);
@@ -36,11 +37,25 @@ public class EndingActivity extends AppCompatActivity {
 
 
         if (check) {
-            binding.istatusa.setEnabled(true);
-            binding.istatusb.setEnabled(false);
+            bi.istatusa.setEnabled(true);
+            bi.istatusb.setEnabled(false);
+            bi.istatusc.setEnabled(false);
+            bi.istatusd.setEnabled(false);
         } else {
-            binding.istatusa.setEnabled(false);
-            binding.istatusb.setEnabled(true);
+            bi.istatusa.setEnabled(false);
+            bi.istatusb.setEnabled(true);
+            bi.istatusc.setEnabled(true);
+            bi.istatusd.setEnabled(true);
+        }
+
+        if (type == 1) {
+            bi.istatusb.setText(R.string.dsa18b);
+            bi.istatusc.setText(R.string.dsa18c);
+            bi.istatusd.setText(R.string.dsa18d);
+        } else {
+            bi.istatusb.setText(R.string.istatusb);
+            bi.istatusc.setVisibility(View.GONE);
+            bi.istatusd.setVisibility(View.GONE);
         }
 
 /*        istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -83,7 +98,7 @@ public class EndingActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() {
-        String statusCode = binding.istatusa.isChecked() ? "1" : binding.istatusb.isChecked() ? "2" : "0";
+        String statusCode = bi.istatusa.isChecked() ? "1" : bi.istatusb.isChecked() ? "2" : bi.istatusc.isChecked() ? "3" : bi.istatusd.isChecked() ? "4" : "0";
 
         if (type == 1)
             MainApp.fc.setIstatus(statusCode);
@@ -115,7 +130,7 @@ public class EndingActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return ValidatorClass.EmptyRadioButton(this, binding.istatus, binding.istatusb, getString(R.string.istatus));
+        return ValidatorClass.EmptyRadioButton(this, bi.istatus, bi.istatusb, getString(R.string.istatus));
     }
 
 

@@ -16,11 +16,6 @@
     <string name="dsa03"> CHW </string>
     <string name="dsa04"> گھرانے کا نمبر رجسٹر میں سے دیکھ کر لکھیں </string>
     <string name="dsa05"> گھر کا پتہ </string>
-    <string name="dsa18"> کیا اجازات مل گی اور نہ ملی تو کیا وجہ تھی؟ </string>
-    <string name="dsa18a"> اجازات مل گی </string>
-    <string name="dsa18b"> انٹرویو کے دوران منع کر دیا </string>
-    <string name="dsa18c"> گهر بند تھا </string>
-    <string name="dsa18d"> بالغ جوابدہندہ موجود نہیں تھا </string>
     <string name="dsa06"> گھرانے کے سر براہ کا نام </string>
     <string name="dsa07"> موبائل نمبر </string>
     <string name="dsa08"> شناختی کارڈنمبر </string>
@@ -38,6 +33,11 @@
     <string name="dsa12week"> ہفتے </string>
     <string name="dsa12month"> مہینے </string>
     <string name="dsa16"> حاملہ خاتون کی تعداد </string>
+    <string name="dsa18"> کیا اجازات مل گی اور نہ ملی تو کیا وجہ تھی؟ </string>
+    <string name="dsa18a"> اجازات مل گی </string>
+    <string name="dsa18b"> انٹرویو کے دوران منع کر دیا </string>
+    <string name="dsa18c"> گهر بند تھا </string>
+    <string name="dsa18d"> بالغ جوابدہندہ موجود نہیں تھا </string>
 
     <!--Section B-->
     <string name="dsbh"> دو سال سے کم عمر بچوں کے حفاظتی ٹیکہ جات کی تفصیل </string>
@@ -114,7 +114,7 @@
     <string name="complete"> مکمل</string>
     <string name="incomplete">نا مکمل</string>
 
-    <string name="istatus"> OUTCOME OF INTERVIEW </string>
+    <string name="istatus"> انٹروہو کا نتیجہ </string>
     <string name="istatusa"> مکمل </string>
     <string name="istatusb"> نا مکمل </string>
 
