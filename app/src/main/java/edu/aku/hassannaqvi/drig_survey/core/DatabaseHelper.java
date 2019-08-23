@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import edu.aku.hassannaqvi.drig_survey.contracts.CHWContract;
+import edu.aku.hassannaqvi.drig_survey.contracts.CHWContract.CHWTable;
 import edu.aku.hassannaqvi.drig_survey.contracts.ChildContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.ChildContract.ChildFormsTable;
 import edu.aku.hassannaqvi.drig_survey.contracts.FormsContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.drig_survey.contracts.HFContract;
-import edu.aku.hassannaqvi.drig_survey.contracts.HFContract.HFTable;
 import edu.aku.hassannaqvi.drig_survey.contracts.SchoolContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.SchoolContract.SchoolTable;
 import edu.aku.hassannaqvi.drig_survey.contracts.UCsContract;
@@ -71,7 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED + " TEXT," +
             FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
-    private static final String SQL_DELETE_TALUKAS = "DROP TABLE IF EXISTS " + HFTable.TABLE_NAME;
+    private static final String SQL_DELETE_TALUKAS = "DROP TABLE IF EXISTS " + CHWTable.TABLE_NAME;
     private static final String SQL_CREATE_CHILD_FORMS = "CREATE TABLE "
             + ChildFormsTable.TABLE_NAME + "("
             + ChildFormsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -103,12 +103,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
     private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
     private static final String SQL_DELETE_SCHOOL = "DROP TABLE IF EXISTS " + SchoolTable.TABLE_NAME;
-    private static final String SQL_DELETE_HF = "DROP TABLE IF EXISTS " + HFTable.TABLE_NAME;
+    private static final String SQL_DELETE_HF = "DROP TABLE IF EXISTS " + CHWTable.TABLE_NAME;
     private static final String SQL_DELETE_CHILD_FORMS = "DROP TABLE IF EXISTS " + ChildFormsTable.TABLE_NAME;
-    final String SQL_CREATE_HF = "CREATE TABLE " + HFTable.TABLE_NAME + " (" +
-            HFTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            HFTable.COLUMN_HF_CODE + " TEXT, " +
-            HFTable.COLUMN_HF_NAME + " TEXT " +
+    final String SQL_CREATE_HF = "CREATE TABLE " + CHWTable.TABLE_NAME + " (" +
+            CHWTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            CHWTable.COLUMN_CHW_CODE + " TEXT, " +
+            CHWTable.COLUMN_UC_CODE + " TEXT, " +
+            CHWTable.COLUMN_CHW_NAME + " TEXT " +
             ");";
     private final String SQL_CREATE_SCHOOL = "CREATE TABLE " + SchoolTable.TABLE_NAME + " (" +
             SchoolTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -147,23 +148,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void syncHF(JSONArray Talukaslist) {
+    public void syncCHWs(JSONArray Talukaslist) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(HFTable.TABLE_NAME, null, null);
+        db.delete(CHWTable.TABLE_NAME, null, null);
         try {
             JSONArray jsonArray = Talukaslist;
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
 
-                HFContract Vc = new HFContract();
+                CHWContract Vc = new CHWContract();
                 Vc.Sync(jsonObjectCC);
 
                 ContentValues values = new ContentValues();
 
-                values.put(HFTable.COLUMN_HF_CODE, Vc.getHfcode());
-                values.put(HFTable.COLUMN_HF_NAME, Vc.getHfname());
+                values.put(CHWTable.COLUMN_CHW_CODE, Vc.getChwcode());
+                values.put(CHWTable.COLUMN_UC_CODE, Vc.getUccode());
+                values.put(CHWTable.COLUMN_CHW_NAME, Vc.getChwname());
 
-                db.insert(HFTable.TABLE_NAME, null, values);
+                db.insert(CHWTable.TABLE_NAME, null, values);
             }
         } catch (Exception e) {
         } finally {
@@ -222,13 +224,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Collection<HFContract> getAllHF() {
+    public Collection<CHWContract> getAllCHW() {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
-                HFTable.COLUMN_HF_CODE,
-                HFTable.COLUMN_HF_NAME
+                CHWTable.COLUMN_CHW_CODE,
+                CHWTable.COLUMN_CHW_NAME,
+                CHWTable.COLUMN_UC_CODE
         };
 
         String whereClause = null;
@@ -236,12 +239,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String groupBy = null;
         String having = null;
 
-        String orderBy = HFTable.COLUMN_HF_NAME + " ASC";
+        String orderBy = CHWTable.COLUMN_CHW_NAME + " ASC";
 
-        Collection<HFContract> allDC = new ArrayList<>();
+        Collection<CHWContract> allDC = new ArrayList<>();
         try {
             c = db.query(
-                    HFTable.TABLE_NAME,  // The table to query
+                    CHWTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
                     whereClause,               // The columns for the WHERE clause
                     whereArgs,                 // The values for the WHERE clause
@@ -250,7 +253,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     orderBy                    // The sort order
             );
             while (c.moveToNext()) {
-                allDC.add(new HFContract().HydrateHF(c));
+                allDC.add(new CHWContract().HydrateHF(c));
             }
         } finally {
             if (c != null) {

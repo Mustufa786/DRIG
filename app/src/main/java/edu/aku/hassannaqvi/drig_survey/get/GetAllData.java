@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.drig_survey.contracts.HFContract;
+import edu.aku.hassannaqvi.drig_survey.contracts.CHWContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.SchoolContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.UCsContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.UsersContract;
@@ -62,8 +62,8 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     case "User":
                         url = new URL(hostItem + UsersContract.UsersTable._URI);
                         break;
-                    case "HF":
-                        url = new URL(hostItem + HFContract.HFTable._URI);
+                    case "CHW":
+                        url = new URL(hostItem + CHWContract.CHWTable._URI);
                         break;
                     case "UC":
                         url = new URL(hostItem + UCsContract.UCsTable._URI);
@@ -123,8 +123,8 @@ public class GetAllData extends AsyncTask<String, String, String> {
                         case "User":
                             db.syncUser(jsonArray);
                             break;
-                        case "HF":
-                            db.syncHF(jsonArray);
+                        case "CHW":
+                            db.syncCHWs(jsonArray);
                             break;
                         case "UC":
                             db.syncUCs(jsonArray);

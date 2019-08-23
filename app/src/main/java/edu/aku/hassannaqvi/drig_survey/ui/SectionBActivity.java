@@ -7,6 +7,8 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -61,7 +63,26 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
+        bi.dsb0799.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    bi.dsb07.setText(null);
+                    bi.dsb07.setEnabled(false);
+                } else {
+                    bi.dsb07.setEnabled(true);
+                }
 
+            }
+        });
+
+        bi.dsb06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.dsb06a.getId())
+                    bi.dsb10.clearCheck();
+            }
+        });
     }
 
     public void BtnContinue() {
@@ -124,7 +145,9 @@ public class SectionBActivity extends AppCompatActivity {
 
         sfb.put("dsb06", bi.dsb06a.isChecked() ? "1" : bi.dsb06b.isChecked() ? "2" : "0");
         sfb.put("dsb07", bi.dsb07.getText().toString());
+        sfb.put("dsb0799", bi.dsb0799.isChecked() ? "99" : "0");
         sfb.put("dsb08", bi.dsb08.getText().toString());
+        sfb.put("dsb10", bi.dsb10a.isChecked() ? "1" : bi.dsb10b.isChecked() ? "2" : "0");
 
         MainApp.cc.setsA(String.valueOf(sfb));
 

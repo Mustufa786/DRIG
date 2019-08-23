@@ -50,7 +50,6 @@ import edu.aku.hassannaqvi.drig_survey.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
 import edu.aku.hassannaqvi.drig_survey.databinding.ActivityMainBinding;
-import edu.aku.hassannaqvi.drig_survey.get.GetAllData;
 import edu.aku.hassannaqvi.drig_survey.sync.SyncAllData;
 
 public class MainActivity extends AppCompatActivity {
@@ -437,11 +436,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void CheckCluster(View v) {
 
-    }
-
-    public void downloadData(View view) {
-        Toast.makeText(this, "Sync Schools", Toast.LENGTH_LONG).show();
-        new GetAllData(this, "School").execute();
     }
 
     public void syncServer(View view) {

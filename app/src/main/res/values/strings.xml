@@ -13,7 +13,7 @@
     <string name="dsah"> سروے فارم</string>
     <string name="dsa01"> ٹا وُن کا نام اور کوڈ </string>
     <string name="dsa02"> یونین کونسل کا نام اور کوڈ </string>
-    <string name="dsa03"> CHW </string>
+    <string name="dsa03"> ۔CHW  کا نام اور کوڈ </string>
     <string name="dsa04"> گھرانے کا نمبر رجسٹر میں سے دیکھ کر لکھیں </string>
     <string name="dsa05"> گھر کا پتہ </string>
     <string name="dsa06"> گھرانے کے سر براہ کا نام </string>
@@ -50,7 +50,9 @@
     <string name="dsb05"> بچے کی عمر </string>
     <string name="dsb06"> کیا حفاظتی ٹیکہ جات کا کارڈ موجود ہے؟ </string>
     <string name="dsb07"> حفاظتی ٹیکہ جات کے کارڈ کا QR کوڈ </string>
+    <string name="dsb0799">۔QR کوڈ موجود نہیں </string>
     <string name="dsb08"> بچے کاای پی آئی نمبر </string>
+    <string name="dsb10"> مشاہدہ کریں،آپ نے کاڈر دیکھا؟ اگر ہاں تو جوابدہندہ سے کارڈ دکھانے کے لۓ کہیں، </string>
     <string name="dsb04a">تاریخ پیدائش</string>
     <string name="dsb04b">عمر</string>
 

@@ -31,7 +31,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -51,17 +50,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.drig_survey.R;
-import edu.aku.hassannaqvi.drig_survey.contracts.HFContract;
-import edu.aku.hassannaqvi.drig_survey.contracts.UCsContract;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
 import edu.aku.hassannaqvi.drig_survey.get.GetAllData;
@@ -81,17 +76,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "test1234:test1234", "testS12345:testS12345", "bar@example.com:world"
     };
-    // Spinners
-    ArrayAdapter<String> dataAdapter;
-
-    ArrayList<String> lablesTalukas;
-    Collection<HFContract> TalukasList;
-    Map<String, String> talukasMap;
-
-    ArrayList<String> lablesUCs;
-    Collection<UCsContract> UcsList;
-    Map<String, String> ucsMap;
-
 
     // UI references.
     @BindView(R.id.login_progress)
@@ -557,12 +541,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 public void run() {
                     Toast.makeText(mContext, "Sync Users", Toast.LENGTH_LONG).show();
                     new GetAllData(mContext, "User").execute();
-                    /*Toast.makeText(mContext, "Sync UCs", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "UC").execute();
-                    Toast.makeText(mContext, "Sync HF", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "HF").execute();
-                    Toast.makeText(mContext, "Sync CCChildren", Toast.LENGTH_LONG).show();
-                    new GetAllData(mContext, "CCChildren").execute();*/
+                    Toast.makeText(mContext, "Sync CHW", Toast.LENGTH_LONG).show();
+                    new GetAllData(mContext, "CHW").execute();
                     Toast.makeText(mContext, "Sync App version", Toast.LENGTH_LONG).show();
                     new GetAllData(mContext, "Appversion").execute();
                 }

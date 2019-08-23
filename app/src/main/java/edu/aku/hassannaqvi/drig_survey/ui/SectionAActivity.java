@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -28,8 +29,8 @@ import java.util.List;
 import java.util.Map;
 
 import edu.aku.hassannaqvi.drig_survey.R;
+import edu.aku.hassannaqvi.drig_survey.contracts.CHWContract;
 import edu.aku.hassannaqvi.drig_survey.contracts.FormsContract;
-import edu.aku.hassannaqvi.drig_survey.contracts.HFContract;
 import edu.aku.hassannaqvi.drig_survey.core.DatabaseHelper;
 import edu.aku.hassannaqvi.drig_survey.core.MainApp;
 import edu.aku.hassannaqvi.drig_survey.databinding.ActivitySectionABinding;
@@ -43,8 +44,8 @@ public class SectionAActivity extends AppCompatActivity {
 
     private ActivitySectionABinding bi;
     private DatabaseHelper db;
-    private Map<String, HFContract> hfMap;
-    private List<String> hfName = new ArrayList<>(Arrays.asList("...."));
+    private Map<String, CHWContract> chwMap;
+    private List<String> chwName = new ArrayList<>(Arrays.asList("...."));
     private String screenID = "", caseID = "", tagID = "";
     private boolean eligibleFlag = false;
     public static ChildrenCounter ChildC;
@@ -154,20 +155,20 @@ public class SectionAActivity extends AppCompatActivity {
     }
 
     private void loadHFFromDB() {
-        Collection<HFContract> allHF = db.getAllHF();
-        if (allHF.size() == 0) return;
-        hfName = new ArrayList<>();
-        hfName.add("....");
-        hfMap = new HashMap<>();
-        for (HFContract hf : allHF) {
-            hfName.add(hf.getHfname());
-            hfMap.put(hf.getHfname(), hf);
+        Collection<CHWContract> allCHW = db.getAllCHW();
+        if (allCHW.size() == 0) return;
+        chwName = new ArrayList<>();
+        chwName.add("....");
+        chwMap = new HashMap<>();
+        for (CHWContract chw : allCHW) {
+            chwName.add(chw.getChwname());
+            chwMap.put(chw.getChwname(), chw);
         }
-        filledSpinners(hfName);
+        filledSpinners(chwName);
     }
 
-    private void filledSpinners(List<String> hfNames) {
-//        bi.hfcode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, hfNames));
+    private void filledSpinners(List<String> chwNames) {
+        bi.dsa03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, chwNames));
     }
 
     private void setContentUI() {
@@ -175,6 +176,9 @@ public class SectionAActivity extends AppCompatActivity {
         // Initialize db
         db = new DatabaseHelper(this);
         tagID = getSharedPreferences("tagName", MODE_PRIVATE).getString("tagName", null);
+
+        bi.dsa01.setText("Gadaap");
+        bi.dsa02.setText("UC-4 Gujro");
     }
 
     public void BtnContinue() {
@@ -227,9 +231,10 @@ public class SectionAActivity extends AppCompatActivity {
 
         JSONObject sfa = new JSONObject();
 
-        /*sfa.put("dsa01", hfMap.get(bi.dsa01.getSelectedItem().toString()).getHfcode());
-        sfa.put("dsa02", hfMap.get(bi.dsa02.getSelectedItem().toString()).getHfcode());
-        sfa.put("dsa03", hfMap.get(bi.dsa03.getSelectedItem().toString()).getHfcode());*/
+        sfa.put("dsa01", bi.dsa01.getText().toString());
+        sfa.put("dsa02", bi.dsa02.getText().toString());
+        sfa.put("dsa03", chwMap.get(bi.dsa03.getSelectedItem().toString()).getChwcode());
+        sfa.put("dsa03uc", chwMap.get(bi.dsa03.getSelectedItem().toString()).getUccode());
         sfa.put("dsa04", bi.dsa04.getText().toString());
         sfa.put("dsa05", bi.dsa05.getText().toString());
         sfa.put("dsa06", bi.dsa06.getText().toString());
