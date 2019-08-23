@@ -293,7 +293,7 @@ public class SectionAActivity extends AppCompatActivity {
 
     public void BtnEnd() {
         try {
-            if (!ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01)) return;
+            if (!ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf02)) return;
 
             SaveDraft();
 
