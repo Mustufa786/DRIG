@@ -200,27 +200,9 @@
                         style="@style/EditText_number"
                         android:hint="@string/dsa09total"
                         android:maxLength="2"
-                        app:maxValue="15"
-                        app:minValue="0"
-                        app:type="range" />
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/dsa10"
-                        style="@style/EditText_number"
-                        android:hint="@string/dsa09boy"
-                        android:maxLength="2"
-                        app:maxValue="15"
-                        app:minValue="0"
-                        app:type="range" />
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/dsa11"
-                        style="@style/EditText_number"
-                        android:hint="@string/dsa09girl"
-                        android:maxLength="2"
-                        app:maxValue="15"
-                        app:minValue="0"
-                        app:type="range" />
+                        app:maxValue="30"
+                        app:minValue="1"
+                        app:type="range" />=
 
                 </LinearLayout>
 
@@ -236,27 +218,31 @@
                         android:text="@string/dsa10" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/dsa12"
+                        android:id="@+id/dsa10"
                         style="@style/EditText_number"
-                        android:hint="@string/dsa10total"
+                        android:hint="@string/dsa09total"
                         android:maxLength="2"
                         app:maxValue="15"
                         app:minValue="0"
                         app:type="range" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/dsa13"
-                        style="@style/EditText_number"
-                        android:hint="@string/dsa10boy"
-                        android:maxLength="2"
-                        app:maxValue="15"
-                        app:minValue="0"
-                        app:type="range" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!--EditText dsa11 -->
+            <android.support.v7.widget.CardView style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+                    <TextView
+                        style="@style/i_textview"
+                        android:text="@string/dsa11" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/dsa14"
+                        android:id="@+id/dsa11"
                         style="@style/EditText_number"
-                        android:hint="@string/dsa10girl"
+                        android:hint="@string/dsa09total"
                         android:maxLength="2"
                         app:maxValue="15"
                         app:minValue="0"
@@ -273,7 +259,7 @@
 
                     <TextView
                         style="@style/i_textview"
-                        android:text="@string/dsa11" />
+                        android:text="@string/dsa15" />
 
                     <RadioGroup
                         android:id="@+id/dsa15"
@@ -332,11 +318,7 @@
 
                         <TextView
                             style="@style/i_textview"
-                            android:text="@string/dsa11" />
-
-                        <TextView
-                            style="@style/i_textview"
-                            android:text="@string/dsa12" />
+                            android:text="@string/dsa17a" />
 
                         <LinearLayout
                             android:id="@+id/llgrpsfu309"

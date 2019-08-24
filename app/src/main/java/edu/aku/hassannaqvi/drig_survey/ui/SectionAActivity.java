@@ -57,7 +57,7 @@ public class SectionAActivity extends AppCompatActivity {
 
     private final LinearLayout.LayoutParams mRparams1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
     private final LinearLayout.LayoutParams mRparams2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-    private int totalU2 = 0, boysU2 = 0, girlsU2 = 0;
+    private int total = 0, totalU5 = 0, totalU2 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,7 +194,7 @@ public class SectionAActivity extends AppCompatActivity {
             }
 
             finish();
-            startActivity(new Intent(this, totalU2 > 0 ? SectionBActivity.class : EndingActivity.class)
+            startActivity(new Intent(this, total > 0 ? SectionBActivity.class : EndingActivity.class)
                     .putExtra("childCounter", ChildC)
                     .putExtra("type", 1)
                     .putExtra("complete", true));
@@ -243,9 +243,6 @@ public class SectionAActivity extends AppCompatActivity {
         sfa.put("dsa09", bi.dsa09.getText().toString());
         sfa.put("dsa10", bi.dsa10.getText().toString());
         sfa.put("dsa11", bi.dsa11.getText().toString());
-        sfa.put("dsa12", bi.dsa12.getText().toString());
-        sfa.put("dsa13", bi.dsa13.getText().toString());
-        sfa.put("dsa14", bi.dsa14.getText().toString());
         sfa.put("dsa15", bi.dsa15a.isChecked() ? "1" : bi.dsa15b.isChecked() ? "2" : "0");
         sfa.put("dsa16", bi.dsa16.getText().toString());
 
@@ -257,7 +254,7 @@ public class SectionAActivity extends AppCompatActivity {
         MainApp.fc.setsA(String.valueOf(sfa));
 
 
-        ChildC = new ChildrenCounter(totalU2, boysU2, girlsU2);
+        ChildC = new ChildrenCounter(total);
 
     }
 
@@ -265,22 +262,15 @@ public class SectionAActivity extends AppCompatActivity {
         if (!ValidatorClass.EmptyCheckingContainer(this, bi.llcacrf01))
             return false;
 
-        int boysU5 = Integer.valueOf(bi.dsa10.getText().toString()), girlsU5 = Integer.valueOf(bi.dsa11.getText().toString());
-        int totalU5 = boysU5 + girlsU5;
-        if (Integer.valueOf(bi.dsa09.getText().toString()) != totalU5)
-            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa09, "Boys and Girls count not match!!");
+        total = Integer.valueOf(bi.dsa09.getText().toString());
+        totalU5 = Integer.valueOf(bi.dsa10.getText().toString());
+        totalU2 = Integer.valueOf(bi.dsa11.getText().toString());
 
-        boysU2 = Integer.valueOf(bi.dsa13.getText().toString());
-        girlsU2 = Integer.valueOf(bi.dsa14.getText().toString());
-        totalU2 = boysU2 + girlsU2;
-        if (Integer.valueOf(bi.dsa12.getText().toString()) != totalU2)
-            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Boys and Girls count not match!!");
-        if (totalU2 > totalU5)
-            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Count can't be greater then Under 5 count!!");
-        if (boysU2 > boysU5)
-            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Boys count can't be greater then Under 5 count!!");
-        if (girlsU2 > girlsU5)
-            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa12, "Girls count can't be greater then Under 5 count!!");
+        if (total <= totalU5)
+            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa10, "U5 can't be greater or equal to total!!");
+
+        if (totalU5 < totalU2)
+            return ValidatorClass.EmptyCustomeTextBox(this, bi.dsa11, "U2 can't be greater then U5!!");
 
         for (int i = 0; i < childllArray16.size(); i++) {
             int numbers = i + 1;

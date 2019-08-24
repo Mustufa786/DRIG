@@ -51,15 +51,9 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     private void fillView() {
-        bi.viewGroup01.totalB.setText(String.valueOf(SectionAActivity.ChildC.getTotalBoy()));
-        bi.viewGroup01.totalG.setText(String.valueOf(SectionAActivity.ChildC.getTotalGirl()));
+        bi.viewGroup01.total.setText(String.valueOf(SectionAActivity.ChildC.getTotal()));
         bi.viewGroup01.boyC.setText(String.valueOf(SectionAActivity.ChildC.getTotalBCount()));
         bi.viewGroup01.girlC.setText(String.valueOf(SectionAActivity.ChildC.getTotalGCount()));
-
-        if (SectionAActivity.ChildC.getTotalBoy() == SectionAActivity.ChildC.getTotalBCount())
-            bi.dsb03a.setEnabled(false);
-        else if (SectionAActivity.ChildC.getTotalGirl() == SectionAActivity.ChildC.getTotalGCount())
-            bi.dsb03b.setEnabled(false);
     }
 
     private void setListeners() {
